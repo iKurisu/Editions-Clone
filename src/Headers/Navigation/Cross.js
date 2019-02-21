@@ -1,8 +1,10 @@
 import React from 'react';
-import "./styles.scss";
 
-const CrossButton = ({ isActive, click }) => (
-  <div className={`CrossButton top-left ${isActive ? 'active' : 'inactive'}`}>
+const Cross = ({ isActive, click }) => (
+  <div 
+    className={`cross button top-left ${isActive ? 'active' : 'inactive'}`}
+    onClick={click}
+  >
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18.335 18.335">
       <g transform="translate(-487.075 -425.575)">
         <line y2="23.929" transform="translate(487.782 426.283) rotate(-45)" />
@@ -12,4 +14,4 @@ const CrossButton = ({ isActive, click }) => (
   </div>
 )
 
-export default CrossButton;
+export default Cross;
