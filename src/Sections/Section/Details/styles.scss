@@ -1,0 +1,27 @@
+$timing: cubic-bezier(0.4, 0.55, 0.56, 1);
+
+.Details {
+  width: 100%;
+  color: #777;
+  margin-top: 5vh;
+  text-align: center;
+  opacity: 0;
+  transition: opacity .2s $timing;
+  position: absolute;
+}
+
+.Year {
+  margin: 0 20px;
+}
+
+@media (max-width: 1920px) {
+  .Details {
+    font-size: 13px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .Details {
+    font-size: 16px;
+  }
+}

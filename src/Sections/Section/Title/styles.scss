@@ -1,0 +1,40 @@
+$timing: cubic-bezier(0.4, 0.55, 0.56, 1);
+$reposition: translate(-50%, -50%);
+
+@font-face {
+  font-family: 'Butler Ultra Light';
+  src: url('../../../assets/fonts/Butler_Ultra_Light.otf');
+}
+
+.Title {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  transform: translateY(-50%);
+  text-align: center;
+  pointer-events: none;
+
+  p {
+    font-family: 'Butler Ultra Light'; 
+    font-size: 18.3vw;
+    opacity: 0;
+    
+    transition-property: opacity, transform;
+    transition-duration: .6s, .5s;
+    transition-delay: .15s, 0;
+    transition-timing-function: ease, $timing;
+  }
+}
+
+@media (min-width: 1366px) {
+  .Title p {
+    font-size: 214px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .Title p {
+    font-size: 300px;
+  }
+}

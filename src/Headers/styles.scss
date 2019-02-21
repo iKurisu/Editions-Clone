@@ -1,0 +1,45 @@
+.Side {
+  color: #666;
+  margin: 0 8.5vh;
+  display: none;
+  writing-mode: vertical-lr;  
+  letter-spacing: .56px;
+}
+
+.fixed {
+  position: fixed;
+  top: 50%;
+}
+
+.fixed-left {
+  left: 0;
+  transform: translateY(-50%) rotate(-180deg);
+}
+
+.fixed-right {
+  right: 0;
+  transform: translateY(-50%);
+  margin-top: 3px;
+}
+
+.margin-left {
+  margin-top: 13px;
+}
+
+@media (min-width: 1366px) {
+  .Side {
+    display: block;
+  }
+}
+
+@media (max-width: 1920px) {
+  .Side {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .Side {
+    font-size: 16px;
+  }
+}

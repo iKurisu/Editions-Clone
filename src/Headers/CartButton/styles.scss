@@ -1,0 +1,35 @@
+@mixin cart-button-size($x) {
+  width: $x;
+  height: $x;
+}
+
+@mixin top-right($x) {
+  top: $x;
+  right: $x;
+}
+
+.CartButton {
+  background: #000;
+  border-radius: 50%;
+  position: fixed;
+  
+  @include cart-button-size(14px);
+}
+
+.top-right {
+  margin: 1px 1px 0 0;
+  top: 5vh;
+  right: 9.4vw;
+}
+
+@media (min-width: 768px) {
+  .top-right {
+    @include top-right(7vh);
+  }
+}
+
+@media (min-width: 1366px) {
+  .top-right {
+    @include top-right(8.5vh);
+  }
+}
