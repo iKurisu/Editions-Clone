@@ -2,47 +2,17 @@
 
 .button {
   position: fixed;
-  z-index: 10;
   cursor: pointer
 }
 
-.hamburger {
-  height: 11px;
-  width: 20px;
-
-  .row {
-    height: 2px;
-    background: #666;
-  }
-
+.hamburger, .cross {
   &.active {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    opacity: 1;
   }
-}
 
-.cart-button {
-  background: #000;
-  border-radius: 50%;
-  
-  @include cart-button-size(14px);
-}
-
-.cross {
-  width: 17px;
-  height: 17px;
-  stroke: #000;
-  stroke-width: 2px;
-}
-
-.active {
-  opacity: 1;
-}
-
-.inactive {
-  display: none;
-  opacity: 0;
+  &.inactive {
+    opacity: 0;
+  }
 }
 
 .top-left {

@@ -1,0 +1,21 @@
+@mixin size($x) {
+  width: $x;
+  height: $x;
+}
+
+.cross {
+  stroke: #fff;
+  stroke-width: 2px;
+  z-index: 10;
+  transition: opacity .5s linear;
+  
+  @include size(17px);
+  
+  &.active {
+    transition-delay: .7s;
+  }
+
+  &.inactive {
+    transition-delay: 0s;
+  }
+}

@@ -1,0 +1,9 @@
+@import "../mixins";
+
+.cart-button {
+  background: #000;
+  border-radius: 50%;
+  z-index: 8;
+  
+  @include cart-button-size(14px);
+}

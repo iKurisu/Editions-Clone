@@ -1,0 +1,32 @@
+@font-face {
+  font-family: 'Butler Ultra Light';
+  src: url('../../../assets/fonts/Butler_Ultra_Light.otf');
+}
+
+.Description {
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+
+.text-wrapper {
+  width: 100%;
+  display: table-cell;
+  vertical-align: middle;
+  
+  p {
+    max-width: 1000px;
+    margin: auto;
+    text-align: center;
+    font-family: 'Butler Ultra Light';
+    font-size: 90px;
+    letter-spacing: -1.3px;
+    transform: translateY(10px);
+    transition: transform 1s cubic-bezier(.22,.44,.34,1.0); 
+  }
+}
+
+.show .text-wrapper p {
+  transform: translateY(0);
+  transition-delay: .7s;
+}

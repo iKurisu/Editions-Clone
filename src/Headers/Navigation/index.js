@@ -12,6 +12,9 @@ class Navigation extends React.Component {
 
   click = e => {
     const { hamburgerIsActive, crossIsActive } = this.state;
+    const { togglePanel } = this.props;
+
+    togglePanel();
 
     this.setState({
       hamburgerIsActive: !hamburgerIsActive,
