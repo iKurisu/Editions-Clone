@@ -14,7 +14,7 @@ class Headers extends React.Component {
 
   togglePanel = e => {
     const { showPanel } = this.state;
-
+    
     this.setState({
       showPanel: !showPanel
     })
@@ -26,7 +26,7 @@ class Headers extends React.Component {
     
     return (
       <header>
-        <Navigation togglePanel={this.togglePanel} />
+        <Navigation showPanel={showPanel} togglePanel={this.togglePanel} />
         <div className="Side fixed fixed-left">Selected Artwork</div>
         <div className="Side fixed fixed-right">
           <span>2016 – P</span>

@@ -1,3 +1,9 @@
 .top {
-  top: 9vh;
+  top: 9.5vh;
+}
+
+@media (min-width: 768px) {
+  .top {
+    top: 6vh;
+  }
 }

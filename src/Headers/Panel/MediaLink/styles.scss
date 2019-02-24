@@ -14,10 +14,6 @@
   }
 }
 
-.bottom {
-  bottom: 8.3vh;
-}
-
 .reveal {
   p, .media {
     transition: opacity .4s ease;
@@ -28,7 +24,6 @@
   }
 }
 
-
 .reveal:hover {
   p {
     opacity: 0;
@@ -38,5 +33,15 @@
   .media {
     opacity: 1;
     transition-delay: .15s;
+  }
+}
+
+.bottom {
+  bottom: 8.8vh;
+}
+
+@media (min-width: 768px) {
+  .bottom {
+    bottom: 5vh;
   }
 }
