@@ -7,3 +7,21 @@
     top: 6vh;
   }
 }
+
+@media (min-width: 768px) and (orientation: landscape) {
+  .top {
+    top: 10.6vh;
+  }
+}
+
+@media (min-width: 1000px) {
+  .top {
+    top: 7.5vh;
+  }
+}
+
+@media (min-width: 1366px) {
+  .top {
+    top: 9vh;
+  }
+}

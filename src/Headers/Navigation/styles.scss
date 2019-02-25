@@ -28,6 +28,10 @@
 }
 
 @media (min-width: 768px) {
+  @include top-left-right(5.5vh);
+}
+
+@media (min-width: 768px) and (orientation: landscape) {
   @include top-left-right(7vh);
 }
 
