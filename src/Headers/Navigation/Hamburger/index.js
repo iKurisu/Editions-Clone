@@ -1,8 +1,12 @@
 import React from 'react';
 import "./styles.scss";
 
-const Hamburger = ({ isActive, click }) => (
-  <div className={`hamburger button top-left ${isActive ? 'active' : 'inactive'}`} onClick={click}>
+const Hamburger = ({ isActive, show, click }) => (
+  <div 
+    className={`hamburger button top-left ${isActive ? 'active' : 'inactive'}`} 
+    onClick={click}
+    style={{ opacity: show ? 1 : 0 }}
+  >
     <div className="row" />
     <div className="row" />
   </div>
