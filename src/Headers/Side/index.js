@@ -16,11 +16,9 @@ class Side extends React.Component {
   };
 
   updateCurrentSection() {
-    const { currentSection } = this.state;
     const { scrollY, innerHeight } = window;
 
     const position = Math.ceil((scrollY - (innerHeight * 2) / 3) / innerHeight);
-    const newSection = position % 12 + 1;
 
     this.setState({ currentSection: (position % 12) + 1 });
   }
