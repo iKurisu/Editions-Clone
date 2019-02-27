@@ -1,4 +1,5 @@
 import React from 'react';
+import Side from './Side';
 import Navigation from './Navigation';
 import Panel from './Panel';
 import "./styles.scss";
@@ -6,10 +7,6 @@ import "./styles.scss";
 class Headers extends React.Component {  
   state = {
     showPanel: false
-  }
-  
-  format(x) {
-    return x < 10 ? `0${x}` : x;
   }
 
   togglePanel = e => {
@@ -22,16 +19,11 @@ class Headers extends React.Component {
   
   render() {
     const { showPanel } = this.state;
-    const { currentSection } = this.props; 
     
     return (
       <header>
         <Navigation showPanel={showPanel} togglePanel={this.togglePanel} />
-        <div className="Side fixed fixed-left">Selected Artwork</div>
-        <div className="Side fixed fixed-right">
-          <span>2016 – P</span>
-          <span className="margin-left">{`${this.format(currentSection)} / 12`}</span>
-        </div>
+        <Side />
         <Panel showPanel={showPanel} />
       </header>
     );
