@@ -28,13 +28,13 @@ class Section extends React.Component {
   
   render() {
     const { offX, offY } = this.state;
-    const { artwork, title, details, orientation, color } = this.props;
+    const { artwork, title, details, orientation, colors } = this.props;
     
     return (
       <section className={`Section`} onMouseMove={this.mouseMove}>
         <div className="ContentWrapper">
           <Image artwork={artwork} orientation={orientation} />
-          <Title title={title} style={{ transform: `translate(${offX}px, ${offY}px)`, color }} />
+          <Title title={title} style={{ transform: `translate(${offX}px, ${offY}px)`, color: colors.font }} />
           <Details {...details} />
         </div>
       </section>
