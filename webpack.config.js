@@ -6,7 +6,8 @@ module.exports = {
   entry: "./src/index.js",
   mode: "development",
   devServer: {
-    contentBase: './dist'
+    contentBase: './dist',
+    historyApiFallback: true
   },
   plugins: [
     new HtmlWebpackPlugin({

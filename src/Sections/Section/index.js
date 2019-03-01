@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router } from "react-router-dom";
 import Image from './Image';
 import Title from './Title';
 import Details from './Details';
@@ -33,7 +34,7 @@ class Section extends React.Component {
     return (
       <section className={`Section`} onMouseMove={this.mouseMove}>
         <div className="ContentWrapper">
-          <Image artwork={artwork} orientation={orientation} />
+          <Image title={title} artwork={artwork} orientation={orientation} />
           <Title title={title} style={{ transform: `translate(${offX}px, ${offY}px)`, color: colors.font }} />
           <Details {...details} />
         </div>
