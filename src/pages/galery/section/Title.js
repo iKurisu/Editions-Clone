@@ -1,8 +1,8 @@
 import React from 'react';
-import './styles.scss';
+import "./Title.scss";
 
 const Title = ({ style, title }) => (
-  <div className="Title">
+  <div className="title">
     <p style={style}>{title}</p>
   </div>
 )

@@ -1,6 +1,6 @@
 $timing: cubic-bezier(0.4, 0.55, 0.56, 1);
 
-.ImageWrapper {
+.image-wrapper {
   width: 80vw;
   height: auto;
   margin: 0 auto;
@@ -10,11 +10,8 @@ $timing: cubic-bezier(0.4, 0.55, 0.56, 1);
   &:hover {
     transform: scale(1.02);
 
-    ~.Title p {
-      opacity: 1;
-    }
-
-    ~.Details {
+    ~.title p { opacity: 1; }
+    ~.details {
       opacity: 1;
       transition: opacity 1s $timing;
     }

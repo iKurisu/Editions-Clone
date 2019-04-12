@@ -6,7 +6,7 @@ $reposition: translate(-50%, -50%);
   src: url('../../../assets/fonts/Butler_Ultra_Light.otf');
 }
 
-.Title {
+.title {
   position: absolute;
   left: 0;
   top: 50%;
@@ -28,13 +28,13 @@ $reposition: translate(-50%, -50%);
 }
 
 @media (min-width: 1366px) {
-  .Title p {
+  .title p {
     font-size: 214px;
   }
 }
 
 @media (min-width: 1920px) {
-  .Title p {
+  .title p {
     font-size: 300px;
   }
 }
