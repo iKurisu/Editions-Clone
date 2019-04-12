@@ -1,9 +1,8 @@
-import React from 'react';
-import "./styles.scss";
+import React from "react";
 
 const Hamburger = ({ isActive, show, click }) => (
-  <div 
-    className={`hamburger button top-left ${isActive ? 'active' : 'inactive'}`} 
+  <div
+    className={`hamburger button top-left ${isActive ? "active" : "inactive"}`}
     onClick={click}
     style={{ opacity: show ? 1 : 0 }}
   >

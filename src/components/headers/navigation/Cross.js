@@ -1,9 +1,8 @@
-import React from 'react';
-import "./styles.scss";
+import React from "react";
 
 const Cross = ({ isActive, click }) => (
-  <div 
-    className={`cross button top-left ${isActive ? 'active' : 'inactive'}`}
+  <div
+    className={`cross button top-left ${isActive ? "active" : "inactive"}`}
     onClick={click}
   >
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18.335 18.335">
@@ -13,6 +12,6 @@ const Cross = ({ isActive, click }) => (
       </g>
     </svg>
   </div>
-)
+);
 
 export default Cross;

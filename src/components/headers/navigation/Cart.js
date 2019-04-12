@@ -1,10 +1,9 @@
-import React from 'react';
-import "./styles.scss";
+import React from "react";
 
 const Cart = ({ show, click }) => (
-  <div 
+  <div
     className="cart-button button top-right"
-    onClick={click} 
+    onClick={click}
     style={{ opacity: show ? 1 : 0 }}
   />
 );
