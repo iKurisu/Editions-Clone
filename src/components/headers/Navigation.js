@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import Hamburger from './navigation/Hamburger';
 import Cross from "./navigation/Cross";
 import Cart from "./navigation/Cart";
@@ -40,6 +41,11 @@ const Navigation = ({ showPanel, togglePanel }) => {
       <Cart show={showIcons} />
     </div>
   );
+}
+
+Navigation.propTypes = {
+  showPanel: PropTypes.bool.isRequired,
+  togglePanel: PropTypes.func.isRequired
 }
 
 export default Navigation;

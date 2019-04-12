@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import "./Details.scss";
 
 const Details = ({ type, year, price }) => (
@@ -8,5 +9,11 @@ const Details = ({ type, year, price }) => (
     <span>{`From $${price}.00`}</span>
   </div>
 )
+
+Details.propTypes = {
+  type: PropTypes.string.isRequired,
+  year: PropTypes.number.isRequired,
+  price: PropTypes.number.isRequired
+}
 
 export default Details;

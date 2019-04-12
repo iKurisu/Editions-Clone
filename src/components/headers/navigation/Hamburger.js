@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const Hamburger = ({ isActive, show, click }) => (
   <div
@@ -10,5 +11,11 @@ const Hamburger = ({ isActive, show, click }) => (
     <div className="row" />
   </div>
 );
+
+Hamburger.propTypes = {
+  isActive: PropTypes.bool.isRequired,
+  show: PropTypes.bool.isRequired,
+  click: PropTypes.func.isRequired
+}
 
 export default Hamburger;

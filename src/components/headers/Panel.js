@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import "./Panel.scss";
 
 const instagram = "https://www.instagram.com/jordansowers/";
@@ -33,5 +34,9 @@ const Panel = ({ showPanel }) => (
     </div>
   </div>
 );
+
+Panel.propTypes = {
+  showPanel: PropTypes.bool.isRequired
+}
 
 export default Panel;

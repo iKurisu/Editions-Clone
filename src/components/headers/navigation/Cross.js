@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const Cross = ({ isActive, click }) => (
   <div
@@ -13,5 +14,10 @@ const Cross = ({ isActive, click }) => (
     </svg>
   </div>
 );
+
+Cross.propTypes = {
+  isActive: PropTypes.bool.isRequired,
+  click: PropTypes.func.isRequired
+}
 
 export default Cross;

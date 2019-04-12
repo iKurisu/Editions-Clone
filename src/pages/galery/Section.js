@@ -1,7 +1,4 @@
-import React from 'react';
-import Details from './section/Details';
-import Image from './section/Image';
-import Title from './section/Title';
+import PropTypes from 'prop-types';
 import "./Section.scss";
 
 class Section extends React.Component {
@@ -36,6 +33,12 @@ class Section extends React.Component {
       </section>
     );
   }
+Section.propTypes = {
+  artwork: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  details: PropTypes.object.isRequired,
+  orientation: PropTypes.string.isRequired,
+  colors: PropTypes.object.isRequired
 }
 
 export default Section;
