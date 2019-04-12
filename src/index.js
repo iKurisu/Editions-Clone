@@ -1,7 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router } from 'react-router-dom';
-import Main from './Main';
+import Headers from 'components/Headers';
+import Galery from 'pages/Galery';
+import artworks from './artworks';
 import "./styles.scss";
 
-ReactDOM.render(<Main />, document.getElementById('root'));
+const App = () => (
+  <>
+    <Headers />
+    <Galery artworks={artworks} />
+  </>
+)
+
+
+ReactDOM.render(
+  <App />,
+  document.getElementById('root')
+);
