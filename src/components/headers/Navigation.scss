@@ -1,24 +1,4 @@
-@mixin size($x, $y: $x) {
-  width: $x;
-  height: $y;
-}
-
-@mixin stroke($color, $x) {
-  stroke: $color;
-  stroke-width: $x;
-}
-
-@mixin corners($x) {
-  .top-left {
-    top: $x;
-    left: $x;
-  }
-
-  .top-right {
-    top: $x;
-    right: $x;
-  }
-}
+@import 'sass/mixins.scss';
 
 .button {
   position: fixed;

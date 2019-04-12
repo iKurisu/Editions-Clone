@@ -1,4 +1,4 @@
-$timing: cubic-bezier(0.4, 0.55, 0.56, 1);
+@import 'sass/variables.scss';
 
 .details {
   width: 100%;
@@ -10,18 +10,12 @@ $timing: cubic-bezier(0.4, 0.55, 0.56, 1);
   transition: opacity .2s $timing;
 }
 
-.details-year {
-  margin: 0 20px;
-}
+.details-year { margin: 0 20px; }
 
 @media (max-width: 1920px) {
-  .details {
-    font-size: 13px;
-  }
+  .details { font-size: 13px; }
 }
 
 @media (min-width: 1920px) {
-  .details {
-    font-size: 16px;
-  }
+  .details { font-size: 16px; }
 }

@@ -1,4 +1,4 @@
-$timing: cubic-bezier(0.4, 0.55, 0.56, 1);
+@import 'sass/variables.scss';
 
 .image-wrapper {
   width: 80vw;
@@ -6,15 +6,15 @@ $timing: cubic-bezier(0.4, 0.55, 0.56, 1);
   margin: 0 auto;
   cursor: pointer;
   transition: transform 1s $timing;
+}
 
-  &:hover {
-    transform: scale(1.02);
+.image-wrapper:hover {
+  transform: scale(1.02);
 
-    ~.title p { opacity: 1; }
-    ~.details {
-      opacity: 1;
-      transition: opacity 1s $timing;
-    }
+  ~.title p { opacity: 1; }
+  ~.details {
+    opacity: 1;
+    transition: opacity 1s $timing;
   }
 }
 
@@ -25,45 +25,25 @@ img {
   will-change: transform;
 }
 
-.portrait {
-  max-width: 53vh;
-}
-
-.landscape {
-  max-width: 78.5vh;
-}
-
-.square {
-  max-width: 59.2vh;
-}
+.portrait { max-width: 53vh; }
+.landscape { max-width: 78.5vh; }
+.square { max-width: 59.2vh; }
 
 @media (min-width: 768px) {
-  .portrait {
-    max-width: 47vh;
-  }
-
-  .landscape {
-    max-width: 80vh;
-  }
-
-  .square {
-    max-width: 52.2vh;
-  }
+  .portrait { max-width: 47vh; }
+  .landscape { max-width: 80vh; }
+  .square { max-width: 52.2vh; }
 }
 
 @media (min-width: 1000px) {
-  .portrait {
-    max-width: 48.4vh;
-  }
+  .portrait { max-width: 48.4vh; }
 
   .landscape {
     width: 63.5vw;
     max-width: 100vh;
   }
 
-  .square {
-    max-width: 48.5vh;
-  }
+  .square { max-width: 48.5vh; }
 }
 
 @media (min-width: 1366px) {
@@ -72,9 +52,7 @@ img {
     max-width: 56vh;
   }
 
-  .landscape {
-    width: 63vw;
-  }
+  .landscape { width: 63vw; }
 
   .square {
     width: 60.3vh;
@@ -83,11 +61,6 @@ img {
 }
 
 @media (min-width: 1920px) {
-  .portrait {
-    max-width: 53.2vh;
-  }
-
-  .square {
-    max-width: 62.6vh;
-  }
+  .portrait { max-width: 53.2vh; }
+  .square { max-width: 62.6vh; }
 }
