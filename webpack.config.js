@@ -7,7 +7,7 @@ module.exports = {
   mode: "development",
   devServer: {
     contentBase: './dist',
-    host: '0.0.0.0'
+    historyApiFallback: true
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -49,5 +49,14 @@ module.exports = {
         ]
       }
     ]
+  },
+  resolve: {
+    alias: {
+      assets: path.resolve(__dirname, './src/assets'),
+      components: path.resolve(__dirname, './src/components'),
+      pages: path.resolve(__dirname, './src/pages'),
+      utils: path.resolve(__dirname, './src/utils'),
+      sass: path.resolve(__dirname, "./src/sass")
+    }
   }
 };

@@ -1,4 +1,4 @@
-.Side {
+.side {
   color: #666;
   margin: 0 8.5vh;
   display: none;
@@ -22,24 +22,16 @@
   margin-top: 3px;
 }
 
-.margin-left {
-  margin-top: 13px;
-}
+.margin-left { margin-top: 13px; }
 
 @media (min-width: 1366px) {
-  .Side {
-    display: block;
-  }
+  .side { display: block; }
 }
 
 @media (max-width: 1920px) {
-  .Side {
-    font-size: 14px;
-  }
+  .side { font-size: 14px; }
 }
 
 @media (min-width: 1920px) {
-  .Side {
-    font-size: 16px;
-  }
+  .side { font-size: 16px; }
 }

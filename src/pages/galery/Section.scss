@@ -1,0 +1,17 @@
+@import 'sass/mixins.scss';
+
+.section {
+  @include size(100%, 100vh);
+  display: table;
+  position: relative;
+}
+
+.section:first-child {
+  z-index: 15;
+}
+
+.content-wrapper { 
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%;
+}

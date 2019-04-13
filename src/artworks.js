@@ -1,15 +1,15 @@
-import bloom from './assets/artworks/bloom.jpg';
-import rise from './assets/artworks/rise.jpg';
-import aether from './assets/artworks/aether.jpg';
-import gausser from './assets/artworks/gausser.jpg';
-import anechoia from './assets/artworks/anechoia.jpg';
-import flora from './assets/artworks/flora.jpg';
-import plains from './assets/artworks/plains.jpg';
-import dvtnII from './assets/artworks/dvtn-ii.jpg';
-import cirrus from './assets/artworks/cirrus.jpg';
-import minim from './assets/artworks/minim.jpg';
-import dvtnI from './assets/artworks/dvtn-i.jpg';
-import overture from './assets/artworks/overture.jpg';
+import bloom from 'assets/artworks/bloom.jpg';
+import rise from 'assets/artworks/rise.jpg';
+import aether from 'assets/artworks/aether.jpg';
+import gausser from 'assets/artworks/gausser.jpg';
+import anechoia from 'assets/artworks/anechoia.jpg';
+import flora from 'assets/artworks/flora.jpg';
+import plains from 'assets/artworks/plains.jpg';
+import dvtnII from 'assets/artworks/dvtn-ii.jpg';
+import cirrus from 'assets/artworks/cirrus.jpg';
+import minim from 'assets/artworks/minim.jpg';
+import dvtnI from 'assets/artworks/dvtn-i.jpg';
+import overture from 'assets/artworks/overture.jpg';
 
 const ACRYLIC = 'Acrylic';
 const MIXED_MEDIA = 'Mixed Media';
@@ -28,7 +28,10 @@ export default [
       price: 90,
     },
     orientation: PORTRAIT,
-    color: '#ab8a9f'
+    colors: {
+      font: 'rgb(171, 138, 159)',
+      background: ''
+    }
   },
   {
     artwork: rise,
@@ -39,7 +42,10 @@ export default [
       price: 100
     },
     orientation: LANDSCAPE,
-    color: '#c0c1bf'
+    colors: {
+      font: 'rgb(192, 193, 191)',
+      background: ''
+    }
   },
   {
     artwork: aether,
@@ -50,7 +56,10 @@ export default [
       price: 150
     },
     orientation: PORTRAIT,
-    color: '#26292e'
+    colors: {
+      font: 'rgb(60, 63, 69)',
+      background: ''
+    }
   },
   {
     artwork: gausser,
@@ -61,7 +70,10 @@ export default [
       price: 75
     },
     orientation: SQUARE,
-    color: '#9e9e9b'
+    colors: {
+      font: 'rgb(158, 158, 155)',
+      background: ''
+    }
   },
   {
     artwork: anechoia,
@@ -72,7 +84,10 @@ export default [
       price: 180
     },
     orientation: LANDSCAPE,
-    color: '#3f4957'
+    colors: {
+      font: 'rgb(98, 113, 135)',
+      background: ''
+    }
   },
   {
     artwork: flora,
@@ -83,7 +98,10 @@ export default [
       price: 75
     },
     orientation: SQUARE,
-    color: '#222'
+    colors: {
+      font: 'rgb(68, 68, 68)',
+      background: ''
+    }
   },
   {
     artwork: plains,
@@ -94,7 +112,10 @@ export default [
       price: 200
     },
     orientation: PORTRAIT,
-    color: '#9195a2'
+    colors: {
+      font: 'rgb(145, 149, 162)',
+      background: ''
+    }
   },
   {
     artwork: dvtnII,
@@ -105,7 +126,10 @@ export default [
       price: 100
     },
     orientation: LANDSCAPE,
-    color: '#2a3338'
+    colors: {
+      font: 'rgb(92, 103, 108)',
+      background: ''
+    }
   },
   {
     artwork: cirrus,
@@ -116,7 +140,10 @@ export default [
       price: 150
     },
     orientation: PORTRAIT,
-    color: '#222'
+    colors: {
+      font: 'rgb(68, 68, 68)',
+      background: ''
+    }
   },
   {
     artwork: minim,
@@ -127,7 +154,10 @@ export default [
       price: 75
     },
     orientation: SQUARE,
-    color: '#b4bac0'
+    colors: {
+      font: 'rgb(180, 186, 192)',
+      background: ''
+    }
   },
   {
     artwork: dvtnI,
@@ -138,7 +168,10 @@ export default [
       price: 90
     },
     orientation: PORTRAIT,
-    color: '#2c3139'
+    colors: {
+      font: 'rgb(69, 80, 96)',
+      background: ''
+    }
   },
   {
     artwork: overture,
@@ -149,6 +182,9 @@ export default [
       price: 150
     },
     orientation: LANDSCAPE,
-    color: '#aaa'
+    colors: {
+      font: 'rgb(170, 170, 170)',
+      background: ''
+    }
   }
 ]
