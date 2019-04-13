@@ -1,0 +1,21 @@
+@import 'sass/variables.scss';
+
+.details {
+  width: 100%;
+  color: #777;
+  margin-top: 5vh;
+  position: absolute;
+  text-align: center;
+  opacity: 0;
+  transition: opacity .2s $timing;
+}
+
+.details-year { margin: 0 20px; }
+
+@media (max-width: 1920px) {
+  .details { font-size: 13px; }
+}
+
+@media (min-width: 1920px) {
+  .details { font-size: 16px; }
+}

@@ -1,0 +1,29 @@
+@import 'sass/variables.scss';
+
+.title {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  transform: translateY(-50%);
+  text-align: center;
+  pointer-events: none;
+}
+
+.title p {
+  font-family: 'Butler Ultra Light'; 
+  font-size: 18.3vw;
+  opacity: 0;
+  
+  transition-property: opacity, transform;
+  transition-duration: .6s, .5s;
+  transition-delay: .15s, 0;
+  transition-timing-function: ease, $timing;
+}
+
+@media (min-width: 1366px) {
+  .title p { font-size: 214px; }
+}
+
+@media (min-width: 1920px) {
+  .title p { font-size: 300px; }
+}
