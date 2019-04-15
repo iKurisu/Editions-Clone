@@ -6,8 +6,10 @@ import "./Galery.scss";
 
 const Galery = ({ artworks, atIntro }) => (
   <div className={`galery ${atIntro ? 'no-scroll' : ''}`}>
-    { artworks.map(artwork => <Section {...artwork} key={generate()} /> )}
-    <Section {...artworks[0]} />
+    { artworks.map(artwork => (
+      <Section artwork={artwork} atIntro={atIntro} key={generate()} />
+    ))}
+    <Section artwork={artworks[0]} />
   </div>
 );
 
