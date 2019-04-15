@@ -11,18 +11,18 @@ const App = () => {
   const [atIntro, setIntro] = useState(true);
   const [panelPosition, setPanelPosition] = useState('0');
   
-  const showGalery = () => {
+  const fadeIntro = () => {
     setIntro(false);
     setPanelPosition('-100%');
   }
 
   return (
-    <React.Fragment>
+    <main className={atIntro ? 'intro' : ''}>
       <Headers />
-      <Intro showGalery={showGalery} />
+      <Intro showGalery={fadeIntro} atIntro={atIntro} />
       <Galery artworks={artworks} atIntro={atIntro} />
       <BlackPanel position={panelPosition} />
-    </React.Fragment>
+    </main>
   );
 }
 
