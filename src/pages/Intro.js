@@ -2,8 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import "./Intro.scss";
 
-const Intro = ({ showGalery }) => (
-  <div className="intro-container" onClick={showGalery}>
+const Intro = ({ showGalery, atIntro }) => (
+  <div 
+    className="intro-container" 
+    style={{ display: atIntro ? 'block' : 'none' }}
+    onClick={showGalery}
+  >
     <div className="top text-center intro">
       <p>Selected Artwork</p>
     </div>
@@ -21,7 +25,8 @@ const Intro = ({ showGalery }) => (
 );
 
 Intro.propTypes = {
-  showGalery: PropTypes.func.isRequired
+  showGalery: PropTypes.func.isRequired,
+  atIntro: PropTypes.bool.isRequired
 }
 
 export default Intro;
