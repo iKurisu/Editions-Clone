@@ -29,6 +29,10 @@
 
 .text-center.intro { transition: opacity 1s ease }
 
-.top.intro { top: 5.8vh; }
+@media (max-width: 768px) {
+  .headline { font-size: 27vw }
+  .top.intro { top: 8vh }
+  .bottom.intro { bottom: 8.2vh }
+}
 
 .bottom.intro { bottom: 6vh; }
