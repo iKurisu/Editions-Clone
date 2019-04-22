@@ -22,11 +22,14 @@
 .headline {
   color: #fff;
   font-family: 'Butler Ultra Light';
-  font-size: 180px;
-  width: 46.5vw;
+  font-size: 220px;
+  width: 48.5vw;
   margin: 0 auto;
+  transition: all 1s ease;
 }
 
-.top.intro { top: 8vh; }
+.text-center.intro { transition: opacity 1s ease }
 
-.bottom.intro { bottom: 8.5vh; }
+.top.intro { top: 5.8vh; }
+
+.bottom.intro { bottom: 6vh; }
