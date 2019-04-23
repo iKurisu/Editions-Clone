@@ -34,6 +34,9 @@
   .top.intro { top: 8vh }
   .bottom.intro { bottom: 8.3vh }
 }
+
+@media (max-width: 768px) and (orientation: landscape) {
+  .headline { font-size: 31vh }
 }
 
 .bottom.intro { bottom: 6vh; }
