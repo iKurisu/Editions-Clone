@@ -22,7 +22,6 @@
 .headline {
   color: #fff;
   font-family: 'Butler Ultra Light';
-  font-size: 220px;
   text-align: center;
   transition: all 1s ease;
 }
@@ -39,4 +38,21 @@
   .headline { font-size: 31vh }
 }
 
-.bottom.intro { bottom: 6vh; }
+@media (min-width: 768px) {
+  .headline { font-size: 24vw }
+  .top.intro, .bottom.intro { font-size: 14px }
+  .top.intro { top: 5.8vh }
+  .bottom.intro { bottom: 6vh }
+}
+
+@media (min-width: 768px) and (orientation: landscape) {
+  .headline { font-size: 30.5vh }
+  .top.intro { top: 7vh }
+  .bottom.intro { bottom: 7.3vh }
+}
+
+@media (min-width: 1920px) {
+  .headline { font-size: 290px }
+  .top.intro { top: 7.2vh }
+  .bottom.intro { bottom: 7.3vh }
+}

@@ -4,11 +4,13 @@ import mediaQuery from 'utils/mediaQuery';
 import "./Image.scss";
 
 const preIntroScale = mediaQuery({
-  "(max-width: 768px)": 0.94
+  "(max-width: 768px)": 0.94,
+  "(min-width: 768px)": 1.06
 });
 
 const introScale = mediaQuery({
-  "(max-width: 768px)": 0.89
+  "(max-width: 768px)": 0.89,
+  "(min-width: 768px)": 1.03
 });
 
 const FirstImage = ({ src, orientation, atIntro }) => {
