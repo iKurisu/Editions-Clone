@@ -29,34 +29,25 @@
 .text-center.intro { transition: opacity 1s ease }
 
 @media (max-width: 768px) {
-  .headline { font-size: 27vw }
   .top.intro { top: 8vh }
   .bottom.intro { bottom: 8.3vh }
 }
 
-@media (max-width: 768px) and (orientation: landscape) {
-  .headline { font-size: 31vh }
-}
-
 @media (min-width: 768px) {
-  .headline { font-size: 24vw }
   .top.intro, .bottom.intro { font-size: 14px }
   .top.intro { top: 5.8vh }
   .bottom.intro { bottom: 6vh }
 }
 
 @media (min-width: 768px) and (orientation: landscape) {
-  .headline { font-size: 30.5vh }
   .top.intro { top: 7vh }
   .bottom.intro { bottom: 7.3vh }
 }
 
-@media (min-width: 1000px) {
-  .headline { font-size: 18.4vw }
-}
-
-@media (min-width: 1000px) and (max-height: 700px) {
-  .headline { font-size: 30.6vh }
+@media (min-width: 1366px) {
+  // .headline { font-size: 17.5vw }
+  .top.intro { top: 6vh }
+  .bottom.intro { bottom: 6.3vh }
 }
 
 @media (min-width: 1920px) {
