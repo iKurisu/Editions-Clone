@@ -1,5 +1,11 @@
 @import 'sass/variables.scss';
 
+.intro .image-wrapper {
+  transition-property: opacity, transform;
+  transition-duration: 1.9s;
+  transition-timing-function: $timing;
+}
+
 .image-wrapper {
   width: 80vw;
   height: auto;
@@ -9,7 +15,7 @@
 }
 
 .image-wrapper:hover {
-  transform: scale(1.02);
+  transform: scale(1.02) !important;
 
   ~.title p { opacity: 1; }
   ~.details {

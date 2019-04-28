@@ -20,7 +20,7 @@ const SQUARE = 'square';
 
 export default [
   {
-    artwork: bloom,
+    src: bloom,
     title: 'BLOOM',
     details: {
       type: ACRYLIC,
@@ -30,11 +30,11 @@ export default [
     orientation: PORTRAIT,
     colors: {
       font: 'rgb(171, 138, 159)',
-      background: ''
+      background: 'rgb(171, 138, 159)'
     }
   },
   {
-    artwork: rise,
+    src: rise,
     title: 'RISE',
     details: {
       type: ACRYLIC,
@@ -44,11 +44,11 @@ export default [
     orientation: LANDSCAPE,
     colors: {
       font: 'rgb(192, 193, 191)',
-      background: ''
+      background: '#c0c1bf'
     }
   },
   {
-    artwork: aether,
+    src: aether,
     title: 'AETHER',
     details: {
       type: MIXED_MEDIA,
@@ -58,11 +58,11 @@ export default [
     orientation: PORTRAIT,
     colors: {
       font: 'rgb(60, 63, 69)',
-      background: ''
+      background: '#26292e'
     }
   },
   {
-    artwork: gausser,
+    src: gausser,
     title: 'GAUSSER',
     details: {
       type: MIXED_MEDIA,
@@ -76,7 +76,7 @@ export default [
     }
   },
   {
-    artwork: anechoia,
+    src: anechoia,
     title: 'ANECHOIA',
     details: {
       type: MIXED_MEDIA,
@@ -90,7 +90,7 @@ export default [
     }
   },
   {
-    artwork: flora,
+    src: flora,
     title: 'FLORA',
     details: {
       type: MIXED_MEDIA,
@@ -104,7 +104,7 @@ export default [
     }
   },
   {
-    artwork: plains,
+    src: plains,
     title: 'PLAINS',
     details: {
       type: MIXED_MEDIA,
@@ -118,7 +118,7 @@ export default [
     }
   },
   {
-    artwork: dvtnII,
+    src: dvtnII,
     title: 'DVTN II',
     details: {
       type: MIXED_MEDIA,
@@ -132,7 +132,7 @@ export default [
     }
   },
   {
-    artwork: cirrus,
+    src: cirrus,
     title: 'CIRRUS',
     details: {
       type: MIXED_MEDIA,
@@ -146,7 +146,7 @@ export default [
     }
   },
   {
-    artwork: minim,
+    src: minim,
     title: 'MINIM',
     details: {
       type: MIXED_MEDIA,
@@ -160,7 +160,7 @@ export default [
     }
   },
   {
-    artwork: dvtnI,
+    src: dvtnI,
     title: 'DVTN I',
     details: {
       type: ACRYLIC,
@@ -174,7 +174,7 @@ export default [
     }
   },
   {
-    artwork: overture,
+    src: overture,
     title: 'OVERTURE',
     details: {
       type: MIXED_MEDIA,
