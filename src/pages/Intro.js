@@ -12,7 +12,8 @@ const Intro = ({ showGalery, atIntro }) => {
     "(max-width: 768px)": fontSize('27vw', '31vh'),
     "(min-width: 768px)": fontSize('24vw', '30.5vh'),
     "(min-width: 1000px)": fontSize('18.4vw', '30.5vh'),
-    "(min-width: 1366px)": fontSize('17.5vw', '30.8vh')
+    "(min-width: 1366px)": fontSize('17.3vw', '30.8vh'),
+    "(min-width: 1920px)": fontSize('15.3vw', '30.5vh')
   });
 
   useEffect(() => {
