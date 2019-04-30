@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import withMovement from './section/withMovement';
+import withMovement from 'components/withMovement';
 import Details from "./section/Details";
 import Image from "./section/Image";
 import Title from "./section/Title";

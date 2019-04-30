@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import FirstImage from './section/FirstImage';
 import Title from './section/Title';
 import Details from './section/Details';
-import withMovement from './section/withMovement';
+import withMovement from 'components/withMovement';
 
 const FirstSection = ({ artwork, atIntro, x, y, mouseMove }) => {
   const { src, orientation, title, colors, details } = artwork;
