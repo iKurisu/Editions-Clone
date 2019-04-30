@@ -14,11 +14,11 @@ const withMovement = Section => props => {
     const { clientX, clientY } = e;
     const { innerWidth, innerHeight } = window;
 
-    setX(getOffset(clientX, innerWidth, 28));
-    setY(getOffset(clientY, innerHeight, 18));
+    setX(getOffset(clientX, innerWidth, innerWidth / 50));
+    setY(getOffset(clientY, innerHeight, innerHeight / 50));
   };
 
-  return <Section {...props} x={x} y={y} mouseMove={mouseMove} />
+  return <Section {...props} translate={{x, y}} mouseMove={mouseMove} />
 }
 
 withMovement.propTypes = {

@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import FirstImage from './section/FirstImage';
 import Title from './section/Title';
 import Details from './section/Details';
-import withMovement from './section/withMovement';
+import withMovement from 'components/withMovement';
 
-const FirstSection = ({ artwork, atIntro, x, y, mouseMove }) => {
+const FirstSection = ({ artwork, atIntro, translate: {x, y}, mouseMove }) => {
   const { src, orientation, title, colors, details } = artwork;
   const [zIndex, setZIndex] = useState(15);
 
@@ -41,8 +41,7 @@ const FirstSection = ({ artwork, atIntro, x, y, mouseMove }) => {
 FirstSection.propTypes = {
   artwork: PropTypes.object.isRequired,
   atIntro: PropTypes.bool,
-  x: PropTypes.number.isRequired,
-  y: PropTypes.number.isRequired,
+  translate: PropTypes.object.isRequired,
   mouseMove: PropTypes.func.isRequired
 };
 

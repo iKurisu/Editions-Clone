@@ -1,12 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
-import withMovement from './section/withMovement';
+import withMovement from 'components/withMovement';
 import Details from "./section/Details";
 import Image from "./section/Image";
 import Title from "./section/Title";
 import "./Section.scss";
 
-const Section = ({ artwork, x, y, mouseMove }) => {
+const Section = ({ artwork, translate: {x, y}, mouseMove }) => {
   const { src, orientation, title, colors, details } = artwork;
 
   return (
@@ -31,8 +31,7 @@ const Section = ({ artwork, x, y, mouseMove }) => {
 
 Section.propTypes = {
   artwork: PropTypes.object.isRequired,
-  x: PropTypes.number.isRequired,
-  y: PropTypes.number.isRequired,
+  translate: PropTypes.object.isRequired,
   mouseMove: PropTypes.func.isRequired
 };
 
