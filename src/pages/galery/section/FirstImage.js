@@ -26,7 +26,7 @@ const FirstImage = ({ src, orientation, atIntro }) => {
 
   useEffect(() => {
     setOpacity(1);
-    
+
     const renderer = PIXI.autoDetectRenderer(1400, 1750, { transparent: true })
     canvas.current.appendChild(renderer.view)
 
@@ -69,7 +69,7 @@ const FirstImage = ({ src, orientation, atIntro }) => {
       style={{ transform: `scale(${scale})`, opacity: opacity }}
     >
       <div className="hero">
-        <div className="canvas" ref={canvas}></div>
+        { atIntro && <div className="canvas" ref={canvas}></div> }
         <img src={src} />
       </div>
     </div>
