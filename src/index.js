@@ -1,11 +1,17 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
+import * as PIXI from 'pixi.js';
 import Headers from 'components/Headers';
 import BlackPanel from 'components/BlackPanel';
 import Galery from 'pages/Galery';
 import Intro from 'pages/Intro';
 import artworks from './artworks';
 import "./styles.scss";
+
+let type = "WebGL";
+if (!PIXI.utils.isWebGLSupported()) type = "canvas";
+
+PIXI.utils.sayHello(type)
 
 const App = () => {
   const [atIntro, setIntro] = useState(true);
