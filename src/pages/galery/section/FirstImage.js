@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import PropTypes from "prop-types";
+import * as PIXI from 'pixi.js';
 import mediaQuery from 'utils/mediaQuery';
+import displacement from 'assets/displacement.png';
 import "./Image.scss";
 
 const preIntroScale = mediaQuery({
@@ -16,6 +18,7 @@ const introScale = mediaQuery({
 const FirstImage = ({ src, orientation, atIntro }) => {
   const [scale, setScale] = useState(atIntro ? preIntroScale : introScale);
   const [opacity, setOpacity] = useState(atIntro ? 0 : 1);
+  const canvas = useRef(null);
 
   useEffect(() => {
     setScale(atIntro ? introScale : 1);
@@ -23,6 +26,41 @@ const FirstImage = ({ src, orientation, atIntro }) => {
 
   useEffect(() => {
     setOpacity(1);
+    
+    const renderer = PIXI.autoDetectRenderer(1400, 1750, { transparent: true })
+    canvas.current.appendChild(renderer.view)
+
+    const stage = new PIXI.Container();
+
+    const texture = PIXI.Texture.fromImage(src);
+    const preview = new PIXI.Sprite(texture);
+
+    const displacementSprite = PIXI.Sprite.fromImage(displacement);
+
+    displacementSprite.scale.x = 1.7;
+    displacementSprite.scale.y = 1.7;
+
+    displacementSprite.texture.baseTexture.wrapMode =
+      PIXI.WRAP_MODES.REPEAT;
+    
+    const displacementFilter = new PIXI.filters.DisplacementFilter(displacementSprite);
+
+    stage.filters = [displacementFilter]
+
+    stage.addChild(displacementSprite);
+    stage.addChild(preview);
+
+    animate();
+
+    function animate() {
+      const speed = 1.7;
+      
+      displacementSprite.x += speed;
+      displacementSprite.y += speed;
+      
+      renderer.render(stage);
+      requestAnimationFrame(animate)
+    }
   }, []);
 
   return (
@@ -30,7 +68,10 @@ const FirstImage = ({ src, orientation, atIntro }) => {
       className={`image-wrapper ${orientation}`}
       style={{ transform: `scale(${scale})`, opacity: opacity }}
     >
-      <img src={src} />
+      <div className="hero">
+        <div className="canvas" ref={canvas}></div>
+        <img src={src} />
+      </div>
     </div>
   );
 };
