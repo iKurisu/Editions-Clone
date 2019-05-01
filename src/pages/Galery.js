@@ -6,12 +6,16 @@ import FirstSection from './galery/FirstSection';
 import "./Galery.scss";
 
 const Galery = ({ artworks, atIntro }) => (
-  <div className={`galery ${atIntro ? 'no-scroll' : ''}`}>
+  <div className="galery">
     <FirstSection artwork={artworks[0]} atIntro={atIntro} />
-    { artworks.slice(1).map(artwork => (
-      <Section artwork={artwork} key={generate()} />
-    ))}
-    <Section artwork={artworks[0]} />
+    {!atIntro && (
+      <>
+        {artworks.slice(1).map(artwork => (
+          <Section artwork={artwork} key={generate()} />
+        ))}
+        <Section artwork={artworks[0]} />
+      </>
+    )}
   </div>
 );
 

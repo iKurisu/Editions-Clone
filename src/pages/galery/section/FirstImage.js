@@ -40,8 +40,7 @@ const FirstImage = ({ src, orientation, atIntro }) => {
     displacementSprite.scale.x = 1.7;
     displacementSprite.scale.y = 1.7;
 
-    displacementSprite.texture.baseTexture.wrapMode =
-      PIXI.WRAP_MODES.REPEAT;
+    displacementSprite.texture.baseTexture.wrapMode = PIXI.WRAP_MODES.REPEAT;
     
     const displacementFilter = new PIXI.filters.DisplacementFilter(displacementSprite);
 
