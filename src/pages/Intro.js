@@ -4,7 +4,13 @@ import fontSize from 'utils/fontSize';
 import mediaQuery from 'utils/mediaQuery';
 import "./Intro.scss";
 
-const Intro = ({ showGalery, atIntro }) => {
+const textSize = mediaQuery({
+  "(max-width: 768px)": fontSize("27vw", "31vh"),
+  "(min-width: 768px)": fontSize("24vw", "30.5vh"),
+  "(min-width: 1000px)": fontSize("18.4vw", "30.5vh"),
+  "(min-width: 1366px)": fontSize("17.3vw", "30.8vh"),
+  "(min-width: 1920px)": fontSize("15.3vw", "30.5vh")
+});
   const [display, setDisplay] = useState('block');
   const [hlStyle, setHlStyle] = useState({ transform: 'translateY(10px)', opacity: 0 });
   const [detailsStyle, setDetailsStyle] = useState({ opacity: 0 });
