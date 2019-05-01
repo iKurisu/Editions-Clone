@@ -4,12 +4,12 @@ const toggle = () => ({
   type: types.TOGGLE
 });
 
-const displace = displacement => ({
-  type: types.DISPLACE,
-  payload: {
-    displacement
+const displace = displacement => {
+  return {
+    type: types.DISPLACE,
+    payload: displacement
   }
-})
+}
 
 export default {
   toggle,
