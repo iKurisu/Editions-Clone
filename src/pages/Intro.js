@@ -16,9 +16,12 @@ const textSize = mediaQuery({
   "(min-width: 1920px)": fontSize("15.3vw", "30.5vh")
 });
 
-const Intro = ({ toggled, displacement, toggle, displace }) => {
+const Intro = ({ toggled, displacement: { x, y }, toggle, displace }) => {
   const [display, setDisplay] = useState('block');
-  const [hlStyle, setHlStyle] = useState({ transform: 'translateY(10px)', opacity: 0 });
+  const [hlStyle, setHlStyle] = useState({ 
+    transform: 'translateY(10px)', 
+    opacity: 0 
+  });
   const [detailsStyle, setDetailsStyle] = useState({ opacity: 0 });
 
   useEffect(() => {
@@ -52,7 +55,10 @@ const Intro = ({ toggled, displacement, toggle, displace }) => {
       <div className="vertical-container">
         <div className="headline-container">
           <div className="headline" style={hlStyle}>
-            <span style={{ fontSize: textSize }}>Editions</span>
+            <span style={{ 
+              transform: `translate(${x}px, ${y}px)`, 
+              fontSize: textSize 
+            }}>Editions</span>
           </div>
         </div>
       </div>
