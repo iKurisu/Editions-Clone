@@ -23,7 +23,6 @@ const FirstSection = ({ artwork, atIntro, displacement: {x, y}, displace }) => {
         <FirstImage 
           src={src} 
           orientation={orientation} 
-          atIntro={atIntro}
         />
         <Title
           title={title}

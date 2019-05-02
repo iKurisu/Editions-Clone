@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import PropTypes from "prop-types";
+import { connect } from 'react-redux';
 import * as PIXI from 'pixi.js';
 import mediaQuery from 'utils/mediaQuery';
 import displacement from 'assets/displacement.png';
@@ -15,7 +16,7 @@ const introScale = mediaQuery({
   "(min-width: 768px)": 1.03
 });
 
-const FirstImage = ({ src, orientation, atIntro }) => {
+const FirstImage = ({ src, orientation, atIntro, displacement: {x, y} }) => {
   const [scale, setScale] = useState(atIntro ? preIntroScale : introScale);
   const [opacity, setOpacity] = useState(atIntro ? 0 : 1);
   const canvas = useRef(null);
@@ -67,7 +68,10 @@ const FirstImage = ({ src, orientation, atIntro }) => {
       className={`image-wrapper ${orientation}`}
       style={{ transform: `scale(${scale})`, opacity }}
     >
-      <div className="hero">
+      <div 
+        className="hero" 
+        style={{ transform: `translate(${x / 1.5}px, ${y / 1.5}px)` }}
+      >
         { atIntro && <div className="canvas" ref={canvas}></div> }
         <img src={src} />
       </div>
@@ -78,7 +82,13 @@ const FirstImage = ({ src, orientation, atIntro }) => {
 FirstImage.propTypes = {
   src: PropTypes.string.isRequired,
   orientation: PropTypes.string.isRequired,
-  atIntro: PropTypes.bool.isRequired
+  atIntro: PropTypes.bool.isRequired,
+  displacement: PropTypes.object.isRequired
 };
 
-export default FirstImage;
+const mapState = ({ intro }) => ({
+  atIntro: intro.toggled,
+  displacement: intro.displacement
+})
+
+export default connect(mapState)(FirstImage);

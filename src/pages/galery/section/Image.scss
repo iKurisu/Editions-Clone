@@ -26,6 +26,7 @@
 
 .hero {
   display: inline-block;
+  transition: transform 4s cubic-bezier(.18, 1, .21, 1);
 }
 
 .canvas {

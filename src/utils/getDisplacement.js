@@ -3,12 +3,12 @@ const getOffset = (position, size, range) => {
   return (range * percent) / 100 - range / 2;
 };
 
-const getDisplacement = e => {
+const getDisplacement = (e, range) => {
   const { clientX, clientY } = e;
   const { innerWidth, innerHeight } = window;
 
-  const x = getOffset(clientX, innerWidth, innerWidth / 50);
-  const y = getOffset(clientY, innerHeight, innerHeight / 50);
+  const x = getOffset(clientX, innerWidth, innerWidth / range);
+  const y = getOffset(clientY, innerHeight, innerHeight / range);
 
   return { x, y };
 };

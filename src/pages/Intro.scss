@@ -1,3 +1,5 @@
+@import 'sass/variables.scss';
+
 .intro-container {
   position: absolute;
   top: 0;
@@ -24,6 +26,11 @@
   font-family: 'Butler Ultra Light';
   text-align: center;
   transition: all 1s ease;
+}
+
+.headline span { 
+  display: inline-block;
+  transition: transform .5s $timing;
 }
 
 .text-center.intro { transition: opacity 1s ease }
