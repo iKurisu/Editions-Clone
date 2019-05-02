@@ -10,7 +10,7 @@ const BlackPanel = ({ toggled, position, setPosition }) => {
   }, [toggled])
   
   return (
-    <div className="black-pannel" style={{ top: position }} />
+    <div className="black-pannel" style={{ transform: `translateY(${position})` }} />
   )
 }
 
