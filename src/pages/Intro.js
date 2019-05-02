@@ -51,7 +51,7 @@ const Intro = ({ toggled, displacement: { x, y }, toggle, displaceImage, displac
             style={{ transform: `translateY(${offset}px)`, opacity }}
           >
             <span style={{ 
-              transform: `translate3d(${x}px, ${y}px)`, 
+              transform: `translate(${x}px, ${y}px)`, 
               fontSize: textSize 
             }}>Editions</span>
           </div>
