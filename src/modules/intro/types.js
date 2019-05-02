@@ -1,7 +1,11 @@
 const TOGGLE = "intro/TOGGLE";
 const DISPLACE = "intro/DISPLACE";
+const DISPLACE_TEXT = "intro/DISPLACE_TEXT";
+const DISPLACE_IMAGE = "intro/DISPLACE_IMAGE";
 
 export default {
   TOGGLE,
-  DISPLACE
+  DISPLACE,
+  DISPLACE_TEXT,
+  DISPLACE_IMAGE
 }

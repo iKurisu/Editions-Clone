@@ -88,7 +88,7 @@ FirstImage.propTypes = {
 
 const mapState = ({ intro }) => ({
   atIntro: intro.toggled,
-  displacement: intro.displacement
+  displacement: intro.displacement.image
 })
 
 export default connect(mapState)(FirstImage);
