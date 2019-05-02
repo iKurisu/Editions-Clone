@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import withMovement from 'components/withMovement';
 import fontSize from 'utils/fontSize';
 import mediaQuery from 'utils/mediaQuery';
+import getDisplacement from 'utils/getDisplacement';
 import { introActions } from 'modules/intro';
 import "./Intro.scss";
 
@@ -16,7 +16,7 @@ const textSize = mediaQuery({
   "(min-width: 1920px)": fontSize("15.3vw", "30.5vh")
 });
 
-const Intro = ({ toggled, translate, toggle, displace, mouseMove }) => {
+const Intro = ({ toggled, displacement, toggle, displace }) => {
   const [display, setDisplay] = useState('block');
   const [hlStyle, setHlStyle] = useState({ transform: 'translateY(10px)', opacity: 0 });
   const [detailsStyle, setDetailsStyle] = useState({ opacity: 0 });
@@ -37,15 +37,12 @@ const Intro = ({ toggled, translate, toggle, displace, mouseMove }) => {
     !toggled && setTimeout(() => setDisplay('none'), 900)
   });
 
-  const handleMouseMove = e => {
-    mouseMove(e);
-    displace(translate.x, translate.y);
-  }
+  const handleMouseMove = e => displace(getDisplacement(e));
   
   return (
     <div 
       className="intro-container" 
-      style={{ display: display }}
+      style={{ display }}
       onClick={toggle}
       onMouseMove={handleMouseMove}
     >
@@ -68,10 +65,9 @@ const Intro = ({ toggled, translate, toggle, displace, mouseMove }) => {
 
 Intro.propTypes = {
   toggled: PropTypes.bool.isRequired,
-  translate: PropTypes.object.isRequired,
+  displacement: PropTypes.object.isRequired,
   toggle: PropTypes.func.isRequired,
-  displace: PropTypes.func.isRequired,
-  mouseMove: PropTypes.func.isRequired
+  displace: PropTypes.func.isRequired
 }
 
 const mapState = ({ intro }) => ({ 
@@ -83,4 +79,4 @@ const actionCreators = {
   displace: introActions.displace
 }
 
-export default connect(mapState, actionCreators)(withMovement(Intro));
+export default connect(mapState, actionCreators)(Intro);
