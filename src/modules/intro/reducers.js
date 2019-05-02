@@ -10,16 +10,22 @@ const toggleReducer = (state = true, action) => {
   }
 }
 
-const displaceReducer = (state = {x: 0, y: 0}, action) => {
-  switch (action.type) {
-    case types.DISPLACE: 
-      return { x: action.payload.x, y: action.payload.y };
-    default: 
-      return state;
+const createDisplaceReducerWithType = type => {
+  return (state = { x: 0, y: 0 }, action) => {
+    switch (action.type) {
+      case types.DISPLACE:
+      case type:
+        return { x: action.payload.x, y: action.payload.y };
+      default:
+        return state;
+    }
   }
 }
 
 export default combineReducers({
   toggled: toggleReducer,
-  displacement: displaceReducer
+  displacement: combineReducers({
+    text: createDisplaceReducerWithType(types.DISPLACE_TEXT),
+    image: createDisplaceReducerWithType(types.DISPLACE_IMAGE)  
+  })
 })
