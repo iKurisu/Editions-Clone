@@ -5,7 +5,7 @@ import getDisplacement from 'utils/getDisplacement';
 const withMovement = Section => props => {
   const [displacement, setDisplacement] = useState({ x: 0, y: 0 });
   
-  const displace = e => setDisplacement(getDisplacement(e));
+  const displace = e => setDisplacement(getDisplacement(e, 55));
 
   return <Section {...props} displacement={displacement} displace={displace} />
 }

@@ -37,7 +37,7 @@ const Intro = ({ toggled, displacement, toggle, displace }) => {
     !toggled && setTimeout(() => setDisplay('none'), 900)
   });
 
-  const handleMouseMove = e => displace(getDisplacement(e));
+  const handleMouseMove = e => displace(getDisplacement(e, 64));
   
   return (
     <div 
