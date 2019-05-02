@@ -65,7 +65,7 @@ const FirstImage = ({ src, orientation, atIntro }) => {
   return (
     <div
       className={`image-wrapper ${orientation}`}
-      style={{ transform: `scale(${scale})`, opacity: opacity }}
+      style={{ transform: `scale(${scale})`, opacity }}
     >
       <div className="hero">
         { atIntro && <div className="canvas" ref={canvas}></div> }
