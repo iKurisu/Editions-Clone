@@ -5,7 +5,7 @@ import Title from './section/Title';
 import Details from './section/Details';
 import withMovement from 'components/withMovement';
 
-const FirstSection = ({ artwork, atIntro, translate: {x, y}, mouseMove }) => {
+const FirstSection = ({ artwork, atIntro, displacement: {x, y}, displace }) => {
   const { src, orientation, title, colors, details } = artwork;
   const [zIndex, setZIndex] = useState(15);
 
@@ -16,8 +16,8 @@ const FirstSection = ({ artwork, atIntro, translate: {x, y}, mouseMove }) => {
   return (
     <section 
       className="section" 
-      style={{ zIndex: zIndex }}
-      onMouseMove={mouseMove}
+      style={{ zIndex }}
+      onMouseMove={displace}
     >
       <div className="content-wrapper">
         <FirstImage 
@@ -41,8 +41,8 @@ const FirstSection = ({ artwork, atIntro, translate: {x, y}, mouseMove }) => {
 FirstSection.propTypes = {
   artwork: PropTypes.object.isRequired,
   atIntro: PropTypes.bool,
-  translate: PropTypes.object.isRequired,
-  mouseMove: PropTypes.func.isRequired
+  displacement: PropTypes.object.isRequired,
+  displace: PropTypes.func.isRequired
 };
 
 export default withMovement(FirstSection);
