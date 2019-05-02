@@ -1,26 +1,23 @@
 import React from "react";
 import PropTypes from "prop-types";
-import withMovement from 'components/withMovement';
+import withMovement from "components/withMovement";
 import Details from "./section/Details";
 import Image from "./section/Image";
 import Title from "./section/Title";
 import "./Section.scss";
 
-const Section = ({ artwork, translate: {x, y}, mouseMove }) => {
+const Section = ({ artwork, displacement: { x, y }, displace }) => {
   const { src, orientation, title, colors, details } = artwork;
 
   return (
-    <section 
-      className='section' 
-      onMouseMove={mouseMove}
-    >
+    <section className="section" onMouseMove={displace}>
       <div className="content-wrapper">
         <Image src={src} orientation={orientation} />
         <Title
           title={title}
           style={{
             transform: `translate(${x}px, ${y}px)`,
-            color: colors.font,
+            color: colors.font
           }}
         />
         <Details {...details} />
@@ -31,8 +28,8 @@ const Section = ({ artwork, translate: {x, y}, mouseMove }) => {
 
 Section.propTypes = {
   artwork: PropTypes.object.isRequired,
-  translate: PropTypes.object.isRequired,
-  mouseMove: PropTypes.func.isRequired
+  displacement: PropTypes.object.isRequired,
+  displace: PropTypes.func.isRequired
 };
 
 export default withMovement(Section);
