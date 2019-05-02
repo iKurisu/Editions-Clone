@@ -14,11 +14,7 @@ const App = ({ toggled, displacement }) => (
   <main className={toggled ? "intro" : ""}>
     <Headers />
     <Intro />
-    <Galery
-      artworks={artworks}
-      atIntro={toggled}
-      displacement={displacement}
-    />
+      <Galery atIntro={toggled} />
     <BlackPanel />
   </main>
 );
