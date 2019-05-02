@@ -10,7 +10,7 @@ import Intro from 'pages/Intro';
 import artworks from './artworks';
 import "./styles.scss";
 
-const App = ({ toggled, displacement }) => (
+const App = ({ toggled }) => (
   <main className={toggled ? "intro" : ""}>
     <Headers />
     <Intro />
@@ -20,13 +20,9 @@ const App = ({ toggled, displacement }) => (
 );
 
 App.propTypes = {
-  toggled: PropTypes.bool.isRequired,
-  displacement: PropTypes.object.isRequired 
+  toggled: PropTypes.bool.isRequired
 }
 
-const mapState = ({ intro }) => ({ 
-  toggled: intro.toggled, 
-  displacement: intro.displacement 
-});
+const mapState = ({ intro }) => ({ toggled: intro.toggled });
 
 export default connect(mapState)(App);
