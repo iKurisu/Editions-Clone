@@ -18,22 +18,12 @@ const textSize = mediaQuery({
 
 const Intro = ({ toggled, displacement: { x, y }, toggle, displaceImage, displaceAll }) => {
   const [display, setDisplay] = useState('block');
-  const [hlStyle, setHlStyle] = useState({ 
-    transform: 'translateY(10px)', 
-    opacity: 0 
-  });
-  const [detailsStyle, setDetailsStyle] = useState({ opacity: 0 });
+  const [offset, setOffset] = useState(20);
+  const [opacity, setOpacity] = useState(0);
 
-  useEffect(() => {
-    const { opacity } = hlStyle;
-    
-    setHlStyle({ 
-      transform: `translateY(${opacity === 0 ? '0' : '-10px'})`, 
-      opacity: opacity === 0 ? 1 : 0 
-    });
-    setDetailsStyle({
-      opacity: opacity === 0 ? 1 : 0 
-    });
+  useEffect(() => {    
+    setOffset(opacity === 0 ? 0 : -20);
+    setOpacity(opacity === 0 ? 1 : 0);
 
     return () => displaceImage({x: 0, y: 0});
   }, [toggled]);
@@ -51,20 +41,23 @@ const Intro = ({ toggled, displacement: { x, y }, toggle, displaceImage, displac
       onClick={toggle}
       onMouseMove={handleMouseMove}
     >
-      <div className="top text-center intro" style={detailsStyle}>
+      <div className="top text-center intro" style={{ opacity }}>
         <p>Selected Artwork</p>
       </div>
       <div className="vertical-container">
         <div className="headline-container">
-          <div className="headline" style={hlStyle}>
+          <div 
+            className="headline" 
+            style={{ transform: `translateY(${offset}px)`, opacity }}
+          >
             <span style={{ 
-              transform: `translate(${x}px, ${y}px)`, 
+              transform: `translate3d(${x}px, ${y}px)`, 
               fontSize: textSize 
             }}>Editions</span>
           </div>
         </div>
       </div>
-      <div className="bottom text-center intro" style={detailsStyle}>
+      <div className="bottom text-center intro" style={{ opacity }}>
         <p>2016 – Present</p>
       </div>
     </div>
