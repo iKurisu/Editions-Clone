@@ -34,6 +34,8 @@ const Intro = ({ toggled, displacement: { x, y }, toggle, displace }) => {
     setDetailsStyle({
       opacity: opacity === 0 ? 1 : 0 
     });
+
+    return () => displace({x: 0, y: 0});
   }, [toggled]);
 
   useEffect(() => {
