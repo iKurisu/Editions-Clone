@@ -9,8 +9,14 @@ import Artwork from 'pages/Artwork';
 import Galery from 'pages/Galery';
 import Intro from 'pages/Intro';
 import artworks from 'assets/artworks';
-
 import "./styles.scss";
+
+const parseUrlIntoArtwork = url => {
+  const title = url.slice(1);
+  return artworks
+    .filter(artwork => artwork.title === title.replace('-', ' ')
+    .toUpperCase())[0];
+};
 
 const App = ({ introToggled, artworkToggled }) => (
   <main className={introToggled ? "intro" : artworkToggled ? "artwork" : ""}>
@@ -18,7 +24,12 @@ const App = ({ introToggled, artworkToggled }) => (
     { introToggled && <Intro /> }
     <Router>
       <Route exact path="/" component={Galery} />
-      <Route path={artworks.map(artwork => `/${artwork.title.replace(' ', '-')}`)} component={Artwork} />
+      <Route 
+        path={artworks.map(artwork => `/${artwork.title.replace(' ', '-')}`)} 
+        render={({ match: { url }}) => (
+          <Artwork artwork={parseUrlIntoArtwork(url)} />
+        )}
+      />
     </Router>
     <BlackPanel />
   </main>
