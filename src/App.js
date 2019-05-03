@@ -7,13 +7,12 @@ import BlackPanel from 'components/BlackPanel';
 import Galery from 'pages/Galery';
 import Intro from 'pages/Intro';
 
-import artworks from './artworks';
 import "./styles.scss";
 
 const App = ({ toggled }) => (
   <main className={toggled ? "intro" : ""}>
     <Headers />
-    <Intro />
+    { toggled && <Intro /> }
       <Galery atIntro={toggled} />
     <BlackPanel />
   </main>
