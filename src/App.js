@@ -5,8 +5,10 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import Headers from 'components/Headers';
 import BlackPanel from 'components/BlackPanel';
+import Artwork from 'pages/Artwork';
 import Galery from 'pages/Galery';
 import Intro from 'pages/Intro';
+import artworks from 'assets/artworks';
 
 import "./styles.scss";
 
@@ -16,6 +18,7 @@ const App = ({ toggled }) => (
     { toggled && <Intro /> }
     <Router>
       <Route exact path="/" component={Galery} />
+      <Route path={artworks.map(artwork => `/${artwork.title.replace(' ', '-')}`)} component={Artwork} />
     </Router>
     <BlackPanel />
   </main>
