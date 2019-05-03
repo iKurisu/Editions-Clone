@@ -12,10 +12,10 @@ import artworks from 'assets/artworks';
 
 import "./styles.scss";
 
-const App = ({ toggled }) => (
-  <main className={toggled ? "intro" : ""}>
+const App = ({ introToggled, artworkToggled }) => (
+  <main className={introToggled ? "intro" : artworkToggled ? "artwork" : ""}>
     <Headers />
-    { toggled && <Intro /> }
+    { introToggled && <Intro /> }
     <Router>
       <Route exact path="/" component={Galery} />
       <Route path={artworks.map(artwork => `/${artwork.title.replace(' ', '-')}`)} component={Artwork} />
@@ -25,9 +25,13 @@ const App = ({ toggled }) => (
 );
 
 App.propTypes = {
-  toggled: PropTypes.bool.isRequired
+  introToggled: PropTypes.bool.isRequired,
+  artworkToggled: PropTypes.bool.isRequired
 }
 
-const mapState = ({ intro }) => ({ toggled: intro.toggled });
+const mapState = ({ intro, artwork }) => ({ 
+  introToggled: intro.toggled,
+  artworkToggled: artwork.toggled
+});
 
 export default connect(mapState)(App);
