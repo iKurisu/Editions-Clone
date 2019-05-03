@@ -1,11 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const Hamburger = ({ isActive, show, click }) => (
+const Hamburger = ({ isActive, artworkToggled, click }) => (
   <div
-    className={`hamburger button top-left ${isActive ? "active" : "inactive"}`}
+    className={`hamburger button top-left ${isActive && !artworkToggled ? "active" : "inactive"}`}
     onClick={click}
-    style={{ opacity: show ? 1 : 0 }}
   >
     <div className="row" />
     <div className="row" />
@@ -14,7 +13,7 @@ const Hamburger = ({ isActive, show, click }) => (
 
 Hamburger.propTypes = {
   isActive: PropTypes.bool.isRequired,
-  show: PropTypes.bool.isRequired,
+  artworkToggled: PropTypes.bool.isRequired,
   click: PropTypes.func.isRequired
 }
 
