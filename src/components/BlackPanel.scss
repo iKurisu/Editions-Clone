@@ -8,5 +8,5 @@ $timing: cubic-bezier(0.8, .07, .07, .9);
   height: 100%;
   top: 0;
 
-  transition: top .9s $timing; 
+  transition: transform .9s $timing; 
 }

@@ -16,6 +16,44 @@ const introScale = mediaQuery({
   "(min-width: 768px)": 1.03
 });
 
+const load = (canvas, image) => {
+  const renderer = PIXI.autoDetectRenderer(1400, 1750, { transparent: true });
+  canvas.current.appendChild(renderer.view);
+
+  const stage = new PIXI.Container();
+
+  const texture = PIXI.Texture.fromImage(image);
+  const preview = new PIXI.Sprite(texture);
+
+  const displacementSprite = PIXI.Sprite.fromImage(displacement);
+
+  displacementSprite.scale.x = 1.7;
+  displacementSprite.scale.y = 1.7;
+
+  displacementSprite.texture.baseTexture.wrapMode = PIXI.WRAP_MODES.REPEAT;
+
+  const displacementFilter = new PIXI.filters.DisplacementFilter(
+    displacementSprite
+  );
+
+  stage.filters = [displacementFilter];
+
+  stage.addChild(displacementSprite);
+  stage.addChild(preview);
+
+  animate();
+
+  function animate() {
+    const speed = 1.7;
+
+    displacementSprite.x += speed;
+    displacementSprite.y += speed;
+
+    renderer.render(stage);
+    requestAnimationFrame(animate);
+  }
+}
+
 const FirstImage = ({ src, orientation, atIntro, displacement: {x, y} }) => {
   const [scale, setScale] = useState(atIntro ? preIntroScale : introScale);
   const [opacity, setOpacity] = useState(atIntro ? 0 : 1);
@@ -27,40 +65,7 @@ const FirstImage = ({ src, orientation, atIntro, displacement: {x, y} }) => {
 
   useEffect(() => {
     setOpacity(1);
-
-    const renderer = PIXI.autoDetectRenderer(1400, 1750, { transparent: true })
-    canvas.current.appendChild(renderer.view)
-
-    const stage = new PIXI.Container();
-
-    const texture = PIXI.Texture.fromImage(src);
-    const preview = new PIXI.Sprite(texture);
-
-    const displacementSprite = PIXI.Sprite.fromImage(displacement);
-
-    displacementSprite.scale.x = 1.7;
-    displacementSprite.scale.y = 1.7;
-
-    displacementSprite.texture.baseTexture.wrapMode = PIXI.WRAP_MODES.REPEAT;
-    
-    const displacementFilter = new PIXI.filters.DisplacementFilter(displacementSprite);
-
-    stage.filters = [displacementFilter]
-
-    stage.addChild(displacementSprite);
-    stage.addChild(preview);
-
-    animate();
-
-    function animate() {
-      const speed = 1.7;
-      
-      displacementSprite.x += speed;
-      displacementSprite.y += speed;
-      
-      renderer.render(stage);
-      requestAnimationFrame(animate)
-    }
+    if (atIntro) load(canvas, src);    
   }, []);
 
   return (
