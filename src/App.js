@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import Headers from 'components/Headers';
 import BlackPanel from 'components/BlackPanel';
@@ -13,7 +14,9 @@ const App = ({ toggled }) => (
   <main className={toggled ? "intro" : ""}>
     <Headers />
     { toggled && <Intro /> }
-      <Galery atIntro={toggled} />
+    <Router>
+      <Route exact path="/" component={Galery} />
+    </Router>
     <BlackPanel />
   </main>
 );
