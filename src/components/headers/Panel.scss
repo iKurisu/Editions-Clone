@@ -2,11 +2,14 @@
 
 $timing: cubic-bezier(0.8, .07, .07, .9);
 
-@mixin description-text($width, $font, $line) {
+@mixin description-text($width, $font, $line, $spacing: 0) {
   .text-wrapper p {
     width: $width;
     font-size: $font;
     line-height: $line;
+    @if ($spacing == 0) {
+      letter-spacing: $spacing;
+    }
   }
 }
 
@@ -64,7 +67,7 @@ $timing: cubic-bezier(0.8, .07, .07, .9);
 .text-wrapper p {
   margin: auto;
   text-align: center;
-  font-family: 'Butler Ultra Light';
+  font-family: 'Ogg Roman';
   letter-spacing: -1.3px;
   
   transform: translateY(10px);
@@ -115,39 +118,48 @@ $timing: cubic-bezier(0.8, .07, .07, .9);
 }
 
 @media (max-width: 768px) {
-  @include description-text(68%, 10vw, 10.5vw);
+  @include description-text(65%, 8.5vw, 10.5vw);
 }
 
 @media (max-width: 768px) and (orientation: landscape) {
-  @include description-text(65%, 5.1vw, 5.4vw);
+  @include description-text(65%, 4vw, 5.4vw, 2px);
 }
 
 @media (min-width: 768px) {
   .top { top: 6vh; }
   .bottom { bottom: 5vh; }
   .top, .bottom { font-size: 15px; }
-  @include description-text(73%, 7.3vw, 7.8vw);
+  @include description-text(73%, 6vw, 7.8vw);
 }
 
 @media (min-width: 768px) and (orientation: landscape) {
-  .top { top: 10.6vh; }
-  .bottom { bottom: 10vh; }
-  @include description-text(58%, 5vw, 5.4vw);
+  .top { top: 6vh; }
+  .bottom { bottom: 6vh; }
+  @include description-text(58%, 4vw, 5.4vw);
+}
+
+@media (min-width: 768px) and (min-height: 800px) and (orientation: landscape) {
+  .top { top: 10.5vh }
+  .bottom { bottom: 10vh }
 }
 
 @media (min-width: 1000px) {
   .top { top: 7.5vh; }
   .bottom { bottom: 6.7vh; }
-  @include description-text(58%, 5.5vw, 6vw);
+  @include description-text(59%, 4.5vw, 6vw);
+}
+
+@media (min-width: 1280px) {
+  .text-wrapper p { width: 740px }
 }
 
 @media (min-width: 1366px) {
   .top { top: 9vh; }
   .bottom { bottom: 8vh; }
-  @include description-text(680px, 65px, 70px);
+  @include description-text(680px, 54px, 70px);
 }
 
 @media (min-width: 1920px) {
   .top, .bottom { font-size: 16px; }
-  @include description-text(1000px, 90px, 105px);
+  @include description-text(1000px, 80px, 105px);
 }
