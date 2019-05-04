@@ -9,11 +9,11 @@ import { introActions } from 'modules/intro';
 import "./Intro.scss";
 
 const textSize = mediaQuery({
-  "(max-width: 768px)": fontSize("27vw", "31vh"),
-  "(min-width: 768px)": fontSize("24vw", "30.5vh"),
-  "(min-width: 1000px)": fontSize("18.4vw", "30.5vh"),
-  "(min-width: 1366px)": fontSize("17.3vw", "30.8vh"),
-  "(min-width: 1920px)": fontSize("15.3vw", "30.5vh")
+  "(max-width: 768px)": fontSize("23vw", "26vh"),
+  "(min-width: 768px)": fontSize("20.5vw", "26vh"),
+  "(min-width: 1000px)": fontSize("15.5vw", "26vh"),
+  "(min-width: 1366px)": fontSize("15vw", "26vh"),
+  "(min-width: 1920px)": fontSize("13vw", "26vh")
 });
 
 const Intro = ({ toggled, displacement: { x, y }, toggle, displaceImage, displaceAll }) => {
@@ -50,10 +50,10 @@ const Intro = ({ toggled, displacement: { x, y }, toggle, displaceImage, displac
             className="headline" 
             style={{ transform: `translateY(${offset}px)`, opacity }}
           >
-            <span style={{ 
+            <p style={{ 
               transform: `translate(${x}px, ${y}px)`, 
               fontSize: textSize 
-            }}>Editions</span>
+            }}>Editions</p>
           </div>
         </div>
       </div>

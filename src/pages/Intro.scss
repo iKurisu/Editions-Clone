@@ -23,13 +23,13 @@
 
 .headline {
   color: #fff;
-  font-family: 'Butler Ultra Light';
+  font-family: 'Ogg Roman';
   text-align: center;
   transition: transform 1.5s $timing, opacity 1s $timing;
 }
 
-.headline span { 
-  display: inline-block;
+.headline p { 
+  letter-spacing: 2px;
   transition: transform .5s $timing;
 }
 
