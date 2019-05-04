@@ -1,5 +1,9 @@
 @import 'sass/mixins.scss';
 
+.navigation {
+  transition: opacity .5s ease-out;
+}
+
 .button {
   position: fixed;
   cursor: pointer
@@ -40,9 +44,7 @@
   z-index: 8;
 }
 
-.hamburger, .cart-button {
-  transition: opacity .5s ease-out;
-}
+.artwork .cart-button { background: #FFF }
 
 .top-left {
   margin: 3px 0 0 3px;

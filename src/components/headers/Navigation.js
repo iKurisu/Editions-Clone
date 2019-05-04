@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import Hamburger from './navigation/Hamburger';
 import Cross from "./navigation/Cross";
 import Cart from "./navigation/Cart";
 import "./Navigation.scss";
 
-const Navigation = ({ showPanel, togglePanel }) => {
+const Navigation = ({ showPanel, togglePanel, artworkToggled }) => {
   const [showIcons, toggleIcons] = useState(true);
   const [hamburgerIsActive, setHamburger] = useState(true);
   const [lastToggle, setLastToggle] = useState(0);
@@ -31,21 +32,30 @@ const Navigation = ({ showPanel, togglePanel }) => {
   }, []);
 
   return (
-    <div className="Navigation">
+    <div className="navigation" style={{ opacity: showIcons ? 1 : 0 }}>
       <Hamburger 
         isActive={hamburgerIsActive} 
-        show={showIcons}
+        artworkToggled={artworkToggled}
         click={click}
       />
-      <Cross isActive={!hamburgerIsActive} click={click} />
-      <Cart show={showIcons} />
+      <Cross 
+        isActive={!hamburgerIsActive} 
+        click={click} 
+        artworkToggled={artworkToggled}
+      />
+      <Cart />
     </div>
   );
 }
 
 Navigation.propTypes = {
   showPanel: PropTypes.bool.isRequired,
-  togglePanel: PropTypes.func.isRequired
+  togglePanel: PropTypes.func.isRequired,
+  artworkToggled: PropTypes.bool.isRequired
 }
 
-export default Navigation;
+const mapState = ({ artwork }) => ({
+  artworkToggled: artwork.toggled
+})
+
+export default connect(mapState)(Navigation);
