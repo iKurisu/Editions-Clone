@@ -72,7 +72,7 @@ export default [
     orientation: SQUARE,
     colors: {
       font: 'rgb(158, 158, 155)',
-      background: ''
+      background: '#9e9e9b'
     }
   },
   {
@@ -86,7 +86,7 @@ export default [
     orientation: LANDSCAPE,
     colors: {
       font: 'rgb(98, 113, 135)',
-      background: ''
+      background: '#3f4957'
     }
   },
   {
@@ -100,7 +100,7 @@ export default [
     orientation: SQUARE,
     colors: {
       font: 'rgb(68, 68, 68)',
-      background: ''
+      background: '#222'
     }
   },
   {
@@ -114,7 +114,7 @@ export default [
     orientation: PORTRAIT,
     colors: {
       font: 'rgb(145, 149, 162)',
-      background: ''
+      background: '#9195a2'
     }
   },
   {
@@ -128,7 +128,7 @@ export default [
     orientation: LANDSCAPE,
     colors: {
       font: 'rgb(92, 103, 108)',
-      background: ''
+      background: '#2a3338'
     }
   },
   {
@@ -142,7 +142,7 @@ export default [
     orientation: PORTRAIT,
     colors: {
       font: 'rgb(68, 68, 68)',
-      background: ''
+      background: '#222'
     }
   },
   {
@@ -156,7 +156,7 @@ export default [
     orientation: SQUARE,
     colors: {
       font: 'rgb(180, 186, 192)',
-      background: ''
+      background: '#b4bac0'
     }
   },
   {
@@ -170,7 +170,7 @@ export default [
     orientation: PORTRAIT,
     colors: {
       font: 'rgb(69, 80, 96)',
-      background: ''
+      background: '#2c3139'
     }
   },
   {
@@ -184,7 +184,7 @@ export default [
     orientation: LANDSCAPE,
     colors: {
       font: 'rgb(170, 170, 170)',
-      background: ''
+      background: '#aaa'
     }
   }
 ]
