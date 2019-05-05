@@ -1,15 +1,15 @@
-import bloom from './bloom.jpg';
-import rise from './rise.jpg';
-import aether from './aether.jpg';
-import gausser from './gausser.jpg';
-import anechoia from './anechoia.jpg';
-import flora from './flora.jpg';
-import plains from './plains.jpg';
-import dvtnII from './dvtn-ii.jpg';
-import cirrus from './cirrus.jpg';
-import minim from './minim.jpg';
-import dvtnI from './dvtn-i.jpg';
-import overture from './overture.jpg';
+import bloom from './bloom';
+import aether from './aether';
+import anechoia from './anechoia';
+import cirrus from './cirrus';
+import dvtnI from './dvtn-i';
+import dvtnII from './dvtn-ii';
+import flora from './flora';
+import gausser from './gausser';
+import minim from './minim';
+import overture from './overture';
+import plains from './plains';
+import rise from './rise';
 
 const ACRYLIC = 'Acrylic';
 const MIXED_MEDIA = 'Mixed Media';
