@@ -24,8 +24,7 @@ export default [
     title: "BLOOM",
     details: {
       type: ACRYLIC,
-      year: 2018,
-      price: 90
+      year: 2018      
     },
     formats: [{ dimensions: "16 x 20", price: 90 }],
     orientation: PORTRAIT,
@@ -39,8 +38,7 @@ export default [
     title: "RISE",
     details: {
       type: ACRYLIC,
-      year: 2017,
-      price: 100
+      year: 2017      
     },
     formats: [
       { dimensions: "24 x 16", price: 100 },
@@ -57,8 +55,7 @@ export default [
     title: "AETHER",
     details: {
       type: MIXED_MEDIA,
-      year: 2018,
-      price: 150
+      year: 2018      
     },
     formats: [{ dimensions: "20 x 24", price: 150 }],
     orientation: PORTRAIT,
@@ -72,8 +69,7 @@ export default [
     title: "GAUSSER",
     details: {
       type: MIXED_MEDIA,
-      year: 2017,
-      price: 75
+      year: 2017      
     },
     formats: [
       { dimensions: "16 x 16", price: 75 },
@@ -91,8 +87,7 @@ export default [
     title: "ANECHOIA",
     details: {
       type: MIXED_MEDIA,
-      year: 2017,
-      price: 180
+      year: 2017      
     },
     formats: [{ dimensions: "30 x 20", price: 180 }],
     orientation: LANDSCAPE,
@@ -106,8 +101,7 @@ export default [
     title: "FLORA",
     details: {
       type: MIXED_MEDIA,
-      year: 2017,
-      price: 75
+      year: 2017      
     },
     formats: [{ dimensions: "16 x 16", price: 75 }],
     orientation: SQUARE,
@@ -121,8 +115,7 @@ export default [
     title: "PLAINS",
     details: {
       type: MIXED_MEDIA,
-      year: 2017,
-      price: 200
+      year: 2017      
     },
     formats: [{ dimensions: "22 x 28", price: 200 }],
     orientation: PORTRAIT,
@@ -136,8 +129,7 @@ export default [
     title: "DVTN II",
     details: {
       type: MIXED_MEDIA,
-      year: 2019,
-      price: 100
+      year: 2019      
     },
     formats: [
       { dimensions: "24 x 16", price: 100 },
@@ -154,8 +146,7 @@ export default [
     title: "CIRRUS",
     details: {
       type: MIXED_MEDIA,
-      year: 2017,
-      price: 150
+      year: 2017      
     },
     formats: [{ dimensions: "20 x 24", price: 150 }],
     orientation: PORTRAIT,
@@ -169,8 +160,7 @@ export default [
     title: "MINIM",
     details: {
       type: MIXED_MEDIA,
-      year: 2016,
-      price: 75
+      year: 2016      
     },
     formats: [
       { dimensions: "16 x 16", price: 75 },
@@ -188,8 +178,7 @@ export default [
     title: "DVTN I",
     details: {
       type: ACRYLIC,
-      year: 2018,
-      price: 90
+      year: 2018      
     },
     formats: [{ dimensions: "16 x 20", price: 90 }],
     orientation: PORTRAIT,
@@ -203,8 +192,7 @@ export default [
     title: "OVERTURE",
     details: {
       type: MIXED_MEDIA,
-      year: 2018,
-      price: 150
+      year: 2018
     },
     formats: [{ dimensions: '24 x 16', price: 150 }],
     orientation: LANDSCAPE,
