@@ -1,3 +1,7 @@
+@import 'sass/variables.scss';
+
+$black: rgb(93, 93, 93);
+
 .artwork-details {
   width: 60%;
   margin: 0 auto;
@@ -41,16 +45,98 @@
   margin: 9.75vw 0;
 }
 
-.artwork section {
+.artwork-preview {
   height: 100vh;
   overflow: hidden;
 }
 
-.artwork figure img {
+.artwork-preview img {
   width: 100%;
   height: 100vh;
   object-fit: cover;
   transform: scale(1.07);
-  // position: absolute;
+}
 
+.artwork-purchase {
+  background: #FFF;
+}
+
+.artwork-purchase-container {
+  width: 75%;
+  height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex { flex: 1 }
+
+.artwork-framed img {
+  width: 95%;
+  max-width: 60vh;
+  margin: 0 auto;
+}
+
+.artwork-description {
+  text-align: center;
+  max-width: 450px;
+  margin: -1vh auto 0 5vw;
+}
+
+.artwork-description h1 {
+  font-family: 'Ogg Roman';
+  font-weight: normal;
+  font-size: 80px;
+  letter-spacing: 2.5px;
+}
+
+.artwork-description li, 
+.artwork-description p {
+  color: $black
+}
+
+.artwork-description p {
+  max-width: 400px;
+  margin: 0 auto 2vh;
+  letter-spacing: .5px;
+  line-height: 1.5;
+}
+
+.artwork-description ul {
+  margin-top: 25px;
+}
+
+.artwork-description li {
+  font-size: 15px;
+  display: inline-block;
+  border-bottom: 1px solid $black;
+  padding-bottom: 4px;
+}
+
+.artwork-description button {
+  background: transparent;
+  color: rgb(108, 108, 108);
+  font-family: 'Helvetica Neue LT Pro';
+  font-size: 13px;
+  padding: 10px 34px;
+  margin: 32px 4px 0 0;
+  border: 1px solid $black;
+  border-radius: 4px;
+  transition: border-color .4s $timing;
+}
+
+.artwork-description button:hover {
+  border-color: rgb(200, 200, 200);
+}
+
+.artwork-description li,
+.artwork-description button {
+  cursor: pointer;
+}
+
+.dollar { 
+  margin-left: 8px;
+  margin-right: 1px;  
 }
