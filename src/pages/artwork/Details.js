@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Details.scss';
 
-const Details = ({ title, price, src }) => (
-  <div className="artwork-details">
+const Details = ({ title, price, src, orientation }) => (
+  <div className={`artwork-details ${orientation}-hero`}>
     <div className="details-container">
       <h1 className="details-title">{title}</h1>
       <p>
@@ -21,7 +21,8 @@ const Details = ({ title, price, src }) => (
 Details.propTypes = {
   title: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
-  src: PropTypes.string.isRequired
+  src: PropTypes.string.isRequired,
+  orientation: PropTypes.string.isRequired
 }
 
 export default Details;

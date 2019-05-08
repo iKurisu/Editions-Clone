@@ -14,7 +14,7 @@ const Artwork = ({
   setFormat
 }) => {
   const { innerWidth: width } = window;
-  const { title, colors: { background }, formats, src } = artwork;
+  const { title, colors: { background }, formats, src, orientation } = artwork;
 
   useEffect(() => {
     toggleIntro();
@@ -24,7 +24,12 @@ const Artwork = ({
 
   return (
     <div style={{ background }}>
-      <Details title={title} price={formats[0].price} src={src.main} />
+      <Details 
+        title={title} 
+        price={formats[0].price} 
+        src={src.main} 
+        orientation={orientation}
+      />
       <Preview width={width} src={src} />
       <Purchase artwork={artwork} />
     </div>
