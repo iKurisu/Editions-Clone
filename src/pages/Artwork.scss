@@ -74,15 +74,39 @@ $black: rgb(93, 93, 93);
 .flex { flex: 1 }
 
 .artwork-framed img {
+  margin: 0 auto;
+}
+
+.artwork-framed .portrait {
   width: 95%;
   max-width: 60vh;
-  margin: 0 auto;
+}
+
+.artwork-framed .square {
+  width: 95%;
+  max-width: 65vh;
+}
+
+.artwork-framed .landscape {
+  width: 95%;
+  max-width: 100vh;
 }
 
 .artwork-description {
   text-align: center;
   max-width: 450px;
+}
+
+.flex-portrait .artwork-description {
   margin: -1vh auto 0 5vw;
+}
+
+.flex-square .artwork-description {
+  margin: -1vh auto 0 9.5vw;
+}
+
+.flex-landscape .artwork-description {
+  margin: -1vh auto 0 11vw;
 }
 
 .artwork-description h1 {
@@ -113,6 +137,10 @@ $black: rgb(93, 93, 93);
   display: inline-block;
   border-bottom: 1px solid $black;
   padding-bottom: 4px;
+}
+
+.artwork-description li:not(:last-child) {
+  margin-right: 32px;
 }
 
 .artwork-description button {

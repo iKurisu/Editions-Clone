@@ -7,7 +7,7 @@ import { artworkActions } from 'modules/artwork';
 import "./Artwork.scss";
 
 const Artwork = ({
-  artwork: { colors, title, details, src, formats },
+  artwork: { colors, title, details, src, formats, orientation },
   toggleIntro,
   toggleArtwork
 }) => {
@@ -42,9 +42,9 @@ const Artwork = ({
         </figure>
       </section>
       <section className="artwork-purchase">
-        <div className="artwork-purchase-container">
+        <div className={`artwork-purchase-container flex-${orientation}`}>
           <div className="artwork-framed flex">
-            <img src={src.framed} />
+            <img className={orientation} src={src.framed} />
           </div>
           <section className="flex">
             <div className="artwork-description">
