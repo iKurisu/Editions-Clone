@@ -1,0 +1,42 @@
+.artwork-details {
+  width: 60%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.details-container {
+  color: #FFF;
+  padding: 12vw 0 11vw;
+}
+
+.details-title {
+  font-family: 'Ogg Roman';
+  font-size: 212px;
+  letter-spacing: 7px;
+  font-weight: normal;
+  line-height: 1.5;
+  padding-top: 36px;
+}
+
+.details-container p {
+  font-size: 16px;
+  opacity: .9;
+  letter-spacing: .4px;
+  margin-top: -6px;
+}
+
+.details-container a { 
+  border-bottom: 1px solid #FFF;
+  padding-bottom: 5px;
+  cursor: pointer;
+  transition: border-bottom-color .5s ease;
+}
+
+.details-container a:hover { border-bottom-color: transparent }
+
+.dash { margin: 0 7px }
+
+.details-artwork {
+  border: 24px solid #FFF;
+  margin: 9.75vw 0;
+}
