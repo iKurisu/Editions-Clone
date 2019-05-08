@@ -10,6 +10,16 @@ const toggleReducer = (state = false, action) => {
   }
 };
 
+const formatReducer = (state = {}, action) => {
+  switch(action.type) {
+    case types.SET_FORMAT:
+      return action.payload;
+    default:
+      return state;
+  }
+}
+
 export default combineReducers({
-  toggled: toggleReducer
+  toggled: toggleReducer,
+  format: formatReducer
 });
