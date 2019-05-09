@@ -45,10 +45,19 @@
 }
 
 @media (max-width: 768px) {
-  .portrait-hero { width: 80% }
+  .portrait-hero,
+  .landscape-hero,
+  .square-hero { 
+    width: 80% 
+  }
   
-  .details-container {
+  .portrait-hero .details-container,
+  .square-hero .details-container {
     padding: 14vh 0 13vh;
+  }
+
+  .landscape-hero .details-container {
+    padding: 14vh 0 22vh;
   }
 
   .details-title { 
