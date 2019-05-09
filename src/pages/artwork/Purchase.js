@@ -6,12 +6,16 @@ import Button from './purchase/Button';
 import './Purchase.scss';
 
 const Purchase = ({
-  artwork: { orientation, colors, title, details, formats, src }
+  artwork: { orientation, colors, title, details, formats, src },
+  width
 }) => (
   <section className="artwork-purchase">
     <div className={`artwork-purchase-container flex-${orientation}`}>
       <div className="artwork-framed flex">
-        <img className={orientation} src={src.framed} />
+        <img 
+          className={orientation} 
+          src={width < 700 ? src.framed_small : src.framed } 
+        />
       </div>
       <section className="flex">
         <div className="artwork-description">
@@ -35,7 +39,8 @@ const Purchase = ({
 );
 
 Purchase.propTypes = {
-  artwork: PropTypes.object.isRequired
+  artwork: PropTypes.object.isRequired,
+  width: PropTypes.number.isRequired
 }
 
 export default Purchase;

@@ -26,7 +26,7 @@ const Artwork = ({ artwork, toggleIntro, toggleArtwork, setFormat }) => {
         orientation={orientation}
       />
       <Preview width={width} src={src} />
-      <Purchase artwork={artwork} />
+      <Purchase artwork={artwork} width={width} />
     </div>
   );
 };
