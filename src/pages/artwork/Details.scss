@@ -25,7 +25,7 @@
   font-size: 16px;
   opacity: .9;
   letter-spacing: .4px;
-  margin-top: -6px;
+  // margin-top: -6px;
 }
 
 .details-container a { 
@@ -42,4 +42,28 @@
 .details-artwork {
   border: 24px solid #FFF;
   margin: 9.75vw 0;
+}
+
+@media (max-width: 768px) {
+  .portrait-hero { width: 80% }
+  
+  .details-container {
+    padding: 14vh 0 13vh;
+  }
+
+  .details-title { 
+    font-size: 12vw;
+    padding-top: 10px;
+    letter-spacing: 2px;
+  }
+
+  .details-container p {
+    font-size: 14px;
+    letter-spacing: .5px;
+  }
+
+  .details-artwork {
+    border: 12px solid #FFF;
+    margin: 18vw 0 0;
+  }
 }

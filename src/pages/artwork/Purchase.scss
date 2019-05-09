@@ -14,9 +14,8 @@ $black: rgb(93, 93, 93);
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 }
-
-.flex { flex: 1 }
 
 .artwork-framed img {
   margin: 0 auto;
@@ -24,7 +23,7 @@ $black: rgb(93, 93, 93);
 
 .artwork-framed .portrait {
   width: 95%;
-  max-width: 60vh;
+  max-width: 66vh;
 }
 
 .artwork-framed .square {
@@ -40,18 +39,6 @@ $black: rgb(93, 93, 93);
 .artwork-description {
   text-align: center;
   max-width: 450px;
-}
-
-.flex-portrait .artwork-description {
-  margin: -1vh auto 0 5vw;
-}
-
-.flex-square .artwork-description {
-  margin: -1vh auto 0 9.5vw;
-}
-
-.flex-landscape .artwork-description {
-  margin: -1vh auto 0 11vw;
 }
 
 .artwork-description h1 {
@@ -86,7 +73,7 @@ $black: rgb(93, 93, 93);
 }
 
 .artwork-description li.selected {
-  border-bottom: 1px solid $black;
+  border-bottom: 1px solid rgb(26, 26, 26);
 }
 
 .artwork-description li:not(:last-child) {
@@ -95,12 +82,12 @@ $black: rgb(93, 93, 93);
 
 .artwork-description button {
   background: transparent;
-  color: rgb(108, 108, 108);
+  color: $black;
   font-family: 'Helvetica Neue LT Pro';
   font-size: 13px;
   padding: 10px 34px;
   margin: 32px 4px 0 0;
-  border: 1px solid $black;
+  border: 1px solid rgb(26, 26, 26);
   border-radius: 4px;
   transition: border-color .4s $timing;
 }
@@ -117,4 +104,70 @@ $black: rgb(93, 93, 93);
 .dollar { 
   margin-left: 8px;
   margin-right: 1px;  
+}
+
+@media (max-width: 768px) {
+  .artwork-purchase-container {
+    width: 80%;
+    max-width: 600px;
+    height: auto;
+  }
+
+  .artwork-framed {
+    width: 100%;
+  }
+
+  .artwork-framed img {
+    width: 100% !important;
+    margin-top: 14vh;
+  }
+
+  .artwork-description {
+    width: 80%;
+    max-width: 350px;
+    margin: 5vh auto 10vh;
+  }
+
+  .artwork-description h1 {
+    font-size: 10.5vw;
+    letter-spacing: 3px;
+  }
+
+  .artwork-description p {
+    font-size: 12px;  
+    letter-spacing: 1px;
+    line-height: 1.6;
+  }
+
+  .artwork-description li {
+    font-size: 13px;  
+  }
+
+  .artwork-description p:first-of-type {
+    margin-bottom: 3vh;
+  }
+}
+
+@media (min-width: 480px) {
+  .artwork-description h1 {
+    font-size: 50px;
+  }
+}
+
+@media (min-width: 768px) {
+  .flex { flex: 1 }
+}
+
+@media (min-width: 768px) {
+  .flex-portrait .artwork-description {
+    margin: -1vh auto 0 5vw;
+  }
+
+  .flex-square .artwork-description {
+    margin: -1vh auto 0 9.5vw;
+  }
+
+  .flex-landscape .artwork-description {
+    margin: -1vh auto 0 11vw;
+  }
 }
