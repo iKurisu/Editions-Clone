@@ -24,7 +24,7 @@ const Preview = ({ width, src }) => {
   return (
     <section className="artwork-preview" ref={section}>
       <figure>
-        <img src={width < 768 ? src.details_small : src.details} />
+        <img src={width < 700 ? src.details_small : src.details} />
       </figure>
     </section>
   )
