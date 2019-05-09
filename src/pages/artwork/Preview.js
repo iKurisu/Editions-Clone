@@ -28,7 +28,7 @@ const Preview = ({ width, src }) => {
       </figure>
     </section>
   )
-  }
+}
 
 Preview.propTypes = {
   width: PropTypes.number.isRequired,
