@@ -143,8 +143,16 @@ $black: rgb(93, 93, 93);
     font-size: 13px;  
   }
 
+  .artwork-description p {
+    margin-bottom: 4vh;
+  }
+
   .artwork-description p:first-of-type {
     margin-bottom: 3vh;
+  }
+
+  .artwork-description button {
+    margin-top: 5vh;
   }
 }
 
