@@ -76,3 +76,9 @@
     margin: 18vw 0 0;
   }
 }
+
+@media (max-width: 768px) and (orientation: landscape) {
+  .details-artwork {
+    margin-top: 11vw;
+  }
+}

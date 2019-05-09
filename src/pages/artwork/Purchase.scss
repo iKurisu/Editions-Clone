@@ -113,10 +113,6 @@ $black: rgb(93, 93, 93);
     height: auto;
   }
 
-  .artwork-framed {
-    width: 100%;
-  }
-
   .artwork-framed img {
     width: 100% !important;
     margin-top: 14vh;
@@ -156,6 +152,20 @@ $black: rgb(93, 93, 93);
   }
 }
 
+@media (max-width: 768px) and (orientation: landscape) {
+  .artwork-description {
+    margin: 10vh auto 13vh;
+  }
+
+  .artwork-description p:first-of-type {
+    margin-bottom: 3vh;
+  }
+
+  .artwork-description button {
+    margin-top: 7vh;
+  }
+}
+
 @media (min-width: 480px) {
   .artwork-description h1 {
     font-size: 50px;
@@ -164,9 +174,7 @@ $black: rgb(93, 93, 93);
 
 @media (min-width: 768px) {
   .flex { flex: 1 }
-}
 
-@media (min-width: 768px) {
   .flex-portrait .artwork-description {
     margin: -1vh auto 0 5vw;
   }
