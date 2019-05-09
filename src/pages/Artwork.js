@@ -7,12 +7,7 @@ import Purchase from './artwork/Purchase';
 import { introActions } from 'modules/intro';
 import { artworkActions } from 'modules/artwork';
 
-const Artwork = ({
-  artwork,
-  toggleIntro,
-  toggleArtwork,
-  setFormat
-}) => {
+const Artwork = ({ artwork, toggleIntro, toggleArtwork, setFormat }) => {
   const { innerWidth: width } = window;
   const { title, colors: { background }, formats, src, orientation } = artwork;
 
