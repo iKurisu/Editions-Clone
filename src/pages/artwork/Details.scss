@@ -40,8 +40,8 @@
 .dash { margin: 0 7px }
 
 .details-artwork {
-  border: 24px solid #FFF;
-  margin: 9.75vw 0;
+  border: 12px solid #FFF;
+  margin-top: 18vw;
 }
 
 @media (max-width: 768px) {
@@ -70,15 +70,35 @@
     font-size: 14px;
     letter-spacing: .5px;
   }
-
-  .details-artwork {
-    border: 12px solid #FFF;
-    margin: 18vw 0 0;
-  }
 }
 
 @media (max-width: 768px) and (orientation: landscape) {
   .details-artwork {
     margin-top: 11vw;
+  }
+}
+
+@media(min-width: 768px) {
+  .square-hero {
+    width: 72%;
+  }
+  .square-hero .details-container {
+    padding: 18vw 0 20vw;
+  }
+
+  .details-title {
+    font-size: 12vw;
+    letter-spacing: 1.5px;
+  }
+
+  .details-container p {
+    font-size: 15px;
+  }
+
+  .dash { margin: 0 6px }
+
+  .details-artwork {
+    border-width: 16px;
+    margin-top: 15vw;
   }
 }

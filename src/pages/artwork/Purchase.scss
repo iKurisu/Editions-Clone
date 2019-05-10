@@ -8,7 +8,7 @@ $black: rgb(93, 93, 93);
 
 .artwork-purchase-container {
   width: 75%;
-  height: 100vh;
+  height: auto;
   margin: 0 auto;
   display: flex;
   flex-direction: row;
@@ -18,7 +18,8 @@ $black: rgb(93, 93, 93);
 }
 
 .artwork-framed img {
-  margin: 0 auto;
+  width: 100% !important;
+  margin: 14vh auto 0;
 }
 
 .artwork-framed .portrait {
@@ -110,13 +111,7 @@ $black: rgb(93, 93, 93);
   .artwork-purchase-container {
     width: 80%;
     max-width: 600px;
-    height: auto;
-  }
-
-  .artwork-framed img {
-    width: 100% !important;
-    margin-top: 14vh;
-  }
+  } 
 
   .artwork-description {
     width: 80%;
@@ -173,6 +168,38 @@ $black: rgb(93, 93, 93);
 }
 
 @media (min-width: 768px) {
+  .artwork-purchase-container {
+    width: 80%;
+    max-width: 600px;
+  }
+
+  .artwork-description {
+    margin: 8vh auto 10vh;
+    max-width: 350px;
+  }
+
+  .artwork-description p:first-of-type {
+    margin-bottom: 3vh;
+  }
+
+  .artwork-description p {
+    font-size: 15px;
+  }
+
+  .artwork-description li {
+    font-size: 13px;
+  }
+
+  .artwork-description ul {
+    margin-top: 3vh;
+  }
+
+  .artwork-description button {
+    margin-top: 4.5vh;
+  }
+}
+
+@media (min-width: 1920px) {
   .flex { flex: 1 }
 
   .flex-portrait .artwork-description {
