@@ -101,3 +101,18 @@
     margin-top: 15vw;
   }
 }
+
+@media (min-width: 768px) and (orientation: landscape) {
+  .square-hero .details-container {
+    padding: 17vh 0 14vh;
+  }
+  
+  .details-title {
+    font-size: 8vw;
+    letter-spacing: 2px;
+  }
+
+  .details-artwork {
+    margin: 10vw 0;
+  }
+}
