@@ -200,7 +200,7 @@ $black: rgb(93, 93, 93);
 }
 
 @media (min-width: 1920px) {
-  .flex { flex: 1 }
+  .flex { flex: 1; }
 
   .flex-portrait .artwork-description {
     margin: -1vh auto 0 5vw;
