@@ -1,0 +1,17 @@
+@import 'sass/variables.scss';
+
+.artwork-preview {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.artwork-preview img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  transition: transform 10s $timing;
+}
+
+.artwork-preview.show img {
+  transform: scale(1.07);
+}

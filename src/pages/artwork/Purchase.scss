@@ -1,0 +1,216 @@
+@import 'sass/variables.scss';
+
+$black: rgb(93, 93, 93);
+
+.artwork-purchase {
+  background: #FFF;
+}
+
+.artwork-purchase-container {
+  width: 75%;
+  height: auto;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.artwork-framed img {
+  width: 100% !important;
+  margin: 14vh auto 0;
+}
+
+.artwork-framed .portrait {
+  width: 95%;
+  max-width: 66vh;
+}
+
+.artwork-framed .square {
+  width: 95%;
+  max-width: 74vh;
+}
+
+.artwork-framed .landscape {
+  width: 95%;
+  max-width: 98vh;
+}
+
+.artwork-description {
+  text-align: center;
+  max-width: 450px;
+}
+
+.artwork-description h1 {
+  font-family: 'Ogg Roman';
+  font-weight: normal;
+  font-size: 80px;
+  letter-spacing: 2.5px;
+}
+
+.artwork-description li, 
+.artwork-description p {
+  color: $black
+}
+
+.artwork-description p {
+  max-width: 400px;
+  margin: 0 auto 2vh;
+  letter-spacing: .5px;
+  line-height: 1.5;
+}
+
+.artwork-description ul {
+  margin-top: 25px;
+}
+
+.artwork-description li {
+  font-size: 15px;
+  display: inline-block;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #FFF;
+  transition: border-color .2s ease;
+}
+
+.artwork-description li.selected {
+  border-bottom: 1px solid rgb(26, 26, 26);
+}
+
+.artwork-description li:not(:last-child) {
+  margin-right: 32px;
+}
+
+.artwork-description button {
+  background: transparent;
+  color: $black;
+  font-family: 'Helvetica Neue LT Pro';
+  font-size: 13px;
+  padding: 10px 34px;
+  margin: 32px 4px 0 0;
+  border: 1px solid rgb(26, 26, 26);
+  border-radius: 4px;
+  transition: border-color .4s $timing;
+}
+
+.artwork-description button:hover {
+  border-color: rgb(200, 200, 200);
+}
+
+.artwork-description li,
+.artwork-description button {
+  cursor: pointer;
+}
+
+.dollar { 
+  margin-left: 8px;
+  margin-right: 1px;  
+}
+
+@media (max-width: 768px) {
+  .artwork-purchase-container {
+    width: 80%;
+    max-width: 600px;
+  } 
+
+  .artwork-description {
+    width: 80%;
+    max-width: 350px;
+    margin: 5vh auto 11vh;
+  }
+
+  .artwork-description h1 {
+    font-size: 10.5vw;
+    letter-spacing: 3px;
+  }
+
+  .artwork-description p {
+    font-size: 12px;  
+    letter-spacing: 1px;
+    line-height: 1.6;
+  }
+
+  .artwork-description li {
+    font-size: 13px;  
+  }
+
+  .artwork-description p {
+    margin-bottom: 4vh;
+  }
+
+  .artwork-description p:first-of-type {
+    margin-bottom: 3vh;
+  }
+
+  .artwork-description button {
+    margin-top: 5vh;
+  }
+}
+
+@media (max-width: 768px) and (orientation: landscape) {
+  .artwork-description {
+    margin: 10vh auto 13vh;
+  }
+
+  .artwork-description p:first-of-type {
+    margin-bottom: 3vh;
+  }
+
+  .artwork-description button {
+    margin-top: 7vh;
+  }
+}
+
+@media (min-width: 480px) {
+  .artwork-description h1 {
+    font-size: 50px;
+  }
+}
+
+@media (min-width: 768px) {
+  .artwork-purchase-container {
+    width: 80%;
+    max-width: 600px;
+  }
+
+  .artwork-description {
+    margin: 8vh auto 10vh;
+    max-width: 350px;
+  }
+
+  .artwork-description p:first-of-type {
+    margin-bottom: 3vh;
+  }
+
+  .artwork-description p {
+    font-size: 15px;
+  }
+
+  .artwork-description li {
+    font-size: 13px;
+  }
+
+  .artwork-description ul {
+    margin-top: 3vh;
+  }
+
+  .artwork-description button {
+    margin-top: 4.5vh;
+  }
+}
+
+@media (min-width: 1920px) {
+  .flex { flex: 1; }
+
+  .flex-portrait .artwork-description {
+    margin: -1vh auto 0 5vw;
+  }
+
+  .flex-square .artwork-description {
+    margin: -1vh auto 0 9.5vw;
+  }
+
+  .flex-landscape .artwork-description {
+    margin: -1vh auto 0 11vw;
+  }
+}

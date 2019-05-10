@@ -1,0 +1,103 @@
+.artwork-details {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.portrait-hero { width: 60% }
+.landscape-hero { width: 75% }
+.square-hero { width: 60% }
+
+.details-container {
+  color: #FFF;
+  padding: 12vw 0 11vw;
+}
+
+.details-title {
+  font-family: 'Ogg Roman';
+  font-size: 212px;
+  letter-spacing: 7px;
+  font-weight: normal;
+  line-height: 1.5;
+  padding-top: 36px;
+}
+
+.details-container p {
+  font-size: 16px;
+  opacity: .9;
+  letter-spacing: .4px;
+}
+
+.details-container a { 
+  border-bottom: 1px solid #FFF;
+  padding-bottom: 5px;
+  cursor: pointer;
+  transition: border-bottom-color .5s ease;
+}
+
+.details-container a:hover { border-bottom-color: transparent }
+
+.dash { margin: 0 7px }
+
+.details-artwork {
+  border: 12px solid #FFF;
+  margin-top: 18vw;
+}
+
+@media (max-width: 768px) {
+  .portrait-hero,
+  .landscape-hero,
+  .square-hero { 
+    width: 80% 
+  }
+  
+  .portrait-hero .details-container,
+  .square-hero .details-container {
+    padding: 14vh 0 13vh;
+  }
+
+  .landscape-hero .details-container {
+    padding: 14vh 0 22vh;
+  }
+
+  .details-title { 
+    font-size: 12vw;
+    padding-top: 10px;
+    letter-spacing: 2px;
+  }
+
+  .details-container p {
+    font-size: 14px;
+    letter-spacing: .5px;
+  }
+}
+
+@media (max-width: 768px) and (orientation: landscape) {
+  .details-artwork {
+    margin-top: 11vw;
+  }
+}
+
+@media(min-width: 768px) {
+  .square-hero {
+    width: 72%;
+  }
+  .square-hero .details-container {
+    padding: 18vw 0 20vw;
+  }
+
+  .details-title {
+    font-size: 12vw;
+    letter-spacing: 1.5px;
+  }
+
+  .details-container p {
+    font-size: 15px;
+  }
+
+  .dash { margin: 0 6px }
+
+  .details-artwork {
+    border-width: 16px;
+    margin-top: 15vw;
+  }
+}

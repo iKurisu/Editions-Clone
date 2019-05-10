@@ -1,6 +1,8 @@
 @import 'sass/mixins.scss';
 
 .navigation {
+  position: relative;
+  z-index: 50;
   transition: opacity .5s ease-out;
 }
 
