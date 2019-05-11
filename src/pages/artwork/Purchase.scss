@@ -86,11 +86,16 @@ $black: rgb(93, 93, 93);
   color: $black;
   font-family: 'Helvetica Neue LT Pro';
   font-size: 13px;
-  padding: 10px 34px;
+  padding: 10px 24px;
   margin: 32px 4px 0 0;
   border: 1px solid rgb(26, 26, 26);
   border-radius: 4px;
   transition: border-color .4s $timing;
+}
+
+.artwork-description button > span {
+  display: inline-block;
+  min-width: 134px;
 }
 
 .artwork-description button:hover {
@@ -173,6 +178,14 @@ $black: rgb(93, 93, 93);
     max-width: 600px;
   }
 
+  .artwork-framed .portrait {
+    max-width: 47vh;
+  }
+
+  .artwork-framed .landscape {
+    max-width: 100vh;
+  }
+
   .artwork-description {
     margin: 8vh auto 10vh;
     max-width: 350px;
@@ -199,18 +212,142 @@ $black: rgb(93, 93, 93);
   }
 }
 
+@media (min-width: 768px) and (orientation: landscape) {
+  .artwork-description button {
+    margin-top: 4.5vw;
+  }
+
+  .artwork-description {
+    margin: 6vw 0 11vw;
+  }
+
+  .artwork-description ul {
+    margin-top: 3vw;
+  }
+}
+
+@media (min-width: 1000px) {
+  .artwork-framed .portrait {
+    max-width: 59vh;
+  }
+
+  .artwork-framed .landscape {
+    max-width: 67vh;
+  }
+
+  .artwork-framed .square {
+    max-width: 59vh;
+  }
+
+  .artwork-description h1 {
+    font-size: 56px;
+    letter-spacing: 3px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .artwork-purchase-container {
+    max-width: 80%;
+    height: 100vh;
+  }
+
+  .artwork-framed .landscape {
+    max-width: 97vh;
+  }
+
+  .artwork-framed img {
+    margin-top: 0;
+  }
+
+  .artwork-description {
+    margin: -1vh auto 0 8.5vw;
+  }
+
+  .artwork-description h1 {
+    margin-bottom: -2px;
+  }
+
+  .artwork-description p:first-of-type {
+    margin-bottom: 2vh;
+  }
+
+  .artwork-description p {
+    margin: 0;
+  }
+
+  .artwork-description ul {
+    margin-top: 20px;
+  }
+  
+  .artwork-description button {
+    margin-top: 36px;
+  }
+
+  .flex { flex: 1 }
+}
+
+@media (min-width: 1366px) {
+  .artwork-framed .portrait {
+    max-width: 60vh;
+  }
+
+  .artwork-framed .square {
+    max-width: 65vh;
+  }
+
+  .artwork-framed .landscape {
+    max-width: 100vh;
+  }
+
+  .artwork-description h1 {
+    font-size: 54px;
+  }
+
+  .artwork-description p {
+    font-size: 14px;
+  }
+
+  .artwork-description li {
+    font-size: 13px;
+  }
+}
+
 @media (min-width: 1920px) {
-  .flex { flex: 1; }
+  .artwork-purchase-container {
+    width: 75%;
+  }
+
+  .artwork-framed img {
+    width: 95% !important;
+  }
+  
+  .artwork-description {
+    max-width: 450px;
+  }
 
   .flex-portrait .artwork-description {
-    margin: -1vh auto 0 5vw;
+    margin-left: 5vw;
   }
 
   .flex-square .artwork-description {
-    margin: -1vh auto 0 9.5vw;
+    margin-left: 9.5vw;
   }
 
   .flex-landscape .artwork-description {
-    margin: -1vh auto 0 11vw;
+    margin-left: 11vw;
+  }
+  
+  .artwork-description h1 {
+    font-size: 80px;
+  }
+
+  .artwork-description p {
+    font-size: 16px;
+    max-width: 390px;
+    margin: 0 auto;
+  }
+
+  .artwork-description li {
+    font-size: 15px;
   }
 }

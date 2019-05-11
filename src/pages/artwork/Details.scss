@@ -78,11 +78,22 @@
 }
 
 @media(min-width: 768px) {
+  .portrait-hero,
   .square-hero {
     width: 72%;
   }
+
+  .landscape-hero {
+    width: 80%;
+  }
+  
+  .portrait-hero .details-container,
   .square-hero .details-container {
-    padding: 18vw 0 20vw;
+    padding: 18vw 0 5vw;
+  }
+
+  .landscape-hero .details-container {
+    padding: 12vh 0 22vh;
   }
 
   .details-title {
@@ -98,6 +109,122 @@
 
   .details-artwork {
     border-width: 16px;
-    margin-top: 15vw;
+    margin: 15vw 0;
+  }
+}
+
+@media (min-width: 768px) and (orientation: landscape) {
+  .portrait-hero .details-container,
+  .square-hero .details-container {
+    padding: 17vh 0 14vh;
+  }
+
+  .landscape-hero .details-container {
+    padding: 11vh 0 22vh;
+  }
+  
+  .details-title {
+    font-size: 8vw;
+    letter-spacing: 2px;
+  }
+
+  .details-artwork {
+    margin: 10vw 0;
+  }
+}
+
+@media (min-width: 1000px) {
+  .landscape-hero .details-container {
+    padding: 18vw 0 5vw;
+  }
+  
+  .details-title {
+    font-size: 10vw;
+    letter-spacing: 4px;
+  }
+}
+
+@media (min-width: 1000px) and (orientation: landscape) {
+  .portrait-hero,
+  .square-hero {
+    width: 62%;
+  }
+  
+  .landscape-hero .details-container {
+    padding: 9vw 0 17vw;
+  }
+
+  .portrait-hero .details-container,
+  .square-hero .details-container {
+    padding: 11vw 0;
+  }
+
+  .details-title {
+    padding-top: 3vw;
+  }
+}
+
+@media (min-width: 1280px) {
+  .portrait-hero,
+  .square-hero {
+    width: 65%;
+  }
+
+  .landscape-hero {
+    width: 75%;
+  }
+
+  .square-hero .details-container,
+  .portrait-hero .details-container {
+    padding: 14vw 0 7vw;
+  }
+
+  .landscape-hero .details-container {
+    padding: 14vw 0 2vw;
+  }
+
+  .details-artwork {
+    margin: 12vw 0;
+  }
+}
+
+@media (min-width: 1366px) {
+  .portrait-hero,
+  .square-hero {
+    width: 60%;
+  }
+
+  .portrait-hero .details-container,
+  .square-hero .details-container {
+    padding: 11vw 0;
+  }
+
+  .landscape-hero .details-container {
+    padding: 11vw 0 6vw;
+  }
+
+  .details-container p {
+    font-size: 14px;
+    letter-spacing: .5px;
+    margin-top: -5px;
+  }
+
+  .details-artwork {
+    margin: 9.5vw 0;
+  }
+}
+
+@media (min-width: 1920px) {
+  .details-title {
+    font-size: 214px;
+    letter-spacing: 6px;
+  }
+
+  .details-container p {
+    font-size: 16px;
+  }
+
+  .details-artwork {
+    border-width: 24px;
   }
 }
