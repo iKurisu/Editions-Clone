@@ -132,3 +132,34 @@
     margin: 10vw 0;
   }
 }
+
+@media (min-width: 1000px) {
+  .landscape-hero .details-container {
+    padding: 18vw 0 5vw;
+  }
+  
+  .details-title {
+    font-size: 10vw;
+    letter-spacing: 4px;
+  }
+}
+
+@media (min-width: 1000px) and (orientation: landscape) {
+  .portrait-hero,
+  .square-hero {
+    width: 62%;
+  }
+  
+  .landscape-hero .details-container {
+    padding: 9vw 0 17vw;
+  }
+
+  .portrait-hero .details-container,
+  .square-hero .details-container {
+    padding: 11vw 0;
+  }
+
+  .details-title {
+    padding-top: 3vw;
+  }
+}

@@ -221,6 +221,25 @@ $black: rgb(93, 93, 93);
   }
 }
 
+@media (min-width: 1000px) {
+  .artwork-framed .portrait {
+    max-width: 59vh;
+  }
+
+  .artwork-framed .landscape {
+    max-width: 67vh;
+  }
+
+  .artwork-framed .square {
+    max-width: 59vh;
+  }
+
+  .artwork-description h1 {
+    font-size: 56px;
+    letter-spacing: 3px;
+  }
+}
+
 @media (min-width: 1920px) {
   .flex { flex: 1; }
 
