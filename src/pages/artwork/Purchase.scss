@@ -86,11 +86,16 @@ $black: rgb(93, 93, 93);
   color: $black;
   font-family: 'Helvetica Neue LT Pro';
   font-size: 13px;
-  padding: 10px 34px;
+  padding: 10px 24px;
   margin: 32px 4px 0 0;
   border: 1px solid rgb(26, 26, 26);
   border-radius: 4px;
   transition: border-color .4s $timing;
+}
+
+.artwork-description button > span {
+  display: inline-block;
+  min-width: 134px;
 }
 
 .artwork-description button:hover {
