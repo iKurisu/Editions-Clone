@@ -173,6 +173,14 @@ $black: rgb(93, 93, 93);
     max-width: 600px;
   }
 
+  .artwork-framed .portrait {
+    max-width: 47vh;
+  }
+
+  .artwork-framed .landscape {
+    max-width: 100vh;
+  }
+
   .artwork-description {
     margin: 8vh auto 10vh;
     max-width: 350px;
@@ -205,7 +213,11 @@ $black: rgb(93, 93, 93);
   }
 
   .artwork-description {
-    margin-bottom: 11vw;
+    margin: 6vw 0 11vw;
+  }
+
+  .artwork-description ul {
+    margin-top: 3vw;
   }
 }
 
