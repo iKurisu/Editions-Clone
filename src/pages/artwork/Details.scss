@@ -163,3 +163,27 @@
     padding-top: 3vw;
   }
 }
+
+@media (min-width: 1280px) {
+  .portrait-hero,
+  .square-hero {
+    width: 65%;
+  }
+
+  .landscape-hero {
+    width: 75%;
+  }
+
+  .square-hero .details-container,
+  .portrait-hero .details-container {
+    padding: 14vw 0 7vw;
+  }
+
+  .landscape-hero .details-container {
+    padding: 14vw 0 2vw;
+  }
+
+  .details-artwork {
+    margin: 12vw 0;
+  }
+}

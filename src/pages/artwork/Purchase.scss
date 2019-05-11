@@ -240,9 +240,48 @@ $black: rgb(93, 93, 93);
   }
 }
 
-@media (min-width: 1920px) {
-  .flex { flex: 1; }
+@media (min-width: 1280px) {
+  .artwork-purchase-container {
+    max-width: 80%;
+    height: 100vh;
+  }
 
+  .artwork-framed .landscape {
+    max-width: 97vh;
+  }
+
+  .artwork-framed img {
+    margin-top: 0;
+  }
+
+  .artwork-description {
+    margin: -1vh auto 0 8.5vw;
+  }
+
+  .artwork-description h1 {
+    margin-bottom: -2px;
+  }
+
+  .artwork-description p:first-of-type {
+    margin-bottom: 2vh;
+  }
+
+  .artwork-description p {
+    margin: 0;
+  }
+
+  .artwork-description ul {
+    margin-top: 20px;
+  }
+  
+  .artwork-description button {
+    margin-top: 36px;
+  }
+
+  .flex { flex: 1 }
+}
+
+@media (min-width: 1920px) {
   .flex-portrait .artwork-description {
     margin: -1vh auto 0 5vw;
   }
