@@ -187,3 +187,29 @@
     margin: 12vw 0;
   }
 }
+
+@media (min-width: 1366px) {
+  .portrait-hero,
+  .square-hero {
+    width: 60%;
+  }
+
+  .portrait-hero .details-container,
+  .square-hero .details-container {
+    padding: 11vw 0;
+  }
+
+  .landscape-hero .details-container {
+    padding: 11vw 0 6vw;
+  }
+
+  .details-container p {
+    font-size: 14px;
+    letter-spacing: .5px;
+    margin-top: -5px;
+  }
+
+  .details-artwork {
+    margin: 9.5vw 0;
+  }
+}

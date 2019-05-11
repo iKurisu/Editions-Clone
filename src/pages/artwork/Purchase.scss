@@ -286,6 +286,32 @@ $black: rgb(93, 93, 93);
   .flex { flex: 1 }
 }
 
+@media (min-width: 1366px) {
+  .artwork-framed .portrait {
+    max-width: 60vh;
+  }
+
+  .artwork-framed .square {
+    max-width: 65vh;
+  }
+
+  .artwork-framed .landscape {
+    max-width: 100vh;
+  }
+
+  .artwork-description h1 {
+    font-size: 54px;
+  }
+
+  .artwork-description p {
+    font-size: 14px;
+  }
+
+  .artwork-description li {
+    font-size: 13px;
+  }
+}
+
 @media (min-width: 1920px) {
   .flex-portrait .artwork-description {
     margin: -1vh auto 0 5vw;
