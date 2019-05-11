@@ -313,15 +313,41 @@ $black: rgb(93, 93, 93);
 }
 
 @media (min-width: 1920px) {
+  .artwork-purchase-container {
+    width: 75%;
+  }
+
+  .artwork-framed img {
+    width: 95% !important;
+  }
+  
+  .artwork-description {
+    max-width: 450px;
+  }
+
   .flex-portrait .artwork-description {
-    margin: -1vh auto 0 5vw;
+    margin-left: 5vw;
   }
 
   .flex-square .artwork-description {
-    margin: -1vh auto 0 9.5vw;
+    margin-left: 9.5vw;
   }
 
   .flex-landscape .artwork-description {
-    margin: -1vh auto 0 11vw;
+    margin-left: 11vw;
+  }
+  
+  .artwork-description h1 {
+    font-size: 80px;
+  }
+
+  .artwork-description p {
+    font-size: 16px;
+    max-width: 390px;
+    margin: 0 auto;
+  }
+
+  .artwork-description li {
+    font-size: 15px;
   }
 }
