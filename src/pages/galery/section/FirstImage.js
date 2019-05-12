@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import * as PIXI from 'pixi.js';
 import mediaQuery from 'utils/mediaQuery';
 import displacement from 'assets/displacement.png';
@@ -78,7 +79,9 @@ const FirstImage = ({ src, orientation, atIntro, displacement: {x, y} }) => {
         style={{ transform: `translate(${x / 1.5}px, ${y / 1.5}px)` }}
       >
         { atIntro && <div className="canvas" ref={canvas}></div> }
-        <img src={src} />
+        <Link to={'/bloom'}>
+          <img src={src} />
+        </Link>
       </div>
     </div>
   );
