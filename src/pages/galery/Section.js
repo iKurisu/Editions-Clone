@@ -12,7 +12,7 @@ const Section = ({ artwork, displacement: { x, y }, displace }) => {
   return (
     <section className="section" onMouseMove={displace}>
       <div className="content-wrapper">
-        <Image src={src.main} orientation={orientation} />
+        <Image src={src.main} title={title} orientation={orientation} />
         <Title
           title={title}
           style={{
