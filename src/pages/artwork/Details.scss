@@ -1,6 +1,12 @@
+@import 'sass/variables.scss';
+
+$duration: 1.4s;
+$delay: .4s;
+
 .artwork-details {
   margin: 0 auto;
   text-align: center;
+  transition: transform $duration $timing;
 }
 
 .portrait-hero { width: 60% }
@@ -10,6 +16,7 @@
 .details-container {
   color: #FFF;
   padding: 12vw 0 11vw;
+  transition: transform $duration $timing, opacity $duration $timing;
 }
 
 .details-title {
