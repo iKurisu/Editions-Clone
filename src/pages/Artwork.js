@@ -7,12 +7,18 @@ import Purchase from './artwork/Purchase';
 import { introActions } from 'modules/intro';
 import { artworkActions } from 'modules/artwork';
 
-const Artwork = ({ artwork, toggleIntro, toggleArtwork, setFormat }) => {
+const Artwork = ({ 
+  artwork, 
+  wasAtGalery, 
+  toggleIntro, 
+  toggleArtwork, 
+  setFormat 
+}) => {
   const { innerWidth: width } = window;
   const { title, colors: { background }, formats, src, orientation } = artwork;
 
   useEffect(() => {
-    toggleIntro();
+    wasAtGalery ? window.scrollTo(0, 0) : toggleIntro();
     toggleArtwork();
     setFormat(formats[0]);
   }, []);
@@ -33,10 +39,15 @@ const Artwork = ({ artwork, toggleIntro, toggleArtwork, setFormat }) => {
 
 Artwork.propTypes = {
   artwork: PropTypes.object.isRequired,
+  wasAtGalery: PropTypes.bool.isRequired,
   toggleIntro: PropTypes.func.isRequired,
   toggleArtwork: PropTypes.func.isRequired,
   setFormat: PropTypes.func.isRequired
 }
+
+const mapState = ({ intro }) => ({
+  wasAtGalery: !intro.toggled
+})
 
 const actionCreators = {
   toggleIntro: introActions.toggle,
@@ -44,4 +55,4 @@ const actionCreators = {
   setFormat: artworkActions.setFormat
 }
 
-export default connect(null, actionCreators)(Artwork);
+export default connect(mapState, actionCreators)(Artwork);
