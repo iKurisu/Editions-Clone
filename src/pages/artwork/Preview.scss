@@ -3,6 +3,7 @@
 .artwork-preview {
   height: 100vh;
   overflow: hidden;
+  transition: transform 1s $timing, opacity 1s $timing;
 }
 
 .artwork-preview img {
