@@ -3,6 +3,7 @@ import "./Side.scss";
 
 const Side = () => {
   const { scrollY, innerHeight } = window;
+  const [opacity, setOpacity] = useState(0);
   const [currentSection, updateSection] = useState(scrollY / innerHeight + 1);
 
   const scroll = () => {
@@ -15,6 +16,7 @@ const Side = () => {
 
   useEffect(() => {
     window.addEventListener('scroll', scroll);
+    setTimeout(() => setOpacity(1), 650);
     return () => window.removeEventListener('scroll', scroll);
   }, []);
 
@@ -22,8 +24,10 @@ const Side = () => {
 
   return (
     <React.Fragment>
-      <div className="side fixed fixed-left">Selected Artwork</div>
-      <div className="side fixed fixed-right">
+      <div className="side fixed fixed-left" style={{ opacity }}>
+        Selected Artwork
+      </div>
+      <div className="side fixed fixed-right" style={{ opacity }}>
         <span>2016 – P</span>
         <span className="margin-left">{`${format(currentSection)} / 12`}</span>
       </div>
