@@ -7,7 +7,7 @@ import withMovement from 'components/withMovement';
 
 const FirstSection = ({ artwork, atIntro, displacement: {x, y}, displace }) => {
   const { src, orientation, title, colors, details } = artwork;
-  const [zIndex, setZIndex] = useState(atIntro ? 15 : 1);
+  const [zIndex, setZIndex] = useState(atIntro ? 70 : 1);
 
   useEffect(() => {
     !atIntro && zIndex !== 1 && setTimeout(() => setZIndex(1), 1000);
