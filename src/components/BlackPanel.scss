@@ -10,3 +10,7 @@ $timing: cubic-bezier(0.8, .07, .07, .9);
 
   transition: transform .9s $timing; 
 }
+
+.black-pannel.no-transition {
+  transition: none;
+}
