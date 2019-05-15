@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
@@ -18,22 +18,39 @@ const parseUrlIntoArtwork = url => {
     .toUpperCase())[0];
 };
 
-const App = ({ introToggled, artworkToggled }) => (
-  <main className={introToggled ? "intro" : artworkToggled ? "artwork" : ""}>
-    <Headers />
-    { introToggled && <Intro /> }
-    <Router>
-      <Route exact path="/" component={Galery} />
-      <Route 
-        path={artworks.map(artwork => `/${artwork.title.replace(' ', '-')}`)} 
-        render={({ match: { url }}) => (
-          <Artwork artwork={parseUrlIntoArtwork(url)} />
-        )}
-      />
-    </Router>
-    <BlackPanel />
-  </main>
-);
+const App = ({ introToggled, artworkToggled }) => {
+  const [fading, setFading] = useState(false);
+  const intro = introToggled ? "intro" : "";
+  const artwork = artworkToggled ? "artwork" : "";
+  const fading_intro = fading ? "fading-intro" : "";
+
+  const toggleFading = () => setFading(!fading);
+
+  useEffect(() => {
+    if (!introToggled && !artworkToggled) toggleFading();
+  }, [introToggled]);
+  
+  useEffect(() => {
+    if (fading) setTimeout(toggleFading, 900);
+  }, [fading])
+  
+  return (
+    <main className={`${intro}${artwork}${fading_intro}`}>
+      <Headers />
+      { introToggled && <Intro /> }
+      <Router>
+        <Route exact path="/" component={Galery} />
+        <Route 
+          path={artworks.map(artwork => `/${artwork.title.replace(' ', '-')}`)} 
+          render={({ match: { url }}) => (
+            <Artwork artwork={parseUrlIntoArtwork(url)} />
+          )}
+        />
+      </Router>
+      <BlackPanel />
+    </main>
+  )
+}
 
 App.propTypes = {
   introToggled: PropTypes.bool.isRequired,
