@@ -5,6 +5,11 @@ const setPosition = position => ({
   payload: position
 })
 
+const toggleTransition = () => ({
+  type: types.TOGGLE_TRANSITION
+})
+
 export default {
-  setPosition
+  setPosition,
+  toggleTransition
 }

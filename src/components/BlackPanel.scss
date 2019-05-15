@@ -1,12 +1,29 @@
-$timing: cubic-bezier(0.8, .07, .07, .9);
+$to-artwork: cubic-bezier(0.8, .07, .17, .7);
+$intro: cubic-bezier(.8, .07, .07, .9);
 
 .black-pannel {
   background: #1a1a1a;
   position: fixed;
   z-index: 60;
   width: 100%;
-  height: 100%;
+  height: 118%;
   top: 0;
 
-  transition: transform .9s $timing; 
+  transition: transform 1.8s $to-artwork, height 0s .9s; 
+}
+
+.intro .black-pannel {
+  height: 100%;
+}
+
+.fading-intro .black-pannel {
+  transition: transform .9s $intro;
+}
+
+.artwork .black-pannel {
+  transition: transform 1s cubic-bezier(0,.7,.3,.9);
+}
+
+.black-pannel.no-transition {
+  transition: none;
 }

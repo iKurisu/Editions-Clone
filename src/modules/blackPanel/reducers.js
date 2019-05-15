@@ -10,6 +10,16 @@ const positionReducer = (state = '0', action) => {
   }
 }
 
+const transitionReducer = (state = true, action) => {
+  switch (action.type) {
+    case types.TOGGLE_TRANSITION:
+      return !state;
+    default: 
+      return state;
+  }
+}
+
 export default combineReducers({
-  position: positionReducer
+  position: positionReducer,
+  canTransition: transitionReducer
 })
