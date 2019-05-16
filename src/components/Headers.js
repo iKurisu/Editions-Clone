@@ -12,7 +12,7 @@ const Headers = () => {
     <header>
       <Navigation showPanel={showPanel} togglePanel={togglePanel} />
       <Side />
-      <Panel showPanel={showPanel} />
+      <Panel showPanel={showPanel} toggle={togglePanel} />
     </header>
   )
 }

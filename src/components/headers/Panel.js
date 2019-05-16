@@ -3,14 +3,13 @@ import PropTypes from 'prop-types';
 import Portfolio from './panel/Portfolio';
 import Description from './panel/Description';
 import Media from './panel/Media';
+import Cross from './common/Cross';
 import "./Panel.scss";
 
-const instagram = "https://www.instagram.com/jordansowers/";
-const twitter = "https://twitter.com/hellojsowers";
-
-const Panel = ({ showPanel }) => (
+const Panel = ({ showPanel, toggle }) => (
   <div className={`panel ${showPanel ? "show" : "hide"}`}>
     <div className="panel-wrapper">
+      <Cross isActive={showPanel} click={toggle} />
       <Portfolio />
       <Description />
       <Media />
@@ -19,7 +18,8 @@ const Panel = ({ showPanel }) => (
 );
 
 Panel.propTypes = {
-  showPanel: PropTypes.bool.isRequired
+  showPanel: PropTypes.bool.isRequired,
+  toggle: PropTypes.func.isRequired
 }
 
 export default Panel;
