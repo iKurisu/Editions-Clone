@@ -1,0 +1,14 @@
+@import 'sass/mixins.scss';
+
+.cross {
+  @include size(17px);
+  @include stroke(#fff, 2px);
+  z-index: 10;
+  transition: opacity .5s linear;
+  
+  &.active { transition-delay: .7s; }
+  &.inactive { 
+    transition-delay: 0s; 
+    pointer-events: none;
+  }
+}
