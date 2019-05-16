@@ -1,0 +1,26 @@
+.media {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  opacity: 0;
+}
+
+.media a {
+  margin-right: 36px;
+  cursor: pointer;
+}
+
+.media a:last-child { margin-right: 0; }
+
+.reveal p { transition-delay: .15s; }
+.reveal p, .reveal .media { transition: opacity .4s ease; }
+
+.reveal:hover p {
+  opacity: 0;
+  transition-delay: 0s;
+}
+
+.reveal:hover .media {
+  opacity: 1;
+  transition-delay: 0s;
+}
