@@ -35,14 +35,12 @@ const Navigation = ({ showPanel, togglePanel, artworkToggled }) => {
   return (
     <div className="navigation" style={{ opacity: showIcons ? 1 : 0 }}>
       <Hamburger 
-        isActive={hamburgerIsActive} 
-        artworkToggled={artworkToggled}
-        click={click}
+        isActive={!artworkToggled} 
+        click={togglePanel}
       />
       <Cross 
-        isActive={!hamburgerIsActive} 
-        click={click} 
-        artworkToggled={artworkToggled}
+        isActive={artworkToggled} 
+        click={() => console.log('TODO')} 
       />
       <Cart />
     </div>
