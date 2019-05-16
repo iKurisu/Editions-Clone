@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import Hamburger from './navigation/Hamburger';
 import Cross from "./navigation/Cross";
 import Cart from "./navigation/Cart";
+import Cross from "./common/Cross";
 import "./Navigation.scss";
 
 const Navigation = ({ showPanel, togglePanel, artworkToggled }) => {
