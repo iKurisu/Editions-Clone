@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { connect } from 'react-redux';
 import LinkedImage from "./image/LinkedImage";
 import mediaQuery from 'utils/mediaQuery';
-import displacement from 'assets/displacement.png';
+import load from './canvas';
 import "./Image.scss";
 
 const preIntroScale = mediaQuery({
