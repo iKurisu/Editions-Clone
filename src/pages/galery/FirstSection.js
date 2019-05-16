@@ -22,6 +22,7 @@ const FirstSection = ({ artwork, atIntro, displacement: {x, y}, displace }) => {
       <div className="content-wrapper">
         <FirstImage 
           src={src.main} 
+          title={title}
           orientation={orientation} 
         />
         <Title
