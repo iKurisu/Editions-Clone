@@ -1,0 +1,10 @@
+@import 'sass/mixins.scss';
+
+.cart-button {
+  @include size(14px);
+  background: #000;
+  border-radius: 50%;
+  z-index: 8;
+}
+
+.artwork .cart-button { background: #FFF }

@@ -1,10 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
+import './Cross.scss';
 
-const Cross = ({ isActive, artworkToggled, click }) => (
+const Cross = ({ isActive, click }) => (
   <div
     className={`cross button top-left ${
-      isActive || artworkToggled ? "active" : "inactive"
+      isActive ? "active" : "inactive"
     }`}
     onClick={click}
   >
@@ -19,8 +20,7 @@ const Cross = ({ isActive, artworkToggled, click }) => (
 
 Cross.propTypes = {
   isActive: PropTypes.bool.isRequired,
-  artworkToggled: PropTypes.bool.isRequired,
-  click: PropTypes.func.isRequired
+  click: PropTypes.func
 }
 
 export default Cross;
