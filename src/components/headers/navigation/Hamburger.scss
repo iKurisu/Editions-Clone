@@ -1,0 +1,14 @@
+@import 'sass/mixins.scss';
+
+.hamburger {
+  @include size(20px, 11px);
+  z-index: 8;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .row {
+    height: 2px;
+    background: #666;
+  }
+}
