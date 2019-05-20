@@ -6,13 +6,14 @@ import { blackPanelActions } from 'modules/blackPanel';
 import { artworkOperations } from 'modules/artwork';
 import Cross from '../common/Cross';
 
-const LinkedCross = ({ isActive, setPosition, closeArtwork, history }) => {
+const LinkedCross = ({ id, isActive, setPosition, closeArtwork, history }) => {
   const goBack = e => {
     e.preventDefault();
     setPosition('0');
     closeArtwork();
     setTimeout(() => {
       history.push('/');
+      window.scrollTo(0, id * window.innerHeight)
       setPosition('100%')
     }, 900);
   }
@@ -25,19 +26,20 @@ const LinkedCross = ({ isActive, setPosition, closeArtwork, history }) => {
 }
 
 LinkedCross.propTypes = {
+  id: PropTypes.number.isRequired,
   isActive: PropTypes.bool.isRequired,
   setPosition: PropTypes.func.isRequired,
   closeArtwork: PropTypes.func.isRequired,
   history: PropTypes.object.isRequired
 }
 
-// const mapState = ({}) => ({
-
-// })
+const mapState = ({ artwork }) => ({
+  id: artwork.id
+})
 
 const actionCreators = {
   setPosition: blackPanelActions.setPosition,
   closeArtwork: artworkOperations.closeArtwork
 }
 
-export default withRouter(connect(null, actionCreators)(LinkedCross));
+export default withRouter(connect(mapState, actionCreators)(LinkedCross));
