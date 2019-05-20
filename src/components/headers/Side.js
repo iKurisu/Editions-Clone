@@ -10,8 +10,11 @@ const Side = ({ toggled, id }) => {
 
   const scroll = () => {
     const { scrollY, innerHeight } = window;
-    if (scrollY > 12000) window.scrollTo(0, 0);
 
+    // Infinite loop
+    if (scrollY > innerHeight * 11.99) window.scrollTo(0, 0);
+
+    // Side current section
     const position = Math.ceil((scrollY - innerHeight * 2 / 3) / innerHeight);
     updateSection(position % 12 + 1);
   }
