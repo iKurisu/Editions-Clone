@@ -1,22 +1,35 @@
-import React from "react";
+import React, { useRef } from "react";
 import PropTypes from "prop-types";
-import withMovement from "components/withMovement";
+import useDisplacement from 'hooks/useDisplacement';
 import Details from "./section/Details";
 import Image from "./section/Image";
 import Title from "./section/Title";
 import "./Section.scss";
 
-const Section = ({ artwork, displacement: { x, y }, displace }) => {
+const Section = ({ artwork }) => {
   const { src, orientation, title, colors, details } = artwork;
 
+  const hovering = useRef(false);
+  const [titleNode, displace] = useDisplacement(hovering);
+
+  const toggleHover = () => (hovering.current = !hovering.current);
+
   return (
-    <section className="section" onMouseMove={displace}>
+    <section 
+      className="section" 
+      onMouseMove={displace} 
+      onMouseEnter={toggleHover} 
+      onMouseLeave={toggleHover}
+    >
       <div className="content-wrapper">
-        <Image src={src.main} title={title} orientation={orientation} />
+        <Image 
+          src={src.main} 
+          title={title} 
+          orientation={orientation} />
         <Title
           title={title}
+          node={titleNode}
           style={{
-            transform: `translate(${x}px, ${y}px)`,
             color: colors.font
           }}
         />
@@ -27,9 +40,7 @@ const Section = ({ artwork, displacement: { x, y }, displace }) => {
 };
 
 Section.propTypes = {
-  artwork: PropTypes.object.isRequired,
-  displacement: PropTypes.object.isRequired,
-  displace: PropTypes.func.isRequired
+  artwork: PropTypes.object.isRequired
 };
 
-export default withMovement(Section);
+export default Section;
