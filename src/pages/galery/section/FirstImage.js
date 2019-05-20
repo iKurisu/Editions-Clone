@@ -16,7 +16,7 @@ const introScale = mediaQuery({
   "(min-width: 768px)": 1.03
 });
 
-const FirstImage = ({ src, title, orientation, atIntro, displacement: {x, y} }) => {
+const FirstImage = ({ src, title, orientation, atIntro, node }) => {
   const [scale, setScale] = useState(atIntro ? preIntroScale : introScale);
   const [opacity, setOpacity] = useState(atIntro ? 0 : 1);
   const canvas = useRef(null);
@@ -37,7 +37,7 @@ const FirstImage = ({ src, title, orientation, atIntro, displacement: {x, y} }) 
     >
       <div 
         className="hero" 
-        style={{ transform: `translate(${x / 1.5}px, ${y / 1.5}px)` }}
+        ref={node}
       >
         { atIntro && <div className="canvas" ref={canvas}></div> }
         <LinkedImage src={src} title={title} />
@@ -49,9 +49,9 @@ const FirstImage = ({ src, title, orientation, atIntro, displacement: {x, y} }) 
 FirstImage.propTypes = {
   src: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
+  node: PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
   orientation: PropTypes.string.isRequired,
   atIntro: PropTypes.bool.isRequired,
-  displacement: PropTypes.object.isRequired
 };
 
 const mapState = ({ intro }) => ({
