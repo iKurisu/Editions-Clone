@@ -5,7 +5,7 @@ import { Link, withRouter } from 'react-router-dom';
 import { blackPanelActions } from 'modules/blackPanel';
 
 const LinkedImage = ({ src, title, setPosition, history }) => {
-  const route = `/${title.toLowerCase()}`;
+  const route = `/${title.replace(' ', '-').toLowerCase()}`;
 
   const goToRoute = e => {
     e.preventDefault();
