@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
@@ -18,28 +18,16 @@ const parseUrlIntoArtwork = url => {
     .toUpperCase())[0];
 };
 
-const App = ({ introToggled, artworkToggled }) => {
-  const [fading, setFading] = useState(false);
-  const intro = introToggled ? "intro" : "";
-  const artwork = artworkToggled ? "artwork" : "";
-  const fading_intro = fading ? "fading-intro" : "";
+const App = ({ location }) => {  
+  const introImage = useRef(null);
+  const toggle = location === 'intro' || location === 'fading-intro';
 
-  const toggleFading = () => setFading(!fading);
-
-  useEffect(() => {
-    if (!introToggled && !artworkToggled) toggleFading();
-  }, [introToggled]);
-  
-  useEffect(() => {
-    if (fading) setTimeout(toggleFading, 900);
-  }, [fading])
-  
   return (
-    <main className={`${intro}${artwork}${fading_intro}`}>
-      <Headers />
-      { introToggled && <Intro /> }
+    <main className={location}>
+      { toggle && <Intro imageNode={introImage} /> }
       <Router>
-        <Route exact path="/" component={Galery} />
+        <Headers />
+        <Route exact path="/" render={props => <Galery {...props} introImage={introImage} />} />
         <Route 
           path={artworks.map(artwork => `/${artwork.title.replace(' ', '-')}`)} 
           render={({ match: { url }}) => (
@@ -53,13 +41,11 @@ const App = ({ introToggled, artworkToggled }) => {
 }
 
 App.propTypes = {
-  introToggled: PropTypes.bool.isRequired,
-  artworkToggled: PropTypes.bool.isRequired
+  location: PropTypes.string.isRequired,
 }
 
-const mapState = ({ intro, artwork }) => ({ 
-  introToggled: intro.toggled,
-  artworkToggled: artwork.toggled
+const mapState = ({ app }) => ({ 
+  location: app.location
 });
 
 export default connect(mapState)(App);
