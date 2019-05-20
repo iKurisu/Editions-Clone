@@ -19,7 +19,17 @@ const formatReducer = (state = {}, action) => {
   }
 }
 
+const idReducer = (state = 0, action) => {
+  switch (action.type) {
+    case types.SET_ID:
+      return action.payload;
+    default:
+      return state;
+  }
+}
+
 export default combineReducers({
   toggled: toggleReducer,
-  format: formatReducer
+  format: formatReducer,
+  id: idReducer
 });

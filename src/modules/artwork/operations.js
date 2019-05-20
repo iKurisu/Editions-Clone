@@ -1,11 +1,12 @@
 import artworkActions from './actions';
 import { appActions } from '../app';
 
-const { toggle } = artworkActions;
+const { toggle, setId } = artworkActions;
 const { setLocation } = appActions;
 
-const openArtwork = () => dispatch => {
+const openArtwork = id => dispatch => {
   dispatch(toggle());
+  dispatch(setId(id));
   dispatch(setLocation('artwork'))
 }
 
