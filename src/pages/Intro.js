@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import fontSize from 'utils/fontSize';
-import mediaQuery from 'utils/mediaQuery';
 import getDisplacement from 'utils/getDisplacement';
-import { introActions } from 'modules/intro';
+import mediaQuery from 'utils/mediaQuery';
+import { introActions, introOperations } from 'modules/intro';
 import "./Intro.scss";
 
 const textSize = mediaQuery({
@@ -16,29 +16,43 @@ const textSize = mediaQuery({
   "(min-width: 1920px)": fontSize("13vw", "26vh")
 });
 
-const Intro = ({ toggled, displacement: { x, y }, toggle, displaceImage, displaceAll }) => {
-  const [display, setDisplay] = useState('block');
+const Intro = ({ toggled, imageNode, fadeIntro }) => {
   const [offset, setOffset] = useState(20);
   const [opacity, setOpacity] = useState(0);
+  const displacement = useRef({ x: 0, y: 0 });
+  const text = useRef(null);
+  const animation = useRef(null);
+
+  const updateText = () => {
+    const { x, y } = displacement.current;
+
+    if (!text.current || !imageNode.current) return;
+
+    text.current.style.transform = `translate(${x}px, ${y}px)`;
+    imageNode.current.style.transform = `translate(${x / 1.5}px, ${y / 1.5}px)`;
+    animation.current = requestAnimationFrame(updateText);
+  }
 
   useEffect(() => {    
     setOffset(opacity === 0 ? 0 : -20);
     setOpacity(opacity === 0 ? 1 : 0);
 
-    return () => displaceImage({x: 0, y: 0});
+    return () => {
+      cancelAnimationFrame(animation.current);
+      imageNode.current.style.transform = `translate(0, 0)`;
+    }
   }, [toggled]);
 
   useEffect(() => {
-    !toggled && setTimeout(() => setDisplay('none'), 900)
-  });
+    updateText();
+  }, []);
 
-  const handleMouseMove = e => displaceAll(getDisplacement(e, 64));
-  
+  const handleMouseMove = e => displacement.current = getDisplacement(e, 64);
+
   return (
     <div 
       className="intro-container" 
-      style={{ display }}
-      onClick={toggle}
+      onClick={fadeIntro}
       onMouseMove={handleMouseMove}
     >
       <div className="top text-center intro" style={{ opacity }}>
@@ -50,8 +64,7 @@ const Intro = ({ toggled, displacement: { x, y }, toggle, displaceImage, displac
             className="headline" 
             style={{ transform: `translateY(${offset}px)`, opacity }}
           >
-            <p style={{ 
-              transform: `translate(${x}px, ${y}px)`, 
+            <p ref={text} style={{ 
               fontSize: textSize 
             }}>Editions</p>
           </div>
@@ -66,20 +79,19 @@ const Intro = ({ toggled, displacement: { x, y }, toggle, displaceImage, displac
 
 Intro.propTypes = {
   toggled: PropTypes.bool.isRequired,
-  displacement: PropTypes.object.isRequired,
-  toggle: PropTypes.func.isRequired,
-  displaceImage: PropTypes.func.isRequired,
-  displaceAll: PropTypes.func.isRequired
+  imageNode: PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
+  fadeIntro: PropTypes.func.isRequired,
 };
 
 const mapState = ({ intro }) => ({ 
   toggled: intro.toggled, 
   displacement: intro.displacement.text
 });
+
 const actionCreators = {
-  toggle: introActions.toggle,
-  displaceImage: introActions.displaceImage,
-  displaceAll: introActions.displaceAll
+  fadeIntro: introOperations.fadeIntro,
+  displaceAll: introActions.displaceAll,
+  displaceImage: introActions.displaceImage
 }
 
 export default connect(mapState, actionCreators)(Intro);
