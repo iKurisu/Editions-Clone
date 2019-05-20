@@ -8,7 +8,7 @@ $intro: cubic-bezier(.8, .07, .07, .9);
   width: 100%;
   height: 118%;
   top: 0;
-
+  will-change: transform;
   transition: transform 1.8s $to-artwork, height 0s .9s; 
 }
 
@@ -22,6 +22,10 @@ $intro: cubic-bezier(.8, .07, .07, .9);
 
 .artwork .black-pannel {
   transition: transform 1s cubic-bezier(0,.7,.3,.9);
+}
+
+.fading-artwork .black-pannel {
+  transition: transform .8s cubic-bezier(.8, .07, .07, .9);
 }
 
 .black-pannel.no-transition {
