@@ -8,7 +8,7 @@ $timing: cubic-bezier(0.8, .07, .07, .9);
   @include size(100%);
   z-index: 90;
 
-  transition: transform .7s $timing;
+  transition: transform .8s $timing;
 }
 
 .panel.show { 
@@ -17,7 +17,7 @@ $timing: cubic-bezier(0.8, .07, .07, .9);
 
 .panel.hide {
   transform: translateY(-100%);
-  transition-delay: .7s;
+  transition-delay: .8s;
 }
 
 .panel-wrapper {
@@ -29,7 +29,7 @@ $timing: cubic-bezier(0.8, .07, .07, .9);
 
 .panel.show .panel-wrapper {
   opacity: 1;
-  transition-delay: .7s;
+  transition-delay: .8s;
 }
 
 .text-center {
