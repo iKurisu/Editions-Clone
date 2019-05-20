@@ -1,5 +1,6 @@
+const { innerWidth, innerHeight } = window;
+
 const getPixels = x => {
-  const { innerWidth, innerHeight } = window;
   const value = x.slice(0, x.length - 2);
   const unit = x.slice(x.length - 2);
 
