@@ -39,7 +39,10 @@ const Intro = ({ toggled, imageNode, fadeIntro }) => {
 
     return () => {
       cancelAnimationFrame(animation.current);
-      imageNode.current.style.transform = `translate(0, 0)`;
+      
+      if (imageNode.current) {
+        imageNode.current.style.transform = `translate(0, 0)`;
+      }
     }
   }, [toggled]);
 
