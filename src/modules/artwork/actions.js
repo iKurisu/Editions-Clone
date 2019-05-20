@@ -9,7 +9,13 @@ const setFormat = format => ({
   payload: format
 })
 
+const setId = id => ({
+  type: types.SET_ID,
+  payload: id
+})
+
 export default {
   toggle,
-  setFormat
+  setFormat,
+  setId
 }

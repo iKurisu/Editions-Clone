@@ -5,21 +5,21 @@ import Details from './artwork/Details';
 import Preview from './artwork/Preview';
 import Purchase from './artwork/Purchase';
 import { introActions } from 'modules/intro';
-import { artworkActions } from 'modules/artwork';
+import { artworkActions, artworkOperations } from 'modules/artwork';
 
 const Artwork = ({ 
   artwork, 
   wasAtGalery, 
   toggleIntro, 
-  toggleArtwork, 
+  openArtwork, 
   setFormat 
 }) => {
   const { innerWidth: width } = window;
-  const { title, colors: { background }, formats, src, orientation } = artwork;
+  const { title, colors: { background }, formats, src, orientation, id } = artwork;
 
   useEffect(() => {
     wasAtGalery ? window.scrollTo(0, 0) : toggleIntro();
-    toggleArtwork();
+    openArtwork(id);
     setFormat(formats[0]);
   }, []);
 
@@ -41,7 +41,7 @@ Artwork.propTypes = {
   artwork: PropTypes.object.isRequired,
   wasAtGalery: PropTypes.bool.isRequired,
   toggleIntro: PropTypes.func.isRequired,
-  toggleArtwork: PropTypes.func.isRequired,
+  openArtwork: PropTypes.func.isRequired,
   setFormat: PropTypes.func.isRequired
 }
 
@@ -51,7 +51,7 @@ const mapState = ({ intro }) => ({
 
 const actionCreators = {
   toggleIntro: introActions.toggle,
-  toggleArtwork: artworkActions.toggle,
+  openArtwork: artworkOperations.openArtwork,
   setFormat: artworkActions.setFormat
 }
 

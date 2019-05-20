@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from "prop-types";
+import { connect } from 'react-redux';
 import "./Side.scss";
 
-const Side = () => {
+const Side = ({ toggled, id }) => {
   const { scrollY, innerHeight } = window;
   const [opacity, setOpacity] = useState(0);
   const [currentSection, updateSection] = useState(scrollY / innerHeight + 1);
@@ -15,10 +17,17 @@ const Side = () => {
   }
 
   useEffect(() => {
-    window.addEventListener('scroll', scroll);
     setTimeout(() => setOpacity(1), 650);
-    return () => window.removeEventListener('scroll', scroll);
   }, []);
+
+  useEffect(() => {
+    if (!toggled) {
+      window.addEventListener('scroll', scroll);
+    } else {
+      updateSection(id + 1);
+    }
+    return () => window.removeEventListener('scroll', scroll);
+  }, [toggled])
 
   const format = x => x < 10 ? `0${x}` : x; 
 
@@ -35,4 +44,14 @@ const Side = () => {
   )
 }
 
-export default Side;
+Side.propTypes = {
+  toggled: PropTypes.bool.isRequired,
+  id: PropTypes.number.isRequired
+}
+
+const mapState = ({ artwork }) => ({
+  toggled: artwork.toggled,
+  id: artwork.id
+})
+
+export default connect(mapState)(Side);

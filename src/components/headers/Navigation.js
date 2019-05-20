@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Hamburger from './navigation/Hamburger';
 import Cart from "./navigation/Cart";
-import Cross from "./common/Cross";
+import LinkedCross from './navigation/LinkedCross';
 import "./Navigation.scss";
 
 const Navigation = ({ togglePanel, artworkToggled }) => {
@@ -18,14 +18,8 @@ const Navigation = ({ togglePanel, artworkToggled }) => {
 
   return (
     <div className="navigation" style={{ opacity: showIcons ? 1 : 0 }}>
-      <Hamburger 
-        isActive={!artworkToggled} 
-        click={togglePanel}
-      />
-      <Cross 
-        isActive={artworkToggled} 
-        click={() => console.log('TODO')} 
-      />
+      <Hamburger isActive={!artworkToggled} click={togglePanel} />
+      <LinkedCross isActive={artworkToggled} />
       <Cart />
     </div>
   );
@@ -33,7 +27,7 @@ const Navigation = ({ togglePanel, artworkToggled }) => {
 
 Navigation.propTypes = {
   togglePanel: PropTypes.func.isRequired,
-  artworkToggled: PropTypes.bool.isRequired
+  artworkToggled: PropTypes.bool.isRequired,
 }
 
 const mapState = ({ artwork }) => ({

@@ -30,6 +30,7 @@
 
 .headline p { 
   letter-spacing: 2px;
+  will-change: transform;
   transition: transform .5s $timing;
 }
 
