@@ -17,7 +17,7 @@ const Galery = ({ introImage }) => (
 );
 
 Galery.propTypes = {
-  introImage: PropTypes.shape({ current: PropTypes.isInstanceOf(Element) })
+  introImage: PropTypes.shape({ current: PropTypes.instanceOf(Element) })
 }
 
 export default Galery;
