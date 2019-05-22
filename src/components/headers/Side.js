@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import { connect } from 'react-redux';
 import "./Side.scss";
 
+const format = x => (x < 10 ? `0${x}` : x); 
+
 const Side = ({ toggled, id }) => {
   const { scrollY, innerHeight } = window;
   const [opacity, setOpacity] = useState(0);
@@ -29,10 +31,9 @@ const Side = ({ toggled, id }) => {
     } else {
       updateSection(id + 1);
     }
+
     return () => window.removeEventListener('scroll', scroll);
   }, [toggled])
-
-  const format = x => x < 10 ? `0${x}` : x; 
 
   return (
     <React.Fragment>
