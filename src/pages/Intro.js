@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import fontSize from 'utils/fontSize';
 import getDisplacement from 'utils/getDisplacement';
 import mediaQuery from 'utils/mediaQuery';
-import { introActions, introOperations } from 'modules/intro';
+import { introOperations } from 'modules/intro';
 import "./Intro.scss";
 
 const textSize = mediaQuery({
@@ -87,14 +87,11 @@ Intro.propTypes = {
 };
 
 const mapState = ({ intro }) => ({ 
-  toggled: intro.toggled, 
-  displacement: intro.displacement.text
+  toggled: intro.toggled
 });
 
 const actionCreators = {
-  fadeIntro: introOperations.fadeIntro,
-  displaceAll: introActions.displaceAll,
-  displaceImage: introActions.displaceImage
+  fadeIntro: introOperations.fadeIntro
 }
 
 export default connect(mapState, actionCreators)(Intro);
