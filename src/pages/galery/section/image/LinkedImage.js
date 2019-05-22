@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link, withRouter } from 'react-router-dom';
 import { blackPanelActions } from 'modules/blackPanel';
+import useIntersection from 'hooks/useIntersection';
 
 const LinkedImage = ({ src, title, setPosition, history }) => {
+  const node = useRef(null);
+  const isIntersecting = useIntersection(node, title === 'BLOOM');
+  
   const route = `/${title.replace(' ', '-').toLowerCase()}`;
 
   const goToRoute = e => {
@@ -14,8 +18,12 @@ const LinkedImage = ({ src, title, setPosition, history }) => {
   };
 
   return (
-    <Link to={route} onClick={goToRoute}>
-      <img src={src} />
+    <Link 
+      className={isIntersecting ? '' : 'hide'} 
+      to={route} 
+      onClick={goToRoute}
+    >
+      <img ref={node} src={src} />
     </Link>
   );
 }

@@ -24,6 +24,11 @@
   }
 }
 
+.image-wrapper .hide img {
+  transform: translateY(-1vw);
+  opacity: 0;
+}
+
 .hero {
   display: inline-block;
   transition: transform 4s cubic-bezier(.18, 1, .21, 1);
@@ -48,6 +53,10 @@ img {
   height: auto;
   display: block;
   will-change: transform;
+
+  transform: translateY(0);
+  opacity: 1;
+  transition: opacity 1s $timing, transform .6s $timing;
 }
 
 .portrait { max-width: 53vh; }
