@@ -11,7 +11,7 @@ const FirstSection = ({ artwork, introToggled, introImage }) => {
   
   const [zIndex, setZIndex] = useState(introToggled ? 70 : 1);
   const hovering = useRef(false);
-  const [titleNode, displace] = useDisplacement(hovering);
+  const [titleNode, displace] = useDisplacement(hovering, 55);
 
   const toggleHover = () => hovering.current = !hovering.current;
 

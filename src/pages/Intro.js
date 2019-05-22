@@ -1,11 +1,11 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
+import useDisplacement from 'hooks/useDisplacement';
 import fontSize from 'utils/fontSize';
-import getDisplacement from 'utils/getDisplacement';
 import mediaQuery from 'utils/mediaQuery';
-import { introActions, introOperations } from 'modules/intro';
+import { introOperations } from 'modules/intro';
 import "./Intro.scss";
 
 const textSize = mediaQuery({
@@ -19,38 +19,24 @@ const textSize = mediaQuery({
 const Intro = ({ toggled, imageNode, fadeIntro }) => {
   const [offset, setOffset] = useState(20);
   const [opacity, setOpacity] = useState(0);
-  const displacement = useRef({ x: 0, y: 0 });
-  const text = useRef(null);
-  const animation = useRef(null);
-
-  const updateText = () => {
-    const { x, y } = displacement.current;
-
-    if (!text.current || !imageNode.current) return;
-
-    text.current.style.transform = `translate(${x}px, ${y}px)`;
-    imageNode.current.style.transform = `translate(${x / 1.5}px, ${y / 1.5}px)`;
-    animation.current = requestAnimationFrame(updateText);
-  }
+  const [text, displaceText] = useDisplacement(toggled, 64);
+  const [image, displaceImage] = useDisplacement(toggled, 64 * 3/2, imageNode);
 
   useEffect(() => {    
     setOffset(opacity === 0 ? 0 : -20);
     setOpacity(opacity === 0 ? 1 : 0);
 
     return () => {
-      cancelAnimationFrame(animation.current);
-      
-      if (imageNode.current) {
-        imageNode.current.style.transform = `translate(0, 0)`;
+      if (image.current) {
+        image.current.style.transform = `translate(0, 0)`;
       }
     }
   }, [toggled]);
 
-  useEffect(() => {
-    updateText();
-  }, []);
-
-  const handleMouseMove = e => displacement.current = getDisplacement(e, 64);
+  const handleMouseMove = e => {
+    displaceText(e);
+    displaceImage(e)
+  }
 
   return (
     <div 
@@ -87,14 +73,11 @@ Intro.propTypes = {
 };
 
 const mapState = ({ intro }) => ({ 
-  toggled: intro.toggled, 
-  displacement: intro.displacement.text
+  toggled: intro.toggled
 });
 
 const actionCreators = {
-  fadeIntro: introOperations.fadeIntro,
-  displaceAll: introActions.displaceAll,
-  displaceImage: introActions.displaceImage
+  fadeIntro: introOperations.fadeIntro
 }
 
 export default connect(mapState, actionCreators)(Intro);

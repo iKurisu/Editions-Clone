@@ -10,7 +10,7 @@ const Section = ({ artwork }) => {
   const { src, orientation, title, colors, details } = artwork;
 
   const hovering = useRef(false);
-  const [titleNode, displace] = useDisplacement(hovering);
+  const [titleNode, displace] = useDisplacement(hovering, 55);
 
   const toggleHover = () => (hovering.current = !hovering.current);
 
