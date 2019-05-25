@@ -24,8 +24,11 @@ const LinkedImage = ({
 
     setPosition("-100%");
     toggleNavOpacity(0);
-    setTimeout(toggleSidesOpacity, 500);
+    setTimeout(toggleSidesOpacity, 400);
     setTimeout(() => history.push(route), 900);
+    setTimeout(() => {
+      toggleNavOpacity();
+    }, 1600);
   };
 
   return (
