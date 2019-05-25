@@ -20,4 +20,6 @@ Galery.propTypes = {
   introImage: PropTypes.shape({ current: PropTypes.instanceOf(Element) })
 }
 
-export default Galery;
+const areEqual = () => true;
+
+export default React.memo(Galery, areEqual);

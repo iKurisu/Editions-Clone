@@ -54,4 +54,7 @@ const actionCreators = {
   toggleOpacity: headersActions.toggleSidesOpacity
 }
 
-export default withRouter(connect(mapState, actionCreators)(LinkedCross));
+const areEqual = (prevProps, nextProps) => 
+  prevProps.isActive === nextProps.isActive;
+
+export default withRouter(connect(mapState, actionCreators)(React.memo(LinkedCross, areEqual)));

@@ -27,4 +27,6 @@ const Headers = () => {
   )
 }
 
-export default Headers;
+const areEqual = () => true;
+
+export default React.memo(Headers, areEqual);
