@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from "prop-types";
 import { connect } from 'react-redux';
 import { headersActions } from 'modules/headers';
@@ -8,8 +8,10 @@ const format = x => (x < 10 ? `0${x}` : x);
 
 const Side = ({ toggled, id, opacity, toggleOpacity }) => {
   const { scrollY, innerHeight } = window;
-  const [opacity, setOpacity] = useState(0);
   const [currentSection, updateSection] = useState(scrollY / innerHeight + 1);
+  const timeoutId = useRef(null);
+
+  const setTimeoutId = id => timeoutId.current = id;
 
   const scroll = () => {
     const { scrollY, innerHeight } = window;
@@ -23,8 +25,17 @@ const Side = ({ toggled, id, opacity, toggleOpacity }) => {
   }
 
   useEffect(() => {
-    setTimeout(() => setOpacity(1), 650);
-  }, []);
+    const { current: currentTimeout } = timeoutId;
+    
+    if (!currentTimeout) {
+      const timeoutId = setTimeout(() => {
+        toggleOpacity();
+        setTimeoutId(null)
+      }, 650)
+      
+      setTimeoutId(timeoutId);
+    }
+  }, [toggled]);
 
   useEffect(() => {
     if (!toggled) {
@@ -51,12 +62,14 @@ const Side = ({ toggled, id, opacity, toggleOpacity }) => {
 
 Side.propTypes = {
   toggled: PropTypes.bool.isRequired,
+  id: PropTypes.number.isRequired,
   opacity: PropTypes.number.isRequired,
   toggleOpacity: PropTypes.func.isRequired
 }
 
 const mapState = ({ artwork, headers }) => ({
   toggled: artwork.toggled,
+  id: artwork.id,
   opacity: headers.sides.opacity
 })
 
