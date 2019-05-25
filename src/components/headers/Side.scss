@@ -7,7 +7,8 @@
   transition: opacity 1s cubic-bezier(.785, .135, .15, .86);
 }
 
-.artwork .side { color: #FFF }
+.artwork .side,
+.fading-artwork .side { color: #FFF }
 
 .fixed {
   position: fixed;
