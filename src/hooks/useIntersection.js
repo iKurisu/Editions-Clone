@@ -19,7 +19,7 @@ const useIntersection = (node, initialValue = false) => {
   useEffect(() => {
     const observer = getObserver();
     if (node.current) observer.observe(node.current);
-    return () => observer.observe(node.current);
+    return () => observer.disconnect();
   }, []);
 
   return isIntersecting;
