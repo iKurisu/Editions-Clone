@@ -9,7 +9,7 @@ const useIntersection = (node, initialValue = false) => {
   const getObserver = () => {
     if (observer.current === null) {
       observer.current = new IntersectionObserver(onIntersect, {
-        threshold: 0.1
+        threshold: 0.05
       });
     }
 
