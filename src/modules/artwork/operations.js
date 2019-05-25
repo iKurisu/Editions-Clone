@@ -8,9 +8,9 @@ const { toggleNavOpacity } = headersActions;
 
 const openArtwork = id => dispatch => {
   dispatch(toggle());
-  dispatch(toggleNavOpacity())
   dispatch(setId(id));
   dispatch(setLocation('artwork'))
+  setTimeout(() => dispatch(toggleNavOpacity()), 700)
 }
 
 const closeArtwork = () => dispatch => {
