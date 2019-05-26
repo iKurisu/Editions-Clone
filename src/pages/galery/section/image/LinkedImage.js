@@ -2,38 +2,37 @@ import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link, withRouter } from 'react-router-dom';
-import { blackPanelActions } from 'modules/blackPanel';
-import { headersActions } from 'modules/headers';
+import { headersOperations } from 'modules/headers';
+import { appActions } from 'modules/app';
 import useIntersection from 'hooks/useIntersection';
 
 const LinkedImage = ({
   src,
   title,
-  setPosition,
+  isClone,
+  cloneIntersecting,
+  initialValue,
   history,
-  toggleSidesOpacity,
-  toggleNavOpacity
+  fadeGalery,
+  toggleCloneIntersection
 }) => {
   const node = useRef(null);
-  const isIntersecting = useIntersection(node, title === "BLOOM");
+  const isIntersecting = useIntersection(node, initialValue);
+
+  React.useEffect(() => {
+    if (isClone) toggleCloneIntersection(isIntersecting);
+  }, [isIntersecting])
 
   const route = `/${title.replace(" ", "-").toLowerCase()}`;
 
   const goToRoute = e => {
     e.preventDefault();
-
-    setPosition("-100%");
-    toggleNavOpacity(0);
-    setTimeout(toggleSidesOpacity, 400);
-    setTimeout(() => history.push(route), 900);
-    setTimeout(() => {
-      toggleNavOpacity();
-    }, 1600);
+    fadeGalery(history, route);
   };
 
   return (
     <Link
-      className={isIntersecting ? "" : "hide"}
+      className={isIntersecting || cloneIntersecting ? "" : "hide"}
       to={route}
       onClick={goToRoute}
     >
@@ -45,16 +44,21 @@ const LinkedImage = ({
 LinkedImage.propTypes = {
   src: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  setPosition: PropTypes.func.isRequired,
+  isClone: PropTypes.bool,
+  cloneIntersecting: PropTypes.bool,
+  initialValue: PropTypes.bool,
   history: PropTypes.object.isRequired,
-  toggleSidesOpacity: PropTypes.func.isRequired,
-  toggleNavOpacity: PropTypes.func.isRequired
+  fadeGalery: PropTypes.func.isRequired,
+  toggleCloneIntersection: PropTypes.func
+}
+
+LinkedImage.defaultProps = {
+  initialValue: false
 }
 
 const actionCreators = {
-  setPosition: blackPanelActions.setPosition,
-  toggleSidesOpacity: headersActions.toggleSidesOpacity,
-  toggleNavOpacity: headersActions.toggleNavOpacity
+  fadeGalery: headersOperations.fadeGalery,
+  toggleCloneIntersection: appActions.toggleCloneIntersection
 };
 
 export default withRouter(connect(null, actionCreators)(LinkedImage));

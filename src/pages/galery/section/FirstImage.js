@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 import { connect } from 'react-redux';
-import LinkedImage from "./image/LinkedImage";
+import FirstLinkedImage from "./image/FirstLinkedImage";
 import mediaQuery from 'utils/mediaQuery';
 import load from './canvas';
 import "./Image.scss";
@@ -23,7 +23,7 @@ const FirstImage = ({ src, title, orientation, atIntro, node }) => {
 
   useEffect(() => {
     setScale(atIntro ? introScale : 1);
-  });
+  }, [atIntro]);
 
   useEffect(() => {
     setOpacity(1);
@@ -40,7 +40,7 @@ const FirstImage = ({ src, title, orientation, atIntro, node }) => {
         ref={node}
       >
         { atIntro && <div className="canvas" ref={canvas}></div> }
-        <LinkedImage src={src} title={title} />
+        <FirstLinkedImage src={src} title={title} />
       </div>
     </div>
   );

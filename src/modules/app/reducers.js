@@ -10,6 +10,16 @@ const locationReducer = (state = 'intro', action) => {
   }
 }
 
+const cloneIntersectionReducer = (state = false, action) => {
+  switch (action.type) {
+    case types.TOGGLE_CLONE_INTERSECTION:
+      return action.payload;
+    default:
+      return state;
+  }
+}
+
 export default combineReducers({
-  location: locationReducer
+  location: locationReducer,
+  cloneIntersecting: cloneIntersectionReducer
 })

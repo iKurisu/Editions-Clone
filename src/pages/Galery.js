@@ -12,7 +12,7 @@ const Galery = ({ introImage }) => (
     { artworks.slice(1).map(artwork => (
       <Section artwork={artwork} key={generate()} />
     )) }
-    <Section artwork={artworks[0]} />
+    <Section artwork={artworks[0]} isClone={true} />
   </div>
 );
 
