@@ -17,4 +17,7 @@ Hamburger.propTypes = {
   click: PropTypes.func.isRequired
 }
 
-export default Hamburger;
+const areEqual = (prevProps, nextProps) =>
+  prevProps.isActive === nextProps.isActive;
+
+export default React.memo(Hamburger, areEqual);

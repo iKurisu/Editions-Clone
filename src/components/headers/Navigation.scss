@@ -6,6 +6,8 @@
   transition: opacity .5s ease-out;
 }
 
+.fading-artwork .navigation { opacity: 0 }
+
 .button {
   position: fixed;
   cursor: pointer
