@@ -5,6 +5,12 @@ const setLocation = location => ({
   payload: location
 })
 
+const toggleCloneIntersection = payload => ({
+  type: types.TOGGLE_CLONE_INTERSECTION,
+  payload
+})
+
 export default {
-  setLocation
+  setLocation,
+  toggleCloneIntersection
 }
