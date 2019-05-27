@@ -2,13 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { cartActions } from 'modules/cart';
+import Header from './cart/Header';
 import './Cart.scss';
 
 const Cart = ({ toggle }) => {
   return (
-    <div className="cart" onClick={toggle}>
-      <div className="cart-overlay" />
-      <section className="cart-container"></section>
+    <div className="cart">
+      <div className="cart-overlay" onClick={toggle} />
+      <section className="cart-container">
+        <Header toggle={toggle} />
+      </section>
     </div>
   )
 }
