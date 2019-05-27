@@ -1,0 +1,33 @@
+@import 'sass/variables.scss';
+
+.cart {
+  width: 100%;
+  background: #FFF;
+  z-index: 900;
+  transform: translateX(100%);
+  transition: transform 1s cubic-bezier(.785, .135, .15, .86);
+}
+
+.show-cart .cart {
+  transform: translateX(0);
+}
+
+.cart-overlay {
+  background: transparent;
+  width: 100vw;
+  transition: transform 0s 1s, background .4s $timing .6s;
+}
+
+.cart, .cart-overlay {
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+
+.show-cart .cart-overlay {
+  cursor: url('../assets/close.svg'), auto;
+  background: rgba(0, 0, 0, .25);
+  transform: translateX(-100%);
+  transition: transform 0s, background .4s $timing;
+}
