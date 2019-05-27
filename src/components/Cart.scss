@@ -31,3 +31,11 @@
   transform: translateX(-100%);
   transition: transform 0s, background .4s $timing;
 }
+
+.cart-shift {
+  transition: transform 1s cubic-bezier(.785, .135, .15, .86);
+}
+
+.show-cart .cart-shift {
+  transform: translateX(-100px);
+}
