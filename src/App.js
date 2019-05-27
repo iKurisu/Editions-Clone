@@ -23,7 +23,7 @@ const App = ({ location }) => {
   const toggle = location === 'intro' || location === 'fading-intro';
 
   return (
-    <main className={location}>
+    <div className={`app${cartToggled ? ' show-cart' : ''}`}>
       { toggle && <Intro imageNode={introImage} /> }
       <Router>
         <Headers />
@@ -37,6 +37,7 @@ const App = ({ location }) => {
       </Router>
       <BlackPanel />
     </main>
+    </div>
   )
 }
 
