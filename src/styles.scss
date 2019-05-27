@@ -19,6 +19,14 @@ body {
   overflow-x: hidden;
 }
 
+.cart-shift {
+  transition: transform 1s cubic-bezier(.785, .135, .15, .86);
+}
+
+.show-cart .cart-shift {
+  transform: translateX(-100px);
+}
+
 ::-webkit-scrollbar {
   display: none;
 }

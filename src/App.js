@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import Headers from 'components/Headers';
 import BlackPanel from 'components/BlackPanel';
+import Cart from 'components/Cart';
 import Artwork from 'pages/Artwork';
 import Galery from 'pages/Galery';
 import Intro from 'pages/Intro';
@@ -18,25 +19,27 @@ const parseUrlIntoArtwork = url => {
     .toUpperCase())[0];
 };
 
-const App = ({ location }) => {  
+const App = ({ location, cartToggled }) => {  
   const introImage = useRef(null);
   const toggle = location === 'intro' || location === 'fading-intro';
 
   return (
     <div className={`app${cartToggled ? ' show-cart' : ''}`}>
-      { toggle && <Intro imageNode={introImage} /> }
-      <Router>
-        <Headers />
-        <Route exact path="/" render={props => <Galery {...props} introImage={introImage} />} />
-        <Route 
-          path={artworks.map(artwork => `/${artwork.title.replace(' ', '-')}`)} 
-          render={({ match: { url }}) => (
-            <Artwork artwork={parseUrlIntoArtwork(url)} />
-          )}
-        />
-      </Router>
-      <BlackPanel />
-    </main>
+      <main className={`${location} cart-shift`}>
+        { toggle && <Intro imageNode={introImage} /> }
+        <Router>
+          <Headers />
+          <Route exact path="/" render={props => <Galery {...props} introImage={introImage} />} />
+          <Route 
+            path={artworks.map(artwork => `/${artwork.title.replace(' ', '-')}`)} 
+            render={({ match: { url }}) => (
+              <Artwork artwork={parseUrlIntoArtwork(url)} />
+            )}
+          />
+        </Router>
+        <BlackPanel />
+      </main>
+      <Cart />
     </div>
   )
 }
@@ -45,8 +48,9 @@ App.propTypes = {
   location: PropTypes.string.isRequired,
 }
 
-const mapState = ({ app }) => ({ 
-  location: app.location
+const mapState = ({ app, cart }) => ({ 
+  location: app.location,
+  cartToggled: cart.toggled
 });
 
 export default connect(mapState)(App);
