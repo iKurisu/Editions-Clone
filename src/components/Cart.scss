@@ -39,3 +39,22 @@
 .show-cart .cart-shift {
   transform: translateX(-100px);
 }
+
+@media (min-width: 768px) {
+  .cart { 
+    width: 400px;
+    transform: translateX(400px);
+  }
+
+  .cart-overlay {
+    transform: translateX(100%);
+  }
+
+  .show-cart .cart-overlay {
+    transform: translateX(-400px);
+  }
+
+  .show-cart .cart-shift {
+    transform: translateX(-400px);
+  }
+}
