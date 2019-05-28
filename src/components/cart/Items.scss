@@ -1,0 +1,39 @@
+.items-container {
+  width: 100%;
+  height: 65vh; // To update
+}
+
+.empty-text {
+  font-size: 14px;
+  text-align: center;
+  margin-top: 5vh;
+  line-height: 1.4;
+  letter-spacing: .5px;
+  color: #999;
+}
+
+@media (min-width: 768px) {
+  .empty-text {
+    font-size: 15px;
+    margin-top: 5.5vh;
+  }
+}
+
+@media (min-width: 1280px) {
+  .empty-text {
+    margin-top: 6vh;
+  }
+}
+
+@media (min-width: 1360px) {
+  .empty-text {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .empty-text {
+    font-size: 16px;
+    margin-top: 5vh;
+  }
+}
