@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { cartActions } from 'modules/cart';
 import Header from './cart/Header';
+import Items from './cart/Items';
 import './Cart.scss';
 
 const Cart = ({ toggle }) => {
@@ -11,6 +12,7 @@ const Cart = ({ toggle }) => {
       <div className="cart-overlay" onClick={toggle} />
       <section className="cart-container">
         <Header toggle={toggle} />
+        <Items />
       </section>
     </div>
   )
