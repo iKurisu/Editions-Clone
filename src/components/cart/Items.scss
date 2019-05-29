@@ -4,12 +4,17 @@
 }
 
 .empty-text {
+  display: none;
   font-size: 14px;
   text-align: center;
   margin-top: 5vh;
   line-height: 1.4;
   letter-spacing: .5px;
   color: #999;
+}
+
+.empty .empty-text {
+  display: block;
 }
 
 @media (min-width: 768px) {
