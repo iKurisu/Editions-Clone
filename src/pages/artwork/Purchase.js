@@ -31,7 +31,7 @@ const Purchase = ({
               <Item key={generate()} format={format} />
             ))}
           </ul>
-          <Button />
+          <Button artwork={{ title, src, details, orientation, colors }} />
         </div>
       </section>
     </div>
