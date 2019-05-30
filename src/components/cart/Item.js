@@ -13,7 +13,10 @@ const Item = ({ artwork, removeItem, isLastItem, toggleCart }) => {
     setState(isLastOfItem ? 'remove-item' : 'update-item')
 
     setTimeout(() => {
-      if (isLastItem) toggleCart()
+      if (isLastItem && isLastOfItem) toggleCart();
+    }, 500);
+
+    setTimeout(() => {
       removeItem({ title, format })
       if (!isLastOfItem) setState('')
     }, isLastOfItem ? 900 : 500);
