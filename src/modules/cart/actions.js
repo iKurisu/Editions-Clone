@@ -9,7 +9,13 @@ const addItem = item => ({
   payload: item
 })
 
+const removeItem = item => ({
+  type: types.REMOVE_ITEM,
+  payload: item
+})
+
 export default {
   toggle,
-  addItem
+  addItem,
+  removeItem
 }
