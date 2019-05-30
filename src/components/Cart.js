@@ -7,9 +7,9 @@ import Items from './cart/Items';
 import Checkout from './cart/Checkout';
 import './Cart.scss';
 
-const Cart = ({ items, toggle }) => {
+const Cart = ({ toggle }) => {
   return (
-    <div className={`cart ${items.length > 0 ? '': 'empty'}`}>
+    <div className="cart">
       <div className="cart-overlay" onClick={toggle} />
       <section className="cart-container">
         <Header toggle={toggle} />
@@ -21,16 +21,11 @@ const Cart = ({ items, toggle }) => {
 }
 
 Cart.propTypes = {
-  items: PropTypes.array.isRequired,
   toggle: PropTypes.func.isRequired
 }
-
-const mapState = ({ cart }) => ({
-  items: cart.items
-})
 
 const actionCreators = {
   toggle: cartActions.toggle
 }
 
-export default connect(mapState, actionCreators)(Cart);
+export default connect(null, actionCreators)(Cart);
