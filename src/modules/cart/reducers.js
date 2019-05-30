@@ -10,8 +10,15 @@ const toggleReducer = (state = false, action) => {
   }
 }
 
+const itemsMatch = (item1, item2) => {
+  const titlesMatch = item1.title === item2.title;
+  const dimensionsMatch = item1.format.dimensions === item2.format.dimensions;
+
+  return titlesMatch && dimensionsMatch;
+}
+
 const itemInCart = (cart, item) => {
-  return cart.map(item => item.title).includes(item.title);
+  return cart.some(cartItem => itemsMatch(cartItem, item));
 };
 
 const increaseAmount = (state, item) => {
