@@ -21,20 +21,20 @@ const Item = ({ artwork, removeItem, isLastItem, toggleCart }) => {
 
   return (
     <div className={`cart-item ${state}`}>
-    <div className="cart-item-image">
-      <img className={orientation} src={src.main_small} />
-    </div>
-    <div className="cart-item-details">
-      <div className="details-grid">
+      <div className="cart-item-image">
+        <img className={orientation} src={src.main_small} />
+      </div>
+      <div className="cart-item-details">
+        <div className="details-grid">
           <p className="cart-item-title" style={{ color: font }}>{title}</p>
           <span className="cart-item-remove" onClick={handleClick} />
-        <p className="cart-item-format">{format.dimensions} in</p>
-        <p className="cart-item-amount">{amount}</p>
-        <p className="cart-item-price">${format.price * amount}.00</p>
+          <p className="cart-item-format">{format.dimensions} in</p>
+          <p className="cart-item-amount">{amount}</p>
+          <p className="cart-item-price">${format.price * amount}.00</p>
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
 }
 
 Item.propTypes = {
