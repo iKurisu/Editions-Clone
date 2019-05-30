@@ -1,5 +1,6 @@
 import types from './types';
 import { combineReducers } from 'redux';
+import { generate } from 'shortid';
 
 const toggleReducer = (state = false, action) => {
   switch (action.type) {
@@ -27,15 +28,15 @@ const updateAmount = type => {
   }
 
   return (state, item) => {
-  return state.reduce((acc, curr) => acc.concat(
+    return state.reduce((acc, curr) => acc.concat(
       itemsMatch(curr, item)
         ? { 
             ...curr, 
             amount: type === 'INCREASE' ? curr.amount + 1 : curr.amount - 1 
           } 
-      : curr
-  ), [])
-}
+        : curr
+    ), [])
+  }
 }
 
 const increaseAmount = updateAmount('INCREASE');
@@ -44,7 +45,7 @@ const decreaseAmount = updateAmount('DECREASE');
 const addItem = (state, item) => {
   return itemInCart(state, item) 
     ? increaseAmount(state, item)
-    : [...state, item]
+    : [...state, { ...item, id: generate() }]
 };
 
 const oneLeft = (cart, item) => {
