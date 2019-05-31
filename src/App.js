@@ -25,7 +25,7 @@ const App = ({ location, cartToggled }) => {
 
   return (
     <div className={`app${cartToggled ? ' show-cart' : ''}`}>
-      <main className={`${location} cart-shift`}>
+      <main className={`${location}`}>
         { toggle && <Intro imageNode={introImage} /> }
         <Router>
           <Headers />

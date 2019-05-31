@@ -17,7 +17,7 @@ const Navigation = ({togglePanel, artworkToggled, opacity, toggleOpacity}) => {
   }, []);
 
   return (
-    <div className="navigation" style={{ opacity }}>
+    <div className="navigation cart-shift" style={{ opacity }}>
       <Hamburger isActive={!artworkToggled} click={togglePanel} />
       <LinkedCross isActive={artworkToggled} />
       <Cart />

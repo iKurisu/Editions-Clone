@@ -7,7 +7,7 @@ import artworks from "assets/artworks";
 import "./Galery.scss";
 
 const Galery = ({ introImage }) => (
-  <div className="galery">
+  <div className="galery cart-shift">
     <FirstSection artwork={artworks[0]} introImage={introImage} />
     { artworks.slice(1).map(artwork => (
       <Section artwork={artwork} key={generate()} />

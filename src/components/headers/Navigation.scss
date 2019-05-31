@@ -3,7 +3,11 @@
 .navigation {
   position: relative;
   z-index: 50;
-  transition: opacity .5s ease-out;
+}
+  
+.navigation.cart-shift {
+  transition: opacity .5s ease-out,
+    transform 1s cubic-bezier(.785, .135, .15, .86);
 }
 
 .fading-artwork .navigation { opacity: 0 }

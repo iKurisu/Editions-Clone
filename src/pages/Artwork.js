@@ -24,7 +24,7 @@ const Artwork = ({
   }, []);
 
   return (
-    <div style={{ background }}>
+    <div className="cart-shift" style={{ background }}>
       <Details 
         title={title} 
         price={formats[0].price} 
