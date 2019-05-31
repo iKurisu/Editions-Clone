@@ -81,17 +81,11 @@ $black: rgb(93, 93, 93);
   margin-right: 32px;
 }
 
-.artwork-description button {
+.artwork-description .wide-button {
   background: transparent;
   color: $black;
-  font-family: 'Helvetica Neue LT Pro';
-  font-size: 13px;
-  padding: 10px 24px;
   margin: 32px 4px 0 0;
   border: 1px solid rgb(26, 26, 26);
-  border-radius: 4px;
-  transition: border-color .4s $timing;
-  outline: none;
 }
 
 .artwork-description button > span {

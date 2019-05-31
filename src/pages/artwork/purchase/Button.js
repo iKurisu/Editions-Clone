@@ -11,7 +11,7 @@ const Button = ({ artwork, selectedFormat, addItem }) => {
   });
 
   return (
-    <button onClick={addToCart}>
+    <button className="wide-button" onClick={addToCart}>
       <span>
         <span>Add to Cart</span>
         <span className="dollar">$</span>
