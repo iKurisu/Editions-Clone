@@ -11,7 +11,7 @@ const Navigation = ({togglePanel, artworkToggled, opacity, toggleOpacity}) => {
   const wheel = ({ deltaY }) => toggleOpacity(deltaY < 0);
 
   useEffect(() => {
-    toggleOpacity();
+    setTimeout(toggleOpacity, 800);
     window.addEventListener("wheel", wheel);
     return () => window.removeEventListener("wheel", wheel);
   }, []);
