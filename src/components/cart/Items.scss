@@ -1,6 +1,7 @@
 .items-container {
   width: 100%;
-  height: 65vh; // To update
+  height: calc(100vh - 290px); // To update
+  overflow-y: scroll;
 }
 
 .empty-text {
@@ -18,6 +19,10 @@
 }
 
 @media (min-width: 768px) {
+  .items-container {
+    height: calc(100vh - 168px);
+  }
+
   .empty-text {
     font-size: 15px;
     margin-top: 5.5vh;
