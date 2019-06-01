@@ -1,11 +1,36 @@
 @import 'sass/mixins.scss';
 
 .cart-button {
+  @include size(20px);
+  text-align: center;
+}
+
+.cart-button span {
+  display: inline-block;
   @include size(14px);
   background: #000;
   border-radius: 50%;
   z-index: 8;
 }
 
-.artwork .cart-button,
-.fading-artwork .cart-button { background: #FFF }
+.cart-button.show-amount span {
+  transform: scale(1.4);
+}
+
+.artwork .cart-button span,
+.fading-artwork .cart-button span { background: #FFF }
+
+.cart-button-amount {
+  width: 19px;
+  color: white;
+  font-size: 12px;
+  margin-top: .5px;
+  position: absolute;
+  z-index: 9;
+  text-align: center;
+}
+
+.artwork .cart-button-amount,
+.fading-artwork .cart-button-amount {
+  color: black;
+}
