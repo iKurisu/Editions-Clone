@@ -1,6 +1,7 @@
 import types from './types';
 import { combineReducers } from 'redux';
 import { generate } from 'shortid';
+import { loadCart } from '../../localStorage';
 
 const toggleReducer = (state = false, action) => {
   switch (action.type) {
@@ -58,7 +59,7 @@ const removeItem = (state, item) => {
     : decreaseAmount(state, item);
 }
 
-const itemReducer = (state = [], action) => {
+const itemReducer = (state = loadCart(), action) => {
   switch (action.type) {
     case types.ADD_ITEM: 
       return addItem(state, action.payload);
