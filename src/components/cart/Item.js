@@ -9,6 +9,8 @@ const Item = ({ artwork, removeItem, isLastItem, toggleCart }) => {
   const [state, setState] = useState('');
   
   const handleClick = () => {
+    if (state !== '') return;
+    
     const isLastOfItem = amount === 1; 
     setState(isLastOfItem ? 'remove-item' : 'update-item')
 
