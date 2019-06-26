@@ -16,10 +16,8 @@ const closeArtwork = () => dispatch => {
   dispatch(setLocation('fading-artwork'));
   dispatch(toggleNavOpacity())
   setTimeout(() => dispatch(toggle()), 800);
-  setTimeout(() => {
-    dispatch(setLocation(''))
-    dispatch(toggleNavOpacity());
-  }, 1600);
+  setTimeout(() => dispatch(setLocation('')), 1600);
+  setTimeout(() => dispatch(toggleNavOpacity()), 1800);
 }
 
 export default {

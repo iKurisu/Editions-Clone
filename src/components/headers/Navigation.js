@@ -11,13 +11,13 @@ const Navigation = ({togglePanel, artworkToggled, opacity, toggleOpacity}) => {
   const wheel = ({ deltaY }) => toggleOpacity(deltaY < 0);
 
   useEffect(() => {
-    toggleOpacity();
+    setTimeout(toggleOpacity, 800);
     window.addEventListener("wheel", wheel);
     return () => window.removeEventListener("wheel", wheel);
   }, []);
 
   return (
-    <div className="navigation" style={{ opacity }}>
+    <div className="navigation cart-shift" style={{ opacity }}>
       <Hamburger isActive={!artworkToggled} click={togglePanel} />
       <LinkedCross isActive={artworkToggled} />
       <Cart />

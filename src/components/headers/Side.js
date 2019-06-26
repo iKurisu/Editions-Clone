@@ -49,10 +49,10 @@ const Side = ({ toggled, id, opacity, toggleOpacity }) => {
 
   return (
     <React.Fragment>
-      <div className="side fixed fixed-left" style={{ opacity }}>
+      <div className="side fixed fixed-left cart-shift" style={{ opacity }}>
         Selected Artwork
       </div>
-      <div className="side fixed fixed-right" style={{ opacity }}>
+      <div className="side fixed fixed-right cart-shift" style={{ opacity }}>
         <span>2016 – P</span>
         <span className="margin-left">{`${format(currentSection)} / 12`}</span>
       </div>

@@ -1,20 +1,21 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { generate } from 'shortid';
-import Item from './purchase/Item';
-import Button from './purchase/Button';
-import './Purchase.scss';
+import React from "react";
+import PropTypes from "prop-types";
+import { generate } from "shortid";
+import Item from "./purchase/Item";
+import Button from "./purchase/Button";
+import "./Purchase.scss";
 
 const Purchase = ({
   artwork: { orientation, colors, title, details, formats, src },
-  width
+  width,
+  node
 }) => (
-  <section className="artwork-purchase">
+  <section className="artwork-purchase" ref={node}>
     <div className={`artwork-purchase-container flex-${orientation}`}>
       <div className="artwork-framed flex">
-        <img 
-          className={orientation} 
-          src={width < 700 ? src.framed_small : src.framed } 
+        <img
+          className={orientation}
+          src={width < 700 ? src.framed_small : src.framed}
         />
       </div>
       <section className="flex">
@@ -31,7 +32,7 @@ const Purchase = ({
               <Item key={generate()} format={format} />
             ))}
           </ul>
-          <Button />
+          <Button artwork={{ title, src, details, orientation, colors }} />
         </div>
       </section>
     </div>
@@ -40,7 +41,8 @@ const Purchase = ({
 
 Purchase.propTypes = {
   artwork: PropTypes.object.isRequired,
-  width: PropTypes.number.isRequired
-}
+  width: PropTypes.number.isRequired,
+  node: PropTypes.object.isRequired
+};
 
 export default Purchase;
