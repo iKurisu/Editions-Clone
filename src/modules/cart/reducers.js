@@ -65,6 +65,8 @@ const itemReducer = (state = loadCart(), action) => {
       return addItem(state, action.payload);
     case types.REMOVE_ITEM:
       return removeItem(state, action.payload);
+    case types.EMPTY_CART:
+      return [];
     default:
       return state;
   }

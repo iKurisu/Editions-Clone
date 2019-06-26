@@ -14,8 +14,13 @@ const removeItem = item => ({
   payload: item
 })
 
+const emptyCart = () => ({
+  type: types.EMPTY_CART
+})
+
 export default {
   toggle,
   addItem,
-  removeItem
+  removeItem,
+  emptyCart
 }
