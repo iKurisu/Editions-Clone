@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import Details from "./artwork/Details";
@@ -9,6 +9,7 @@ import { artworkActions, artworkOperations } from "modules/artwork";
 
 const Artwork = ({
   artwork,
+  purchaseSection,
   wasAtGalery,
   toggleIntro,
   openArtwork,
@@ -23,8 +24,6 @@ const Artwork = ({
     orientation,
     id
   } = artwork;
-  const purchaseSection = useRef({ scrollY: 0 });
-
   useEffect(() => {
     wasAtGalery ? window.scrollTo(0, 0) : toggleIntro();
     openArtwork(id);
@@ -48,6 +47,7 @@ const Artwork = ({
 
 Artwork.propTypes = {
   artwork: PropTypes.object.isRequired,
+  purchaseSection: PropTypes.object.isRequired,
   wasAtGalery: PropTypes.bool.isRequired,
   toggleIntro: PropTypes.func.isRequired,
   openArtwork: PropTypes.func.isRequired,
