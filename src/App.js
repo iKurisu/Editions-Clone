@@ -10,6 +10,7 @@ import Artwork from 'pages/Artwork';
 import Galery from 'pages/Galery';
 import Intro from 'pages/Intro';
 import artworks from 'assets/artworks';
+import useIntersection from 'hooks/useIntersection';
 import "./styles.scss";
 
 const parseUrlIntoArtwork = url => {
@@ -21,19 +22,29 @@ const parseUrlIntoArtwork = url => {
 
 const App = ({ location, cartToggled }) => {  
   const introImage = useRef(null);
+  const purchaseSection = useRef(null);
+  const intersectingPurchase = useIntersection(purchaseSection, false, {
+    threshold: 0.87
+  });
+
   const toggle = location === 'intro' || location === 'fading-intro';
 
   return (
     <div className={`app${cartToggled ? ' show-cart' : ''}`}>
-      <main className={`${location}`}>
+      <main className={`${location}${intersectingPurchase ? ' purchase-section' : ''}`}>
         { toggle && <Intro imageNode={introImage} /> }
         <Router>
           <Headers />
-          <Route exact path="/" render={props => <Galery {...props} introImage={introImage} />} />
+          <Route exact path="/" render={props => {
+            return <Galery {...props} introImage={introImage} />}
+          } />
           <Route 
             path={artworks.map(artwork => `/${artwork.title.replace(' ', '-')}`)} 
             render={({ match: { url }}) => (
-              <Artwork artwork={parseUrlIntoArtwork(url)} />
+              <Artwork 
+                artwork={parseUrlIntoArtwork(url)} 
+                purchaseSection={purchaseSection} 
+              />
             )}
           />
         </Router>
@@ -46,6 +57,7 @@ const App = ({ location, cartToggled }) => {
 
 App.propTypes = {
   location: PropTypes.string.isRequired,
+  cartToggled: PropTypes.bool.isRequired
 }
 
 const mapState = ({ app, cart }) => ({ 

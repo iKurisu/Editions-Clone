@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect } from 'react';
 
-const useIntersection = (node, initialValue = false) => {
+const useIntersection = (node, initialValue = false, options = { threshold: 0.05 }) => {
   const observer = useRef(null);
   const [isIntersecting, setIntersect] = useState(initialValue);
 
@@ -8,9 +8,7 @@ const useIntersection = (node, initialValue = false) => {
 
   const getObserver = () => {
     if (observer.current === null) {
-      observer.current = new IntersectionObserver(onIntersect, {
-        threshold: 0.05
-      });
+      observer.current = new IntersectionObserver(onIntersect, options);
     }
 
     return observer.current;

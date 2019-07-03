@@ -1,13 +1,18 @@
 @import 'sass/mixins.scss';
+@import 'sass/variables.scss';
 
 .cross {
   @include size(17px);
   @include stroke(#fff, 2px);
   z-index: 10;
-  transition: opacity .5s linear;
+  transition: opacity .5s ease, stroke .5s $timing;
   
   &.inactive { 
     transition-delay: 0s; 
     pointer-events: none;
   }
+}
+
+.purchase-section .cross {
+  stroke: #000
 }
