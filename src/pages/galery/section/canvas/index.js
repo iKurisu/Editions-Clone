@@ -2,15 +2,15 @@ import * as PIXI from 'pixi.js';
 import displacement from 'assets/displacement.png';
 
 const load = (canvas, image) => {
-  const renderer = PIXI.autoDetectRenderer(1400, 1750, { transparent: true });
+  const renderer = PIXI.autoDetectRenderer({ width: 1400, height: 1750, transparent: true });
   canvas.current.appendChild(renderer.view);
 
   const stage = new PIXI.Container();
 
-  const texture = PIXI.Texture.fromImage(image);
+  const texture = PIXI.Texture.from(image);
   const preview = new PIXI.Sprite(texture);
 
-  const displacementSprite = PIXI.Sprite.fromImage(displacement);
+  const displacementSprite = PIXI.Sprite.from(displacement);
 
   displacementSprite.scale.x = 1.7;
   displacementSprite.scale.y = 1.7;
