@@ -1,11 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
+import './Hamburger.scss';
 
-const Hamburger = ({ isActive, show, click }) => (
+const Hamburger = ({ isActive, click }) => (
   <div
     className={`hamburger button top-left ${isActive ? "active" : "inactive"}`}
     onClick={click}
-    style={{ opacity: show ? 1 : 0 }}
   >
     <div className="row" />
     <div className="row" />
@@ -14,8 +14,10 @@ const Hamburger = ({ isActive, show, click }) => (
 
 Hamburger.propTypes = {
   isActive: PropTypes.bool.isRequired,
-  show: PropTypes.bool.isRequired,
   click: PropTypes.func.isRequired
 }
 
-export default Hamburger;
+const areEqual = (prevProps, nextProps) =>
+  prevProps.isActive === nextProps.isActive;
+
+export default React.memo(Hamburger, areEqual);

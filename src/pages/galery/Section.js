@@ -1,35 +1,40 @@
-import React, { useState } from "react";
-import PropTypes from 'prop-types';
+import React, { useRef } from "react";
+import PropTypes from "prop-types";
+import useDisplacement from "hooks/useDisplacement";
 import Details from "./section/Details";
 import Image from "./section/Image";
 import Title from "./section/Title";
 import "./Section.scss";
 
-const Section = ({ artwork, title, details, orientation, colors }) => {
-  const [x, setX] = useState(0);
-  const [y, setY] = useState(0);
+const Section = ({ artwork, isClone, zIndex, renderImage }) => {
+  const hovering = useRef(false);
+  const [titleNode, displace] = useDisplacement(hovering, 55);
 
-  const getOffset = (position, size, range) => {
-    const percent = position * 100 / size;
-    return range * percent / 100 - range / 2;
-  }
+  const { src, orientation, title, colors, details } = artwork;
 
-  const mouseMove = e => {
-    const { clientX, clientY } = e;
-    const { innerWidth, innerHeight } = window;
+  const imageProps = {
+    title,
+    orientation,
+    src: src.main,
+    isClone
+  };
 
-    setX(getOffset(clientX, innerWidth, 28));
-    setY(getOffset(clientY, innerHeight, 18));
-  }
+  const toggleHover = () => (hovering.current = !hovering.current);
 
   return (
-    <section className={`section`} onMouseMove={mouseMove}>
+    <section
+      className="section"
+      style={{ zIndex }}
+      onMouseMove={displace}
+      onMouseEnter={toggleHover}
+      onMouseLeave={toggleHover}
+    >
       <div className="content-wrapper">
-        <Image artwork={artwork} orientation={orientation} />
+        {renderImage(imageProps)}
         <Title
           title={title}
+          node={titleNode}
           style={{
-            transform: `translate(${x}px, ${y}px)`,
             color: colors.font
           }}
         />
@@ -37,14 +42,20 @@ const Section = ({ artwork, title, details, orientation, colors }) => {
       </div>
     </section>
   );
-}
+};
 
 Section.propTypes = {
-  artwork: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  details: PropTypes.object.isRequired,
-  orientation: PropTypes.string.isRequired,
-  colors: PropTypes.object.isRequired
-}
+  artwork: PropTypes.object.isRequired,
+  isClone: PropTypes.bool.isRequired,
+  zIndex: PropTypes.number,
+  renderImage: PropTypes.func
+};
+
+Section.defaultProps = {
+  isClone: false,
+  zIndex: 1,
+  // eslint-disable-next-line react/display-name
+  renderImage: props => <Image {...props} />
+};
 
 export default Section;

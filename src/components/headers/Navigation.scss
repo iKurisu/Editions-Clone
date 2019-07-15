@@ -1,5 +1,17 @@
 @import 'sass/mixins.scss';
 
+.navigation {
+  position: relative;
+  z-index: 50;
+}
+  
+.navigation.cart-shift {
+  transition: opacity .5s ease,
+    transform 1s cubic-bezier(.785, .135, .15, .86);
+}
+
+.fading-artwork .navigation { opacity: 0 }
+
 .button {
   position: fixed;
   cursor: pointer
@@ -8,40 +20,6 @@
 .hamburger, .cross {
   &.active { opacity: 1; }
   &.inactive { opacity: 0; }
-}
-
-.hamburger {
-  @include size(20px, 11px);
-  z-index: 8;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-  .row {
-    height: 2px;
-    background: #666;
-  }
-}
-
-.cross {
-  @include size(17px);
-  @include stroke(#fff, 2px);
-  z-index: 10;
-  transition: opacity .5s linear;
-  
-  &.active { transition-delay: .7s; }
-  &.inactive { transition-delay: 0s; }
-}
-
-.cart-button {
-  @include size(14px);
-  background: #000;
-  border-radius: 50%;
-  z-index: 8;
-}
-
-.hamburger, .cart-button {
-  transition: opacity .5s ease-out;
 }
 
 .top-left {

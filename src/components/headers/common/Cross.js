@@ -1,9 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
+import './Cross.scss';
 
 const Cross = ({ isActive, click }) => (
   <div
-    className={`cross button top-left ${isActive ? "active" : "inactive"}`}
+    className={`cross button top-left ${
+      isActive ? "active" : "inactive"
+    }`}
     onClick={click}
   >
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18.335 18.335">
@@ -17,7 +20,7 @@ const Cross = ({ isActive, click }) => (
 
 Cross.propTypes = {
   isActive: PropTypes.bool.isRequired,
-  click: PropTypes.func.isRequired
+  click: PropTypes.func
 }
 
 export default Cross;

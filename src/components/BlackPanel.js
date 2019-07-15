@@ -1,13 +1,49 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { blackPanelActions, blackPanelOperations } from 'modules/blackPanel';
 import "./BlackPanel.scss";
 
-const BlackPanel = ({ position }) => (
-  <div className="black-pannel" style={{ top: position }} />
-)
+const BlackPanel = ({ 
+  introToggled, 
+  artworkToggled,
+  position, 
+  canTransition, 
+  setPosition, 
+  relocate 
+}) => {
+  useEffect(() => {
+    if (!introToggled && !artworkToggled) setTimeout(relocate, 900);
+    return () => setPosition('-100%');
+  }, [introToggled]);
 
-BlackPanel.propTypes = {
-  position: PropTypes.string
+  return (
+    <div 
+      className={`black-pannel ${canTransition ? '' : 'no-transition'}`} 
+      style={{ transform: `translateY(${position})` }} 
+    />
+  )
 }
 
-export default BlackPanel;
+BlackPanel.propTypes = {
+  introToggled: PropTypes.bool.isRequired,
+  artworkToggled: PropTypes.bool.isRequired,
+  position: PropTypes.string.isRequired,
+  canTransition: PropTypes.bool.isRequired,
+  setPosition: PropTypes.func.isRequired,
+  relocate: PropTypes.func.isRequired
+}
+
+const mapState = ({ intro, artwork, blackPanel }) => ({
+  introToggled: intro.toggled,
+  artworkToggled: artwork.toggled,
+  position: blackPanel.position,
+  canTransition: blackPanel.canTransition
+})
+
+const actionCreators = {
+  setPosition: blackPanelActions.setPosition,
+  relocate: blackPanelOperations.relocate
+}
+
+export default connect(mapState, actionCreators)(BlackPanel);

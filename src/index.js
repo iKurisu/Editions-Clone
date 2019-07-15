@@ -1,30 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
-import Headers from 'components/Headers';
-import BlackPanel from 'components/BlackPanel';
-import Galery from 'pages/Galery';
-import Intro from 'pages/Intro';
-import artworks from './artworks';
-import "./styles.scss";
+import * as PIXI from 'pixi.js';
+import { Provider } from 'react-redux';
+import App from './App.js'
+import store from './store';
 
-const App = () => {
-  const [atIntro, setIntro] = useState(true);
-  const [panelPosition, setPanelPosition] = useState('0');
-  
-  const showGalery = () => {
-    setIntro(false);
-    setPanelPosition('-100%');
-  }
+let type = "WebGL";
+if (!PIXI.utils.isWebGLSupported()) type = "canvas";
 
-  return (
-    <React.Fragment>
-      <Headers />
-      <Intro showGalery={showGalery} />
-      <Galery artworks={artworks} atIntro={atIntro} />
-      <BlackPanel position={panelPosition} />
-    </React.Fragment>
-  );
-}
+PIXI.utils.sayHello(type)
 
-
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById("root")
+);

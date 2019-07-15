@@ -10,20 +10,18 @@
 }
 
 .title p {
-  font-family: 'Butler Ultra Light'; 
-  font-size: 18.3vw;
+  font-family: 'Ogg Roman'; 
+  font-size: 16.5vw;
+  padding-top: 3.3vw;
   opacity: 0;
-  
-  transition-property: opacity, transform;
-  transition-duration: .6s, .5s;
-  transition-delay: .15s, 0;
-  transition-timing-function: ease, $timing;
+
+  transition: opacity .6s ease .15s, transform .5s $timing;
 }
 
 @media (min-width: 1366px) {
-  .title p { font-size: 214px; }
+  .title p { font-size: 194px; }
 }
 
 @media (min-width: 1920px) {
-  .title p { font-size: 300px; }
+  .title p { font-size: 280px; }
 }

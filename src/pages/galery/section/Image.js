@@ -1,16 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import "./Image.scss";
+import LinkedImage from './image/LinkedImage';
+import "./Image.scss"; 
 
-const Image = ({ artwork, orientation }) => (
+const Image = ({ src, title, orientation, isClone }) => (
   <div className={`image-wrapper ${orientation}`}>
-    <img src={artwork} />
+    <LinkedImage src={src} title={title} isClone={isClone} />
   </div>
-)
+);
 
 Image.propTypes = {
-  artwork: PropTypes.string.isRequired,
-  orientation: PropTypes.string.isRequired
+  src: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  orientation: PropTypes.string.isRequired,
+  isClone: PropTypes.bool
 }
 
 export default Image;

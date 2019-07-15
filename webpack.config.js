@@ -33,11 +33,12 @@ module.exports = {
         use: [
           'style-loader',
           'css-loader',
+          'postcss-loader',
           'sass-loader'
         ]
       },
       {
-        test: /\.jpg$/,
+        test: /\.(jpg|png|svg)$/,
         use: [
           'file-loader'
         ]
@@ -55,6 +56,8 @@ module.exports = {
       assets: path.resolve(__dirname, './src/assets'),
       components: path.resolve(__dirname, './src/components'),
       pages: path.resolve(__dirname, './src/pages'),
+      modules: path.resolve(__dirname, './src/modules'),
+      hooks: path.resolve(__dirname, './src/hooks'),
       utils: path.resolve(__dirname, './src/utils'),
       sass: path.resolve(__dirname, "./src/sass")
     }
