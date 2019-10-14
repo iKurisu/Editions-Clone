@@ -6,6 +6,7 @@ import Preview from "./artwork/Preview";
 import Purchase from "./artwork/Purchase";
 import { introActions } from "modules/intro";
 import { artworkActions, artworkOperations } from "modules/artwork";
+import { setTitle, formatTitle } from 'utils/title';
 
 const Artwork = ({
   artwork,
@@ -24,10 +25,17 @@ const Artwork = ({
     orientation,
     id
   } = artwork;
+
   useEffect(() => {
     wasAtGalery ? window.scrollTo(0, 0) : toggleIntro();
     openArtwork(id);
     setFormat(formats[0]);
+
+    setTitle(`${formatTitle(title)} — Jordan Sowers`);
+  
+    return () => {
+      setTitle('Editions — Jordan Sowers');
+    };
   }, []);
 
   return (
